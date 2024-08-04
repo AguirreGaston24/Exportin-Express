@@ -10,7 +10,7 @@ const FormContactData = () => {
       if (response.success) {
         console.log(response.message);
       } else {
-        console.log( response.message, response.error );
+        console.log( response.message, response?.error );
       }
   };
 
