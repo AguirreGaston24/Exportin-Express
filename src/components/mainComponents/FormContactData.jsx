@@ -5,16 +5,18 @@ import { insertContactDataRequest } from '../../api/contactDataRequests';
 const FormContactData = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = async (dataContact) => {
-    try {
-      await insertContactDataRequest(dataContact);
-    } catch (error) {
-      console.log('Ocurrió un error durante el envío.');
-    }
+  const onSubmitContactData = async (dataContact) => {
+    const response = await insertContactDataRequest(dataContact);
+      if (response.success) {
+        console.log(response.message);
+      } else {
+        console.log( response.message, response.error );
+      }
   };
 
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmitContactData)}>
       <div>
         <label htmlFor='name'>Nombre</label>
         <input
