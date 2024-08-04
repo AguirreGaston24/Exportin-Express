@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const axiosApi = axios.create({
 
-    baseURL: process.env.API_URL + '/api',
+    baseURL: 'https://nicolas-landing-back.vercel.app' + '/api',
     withCredentials: true,
 
 })
