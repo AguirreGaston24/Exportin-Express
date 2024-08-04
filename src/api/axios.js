@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const axiosApi = axios.create({
 
-    baseURL: 'https://nicolas-landing-back.vercel.app/api',
+    baseURL: `${process.env.REACT_APP_API_BASE_URL}/api`,
     withCredentials: true,
 
 })
