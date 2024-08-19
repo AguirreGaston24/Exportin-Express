@@ -10,7 +10,7 @@ const FormModalContactDataComponent = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const onSubmitContactData = async (contactData) => {
     const response = await insertContactDataRequest(contactData);
