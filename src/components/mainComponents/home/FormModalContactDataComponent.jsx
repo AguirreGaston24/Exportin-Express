@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { insertContactDataRequest } from "../../../api/contactDataRequests";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const FormModalContactDataComponent = () => {
   const {

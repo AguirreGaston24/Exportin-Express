@@ -24,7 +24,6 @@ const FreeTrainingSessionPage = () => {
           obtener tu empleo en el exterior de 2500 USD al mes dale click al
           siguiente BOTÓN.
         </p>
-        <PrimaryButtonComponent RedirectButton={handleRedirect} width="50px" height="50px" fontSize="10px" backgroundColor="red"/>
       </section>
       <footer></footer>
     </div>
