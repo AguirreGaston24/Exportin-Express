@@ -1,11 +1,11 @@
 import React from "react";
-import { InlineWidget } from "react-calendly";
+import { useCalendly } from "../../../contexts/CalendlyContext";
 
 const CalendlyWidgetComponent = () => {
+  const calendlyWidget = useCalendly();
+
   return (
-    <div className='strategic-consultation-page-calendly'>
-      <InlineWidget url='https://calendly.com/gastonlegado1/sesion-asesoria-de-it' />
-    </div>
+    <div className='strategic-consultation-page-calendly'>{calendlyWidget}</div>
   );
 };
 
