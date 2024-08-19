@@ -1,7 +1,8 @@
-import React from "react";
+import { React, useEffect } from "react";
 import FormModalContactDataComponent from "../components/mainComponents/home/FormModalContactDataComponent";
 
 const HomePage = () => {
+  
   useEffect(() => {
     const link = document.createElement("link");
     link.href = "https://assets.calendly.com/assets/external/widget.css";
