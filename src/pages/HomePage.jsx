@@ -1,7 +1,7 @@
 import React from 'react';
-import FormContactData from '../components/mainComponents/FormContactData';
+import FormModalContactDataComponent from '../components/mainComponents/home/FormModalContactDataComponent';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <header>
@@ -12,7 +12,7 @@ const Home = () => {
       <main>
         <section>
           <h2>Contact</h2>
-          <FormContactData />
+          <FormModalContactDataComponent />
         </section>
       </main>
       
@@ -20,7 +20,9 @@ const Home = () => {
         <p>&copy; 2024 Your Company. All rights reserved.</p>
       </footer>
     </div>
+
+    
   );
 };
 
-export default Home;
+export default HomePage;
