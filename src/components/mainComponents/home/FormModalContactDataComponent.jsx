@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { insertContactDataRequest } from "../../../api/contactDataRequests";
 import { useNavigate } from "react-router-dom";
+import { PrimaryButtonComponent } from "../../secondaryComponents/PrimaryButtonComponent";
 
 const FormModalContactDataComponent = () => {
   const {
@@ -65,7 +66,15 @@ const FormModalContactDataComponent = () => {
         {errors.phone && <p>{errors.phone.message}</p>}
       </div>
 
-      <button type='submit'>Enviar</button>
+      <PrimaryButtonComponent
+        onClick={handleRedirect}
+        width='200px'
+        height='200px'
+        fontSize='20px'
+        backgroundColor='red'
+        type='submit'
+        textButton='Hola'
+      />
     </form>
   );
 };

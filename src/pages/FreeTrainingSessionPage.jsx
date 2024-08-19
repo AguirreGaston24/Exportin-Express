@@ -1,12 +1,14 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { PrimaryButtonComponent } from "../components/secondaryComponents/PrimaryButtonComponent";
 
 const FreeTrainingSessionPage = () => {
 
+  const navigate = useNavigate();
+
   const handleRedirect = () => {
-    Navigate("/schedule-consultation");
+    navigate("/schedule-consultation");
   };
 
   return (
@@ -24,6 +26,7 @@ const FreeTrainingSessionPage = () => {
           obtener tu empleo en el exterior de 2500 USD al mes dale click al
           siguiente BOTÓN.
         </p>
+        <PrimaryButtonComponent onClick={handleRedirect} width="200px" height="200px" fontSize="20px" backgroundColor="red" type="button" textButton="Hola"/>
       </section>
       <footer></footer>
     </div>

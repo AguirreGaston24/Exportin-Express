@@ -1,15 +1,26 @@
 import React from "react";
 
-export const PrimaryButtonComponent = ({ RedirectButton, width, height, fontSize, backgroundColor }) => {
+export const PrimaryButtonComponent = ({
+  onClick = () => {},
+  width = "100px",
+  height = "40px",
+  fontSize = "16px",
+  backgroundColor = "blue",
+  type = "button",
+  textButton = "",
+}) => {
   return (
     <button
-      onClick={{ RedirectButton }}
+      type={type}
+      onClick={onClick}
       style={{
         width: width,
         height: height,
         fontSize: fontSize,
         backgroundColor: backgroundColor,
       }}
-    ></button>
+    >
+      {textButton}
+    </button>
   );
 };
