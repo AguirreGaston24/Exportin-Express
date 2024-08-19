@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { insertContactDataRequest } from "../../../api/contactDataRequests";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const FormModalContactDataComponent = () => {
   const {
@@ -12,6 +13,7 @@ const FormModalContactDataComponent = () => {
   const onSubmitContactData = async (contactData) => {
     const response = await insertContactDataRequest(contactData);
     if (response.data.success) {
+      Navigate("/free-training-session");
       console.log(response.data.message);
     } else {
       console.log(response.data.message, response?.data?.error);
