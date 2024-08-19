@@ -1,19 +1,7 @@
-import { React, useEffect } from "react";
+import React from "react";
 import FormModalContactDataComponent from "../components/mainComponents/home/FormModalContactDataComponent";
 
 const HomePage = () => {
-  
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.href = "https://assets.calendly.com/assets/external/widget.css";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
 
   return (
     <div>
