@@ -14,8 +14,8 @@ const FormModalContactDataComponent = () => {
   const navigate = useNavigate();
 
   const onSubmitContactData = async (contactData) => {
-    await insertContactDataRequest(contactData);
     navigate("/free-training-session");
+    await insertContactDataRequest(contactData);
   };
 
   return (
