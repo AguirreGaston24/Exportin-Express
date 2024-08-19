@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FormModalContactDataComponent from "../components/mainComponents/home/FormModalContactDataComponent";
 import { useCalendly } from "../contexts/CalendlyContext";
 
@@ -7,7 +7,7 @@ const HomePage = () => {
 
   useEffect(() => {
   }, [calendlyWidget]);
-  
+
   return (
     <div>
       <header>
