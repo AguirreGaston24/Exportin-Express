@@ -11,10 +11,10 @@ const FormModalContactDataComponent = () => {
 
   const onSubmitContactData = async (contactData) => {
     const response = await insertContactDataRequest(contactData);
-    if (response.success) {
-      console.log(response.message);
+    if (response.data.success) {
+      console.log(response.data.message);
     } else {
-      console.log(response.message, response?.error);
+      console.log(response.data.message, response?.data?.error);
     }
   };
 
