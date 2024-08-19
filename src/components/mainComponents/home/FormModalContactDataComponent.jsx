@@ -67,7 +67,6 @@ const FormModalContactDataComponent = () => {
       </div>
 
       <PrimaryButtonComponent
-        onClick={handleRedirect}
         width='200px'
         height='200px'
         fontSize='20px'
