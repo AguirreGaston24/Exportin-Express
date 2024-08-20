@@ -4,11 +4,9 @@ import HomePage from "./pages/HomePage";
 import FreeTrainingSessionPage from "./pages/FreeTrainingSessionPage";
 import ScheduleConsultationPage from "./pages/ScheduleConsultationPage";
 import "./App.css";
-import { CalendlyProvider } from "./contexts/CalendlyContext";
 
 function App() {
   return (
-    <CalendlyProvider>
       <Router>
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -22,7 +20,6 @@ function App() {
           />
         </Routes>
       </Router>
-    </CalendlyProvider>
   );
 }
 
