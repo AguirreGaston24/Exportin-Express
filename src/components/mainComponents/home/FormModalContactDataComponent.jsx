@@ -20,11 +20,17 @@ const FormModalContactDataComponent = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmitContactData)}>
-      <div>
+     <div>
         <label htmlFor='name'>Nombre</label>
         <input
           id='name'
-          {...register("name", { required: "El nombre es obligatorio" })}
+          {...register("name", {
+            required: "El nombre es obligatorio",
+            pattern: {
+              value: /^[A-Za-zÀ-ÿ\s]+$/,
+              message: "El nombre solo debe contener letras y espacios"
+            }
+          })}
         />
         {errors.name && <p>{errors.name.message}</p>}
       </div>
