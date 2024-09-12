@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { insertContactDataRequest } from "../../../api/contactDataRequests";
 import { useNavigate } from "react-router-dom";
@@ -9,61 +9,44 @@ const FormModalContactDataComponent = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm();
 
   const navigate = useNavigate();
 
   const onSubmitContactData = async (contactData) => {
-    navigate("/free-training-session");
-    await insertContactDataRequest(contactData);
+    try {
+      const response = await insertContactDataRequest(contactData);
+      if (response.status === 200) {
+        navigate("/free-training-session");
+      } else {
+        const data = await response.json();
+        data.errors.forEach((error) => {
+          setError(error.param, { type: "manual", message: error.msg });
+        });
+      }
+    } catch (error) {
+      console.error("Error al enviar los datos:", error);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmitContactData)}>
-     <div>
+      <div>
         <label htmlFor='name'>Nombre</label>
-        <input
-          id='name'
-          {...register("name", {
-            required: "El nombre es obligatorio",
-            pattern: {
-              value: /^[A-Za-zÀ-ÿ\s]+$/,
-              message: "El nombre solo debe contener letras y espacios"
-            }
-          })}
-        />
+        <input id='name' {...register("name")} />
         {errors.name && <p>{errors.name.message}</p>}
       </div>
 
       <div>
         <label htmlFor='email'>Email</label>
-        <input
-          id='email'
-          type='email'
-          {...register("email", {
-            required: "El email es obligatorio",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: "Dirección de email inválida",
-            },
-          })}
-        />
+        <input id='email' type='email' {...register("email")} />
         {errors.email && <p>{errors.email.message}</p>}
       </div>
 
       <div>
         <label htmlFor='phone'>Número con WhatsApp</label>
-        <input
-          id='phone'
-          type='tel'
-          {...register("phone", {
-            required: "El número de teléfono es obligatorio",
-            pattern: {
-              value: /^[0-9]{10,14}$/,
-              message: "Número de teléfono inválido",
-            },
-          })}
-        />
+        <input id='phone' type='tel' {...register("phone")} />
         {errors.phone && <p>{errors.phone.message}</p>}
       </div>
 
