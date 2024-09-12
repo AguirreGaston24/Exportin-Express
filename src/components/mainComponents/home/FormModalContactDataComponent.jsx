@@ -17,11 +17,10 @@ const FormModalContactDataComponent = () => {
   const onSubmitContactData = async (contactData) => {
     try {
       const response = await insertContactDataRequest(contactData);
-  
+
       if (response.data.success) {
         navigate("/free-training-session");
       }
-
     } catch (error) {
       if (error.response) {
         const { data } = error.response;
@@ -29,13 +28,18 @@ const FormModalContactDataComponent = () => {
           data.errors.forEach((error) => {
             setError(error.param, { type: "manual", message: error.msg });
           });
-        } else {
+        }
+        if (!(data && data.errors)) {
           console.error("Error de respuesta inesperado:", data);
         }
-      } else if (error.request) {
-        console.error("Error de red o de solicitud:", error.message);
-      } else {
-        console.error("Error inesperado:", error.message);
+
+        if (error.request) {
+          console.error("Error de red o de solicitud:", error.message);
+        }
+
+        if (!error.response && !error.request) {
+          console.error("Error inesperado:", error.message);
+        }
       }
     }
   };
