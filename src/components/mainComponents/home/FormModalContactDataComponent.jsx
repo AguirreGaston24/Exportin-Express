@@ -22,10 +22,13 @@ const FormModalContactDataComponent = () => {
         navigate("/free-training-session");
       }
 
-      if (!response.data.success) {
-        response.data.data.errors.forEach((error) => {
-          setError(error.param, { type: "manual", message: error.msg });
-        });
+      if (response.status === 400) {
+        const data = await response.json();
+        if (data && !data.success) {
+          data.errors.forEach((error) => {
+            setError(error.param, { type: "manual", message: error.msg });
+          });
+        }
       }
     } catch (error) {
       console.error("Error al enviar los datos:", error);
