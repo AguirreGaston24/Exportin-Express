@@ -32,14 +32,13 @@ const FormModalContactDataComponent = () => {
         if (!(data && data.errors)) {
           console.error("Error de respuesta inesperado:", data);
         }
+      }
+      if (error.request) {
+        console.error("Error de red o de solicitud:", error.message);
+      }
 
-        if (error.request) {
-          console.error("Error de red o de solicitud:", error.message);
-        }
-
-        if (!error.response && !error.request) {
-          console.error("Error inesperado:", error.message);
-        }
+      if (!error.response && !error.request) {
+        console.error("Error inesperado:", error.message);
       }
     }
   };
