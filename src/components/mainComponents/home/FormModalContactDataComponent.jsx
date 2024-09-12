@@ -20,8 +20,7 @@ const FormModalContactDataComponent = () => {
       if (response.data.success) {
         navigate("/free-training-session");
       } else {
-        const data = await response.json();
-        data.errors.forEach((error) => {
+        response.data.errors.forEach((error) => {
           setError(error.param, { type: "manual", message: error.msg });
         });
       }
