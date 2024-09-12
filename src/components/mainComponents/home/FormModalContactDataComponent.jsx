@@ -21,9 +21,9 @@ const FormModalContactDataComponent = () => {
       if (response.data.success) {
         navigate("/free-training-session");
       }
-      
+
       if (!response.data.success) {
-        response.data.errors.forEach((error) => {
+        response.data.data.errors.forEach((error) => {
           setError(error.param, { type: "manual", message: error.msg });
         });
       }
