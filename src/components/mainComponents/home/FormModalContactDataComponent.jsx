@@ -17,9 +17,12 @@ const FormModalContactDataComponent = () => {
   const onSubmitContactData = async (contactData) => {
     try {
       const response = await insertContactDataRequest(contactData);
+
       if (response.data.success) {
         navigate("/free-training-session");
-      } else if (!response.data.success) {
+      }
+      
+      if (!response.data.success) {
         response.data.errors.forEach((error) => {
           setError(error.param, { type: "manual", message: error.msg });
         });
