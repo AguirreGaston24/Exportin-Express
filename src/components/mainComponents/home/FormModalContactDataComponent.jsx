@@ -21,26 +21,14 @@ const FormModalContactDataComponent = () => {
       if (response.data.success) {
         navigate("/free-training-session");
       }
-    } catch (error) {
-      if (error.response) {
-        const { data } = error.response;
-        if (data && data.errors) {
-          data.errors.forEach((error) => {
-            setError(error.param, { type: "manual", message: error.msg });
-          });
-        }
-        if (!(data && data.errors)) {
-          console.error("Error de respuesta inesperado:", data);
-        }
-      }
-      if (error.request) {
-        console.error("Error de red o de solicitud:", error.message);
-      }
 
-      if (!error.response && !error.request) {
-        console.error("Error inesperado:", error.message);
+      if (response.data.errors) {
+        response.data.errors.forEach((error) => {
+          setError(error.path, { type: "manual", message: error.msg });
+        });
       }
-    }
+    } catch (error) {
+      console.log(error);
   };
 
   return (
