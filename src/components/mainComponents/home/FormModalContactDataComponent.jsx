@@ -29,8 +29,9 @@ const FormModalContactDataComponent = () => {
       }
     } catch (error) {
       console.log(error);
+    }
   };
-
+  
   return (
     <form onSubmit={handleSubmit(onSubmitContactData)}>
       <div>
