@@ -1,28 +1,3 @@
-/* Slick */
-.slick-dots {
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.slick-dots li {
-  margin: 0 5px;
-}
-
-.slick-dots li button {
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  display: block;
-}
-
-.slick-dots li.slick-active button {
-  background-color: var(--bright-yellow);
-}
-
 .AboutMeCarouselComponent {
   width: 100%;
   display: inline-block;
@@ -33,15 +8,14 @@
   line-height: var(--font-line-height-paragraph);
   text-align: justify;
   overflow: hidden;
-  background-color: green;
 }
 
 .AboutMeCarouselComponent::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 31%;
-  width: 65%;
+  left: 29%;
+  width: 62%;
   height: 100%;
   background-color: var(--light-gray-2);
   border-radius: 5px;
@@ -86,12 +60,10 @@
 .AboutMeCarouselComponent-inner {
   position: relative;
   align-items: center;
-  padding: 0 0 25px 0;
 }
 
 .AboutMeCarouselComponent-item {
-  padding: 30px;
-  gap: 80px;
+  gap: 40px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -101,7 +73,7 @@
 }
 
 .AboutMeCarouselComponent-item img {
-  height: 380px;
+  height: 340px;
   display: block;
   margin-top: 40px;
 }
@@ -111,7 +83,7 @@
   position: relative;
   align-items: start;
   justify-content: center;
-  width: 500px;
+  width: 700px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -158,12 +130,12 @@
 }
 
 .AboutMeCarouselComponent-control.prev {
-  right: 96%;
+  right: 93%;
   top: 46%;
 }
 
 .AboutMeCarouselComponent-control.next {
-  left: 96%;
+  left: 93%;
   top: 46%;
   transform: rotate(180deg);
 }
@@ -185,7 +157,7 @@
   top: 0;
   bottom: 0;
   right: 0;
-  left: 8.5%;
+  left: 11.5%;
 }
 
 .AboutMeCarouselComponent-indicator-text {
@@ -199,21 +171,26 @@
   background-color: var(--green);
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1250px) {
   .AboutMeCarouselComponent {
     font-size: 1.2rem;
   }
 
+  .AboutMeCarouselComponent::before {
+    width: 65%;
+    left: 27%;
+  }
+
   .AboutMeCarouselComponent-item {
-    gap: 60px;
+    gap: 35px;
   }
 
   .AboutMeCarouselComponent-item img {
-    height: 280px;
+    height: 260px;
   }
 
   .AboutMeCarouselComponent-caption {
-    width: 450px;
+    width: 600px;
     gap: 10px;
   }
 
@@ -228,25 +205,30 @@
 
   .AboutMeCarouselComponent-indicator {
     top: 0;
-    left: 10%;
+    left: 10.8%;
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
   .AboutMeCarouselComponent {
     font-size: 1.05rem;
   }
 
+  .AboutMeCarouselComponent::before {
+    width: 69%;
+    left: 24%;
+  }
+
   .AboutMeCarouselComponent-item {
-    gap: 45px;
+    gap: 30px;
   }
 
   .AboutMeCarouselComponent-item img {
-    height: 250px;
+    height: 190px;
   }
 
   .AboutMeCarouselComponent-caption {
-    width: 380px;
+    width: 540px;
     gap: 8px;
   }
 
@@ -260,61 +242,68 @@
 
   .AboutMeCarouselComponent-indicator {
     top: 0;
-    left: 6.5%;
+    left: 9%;
   }
 }
 
-@media (max-width: 750px) {
-  .AboutMeCarouselComponent::before {
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: none;
-  }
-
-  .AboutMeCarouselComponent-item {
-    gap: 10px;
-    flex-direction: column;
-  }
-
-  .AboutMeCarouselComponent-item img {
-    height: 200px;
-    margin-top: 0;
-  }
-
-  .AboutMeCarouselComponent-caption {
-    width: 500px;
-    gap: 10px;
-  }
-
-  .AboutMeCarouselComponent-control.prev {
-    right: 92%;
-  }
-
-  .AboutMeCarouselComponent-control.next {
-    left: 92%;
-  }
-
-  .AboutMeCarouselComponent-indicator {
-    left: 45%;
-    top: 92%;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .AboutMeCarouselComponent {
     font-size: 0.9rem;
   }
 
+  .AboutMeCarouselComponent-caption {
+    width: 340px;
+    padding: 30px 0 10px 0;
+  }
 
-  .AboutMeCarouselComponent-background {
-    border-radius: 0;
+  .AboutMeCarouselComponent::before {
+    width: 63%;
+    left: 30%;
+  }
+
+  .AboutMeCarouselComponent-indicator {
+    top: 0;
+    left: 10.3%;
+  }
+
+  .AboutMeCarouselComponent-control.prev {
+    right: 90%;
+  }
+  
+  .AboutMeCarouselComponent-control.next {
+    left: 90%;
+  }
+}
+
+@media (max-width: 650px) {
+  .AboutMeCarouselComponent {
+    font-size: 0.8rem;
+  }
+
+  .AboutMeCarouselComponent::before {
+    width: 100%;
+    left: 0;
+  }
+
+  .AboutMeCarouselComponent-item {
+    flex-direction: column;
+    gap: 0;
+    padding: 15px;
+  }
+
+  .AboutMeCarouselComponent-item img {
+    margin-top: 0;
   }
 
   .AboutMeCarouselComponent-caption {
     width: 300px;
     gap: 10px;
+    padding: 10px;
+  }
+
+  .AboutMeCarouselComponent-indicator {
+    top: 94%;
+    left: 38%;
   }
 
   .AboutMeCarouselComponent-control.prev {

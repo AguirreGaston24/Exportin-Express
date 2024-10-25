@@ -9,7 +9,7 @@ const recommendations = [
     id: 1,
     name: "Ana Martínez",
     comment:
-      "¡Una experiencia absolutamente increíble y enriquecedora! Cada momento fue único y se ofrecieron perspectivas que realmente me hicieron reflexionar.",
+      "¡Una experiencia absolutamente increíble y enriquecedora! Cada momento fue único.",
     profileImage: "/images/profiles/recommendations/profile1.webp",
   },
   {
@@ -79,17 +79,17 @@ export default function RecommendationsCarousel() {
     nextArrow: <CustomNextArrow />,
     responsive: [
       {
-        breakpoint: 1150, 
+        breakpoint: 1150,
         settings: {
-          slidesToShow: 2, 
-          slidesToScroll: 2, 
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 750, 
+        breakpoint: 750,
         settings: {
-          slidesToShow: 1, 
-          slidesToScroll: 1, 
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -100,8 +100,8 @@ export default function RecommendationsCarousel() {
       <Slider {...settings} className='RecommendationsCarouselComponent-slider'>
         {recommendations.map((item) => (
           <div
-            className='RecommendationsCarouselComponent-slide-container'
             key={item.id}
+            className='RecommendationsCarouselComponent-slide-container'
           >
             <div className='RecommendationsCarouselComponent-slide'>
               <img

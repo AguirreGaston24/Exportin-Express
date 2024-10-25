@@ -4,7 +4,7 @@
   font-family: var(--font-family);
   flex-direction: row;
   align-items: center;
-  width: 1400px;
+  width: 1350px;
   justify-content: start;
   background-image: url("/images/profiles/profile.png"),
     url("/images/backgrounds/background-world-map.png");
