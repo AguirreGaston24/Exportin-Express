@@ -54,7 +54,7 @@ const AboutMeCarouselComponent = () => {
             showArrows && currentSlide !== totalSlides ? "block" : "none",
         }}
       >
-        <img src='../../../assets/images/icons/arrowIcon.png' alt='Next' />
+        <img src='/src/assets/images/icons/arrowIcon.png' alt='Next' />
       </button>
     );
   };
