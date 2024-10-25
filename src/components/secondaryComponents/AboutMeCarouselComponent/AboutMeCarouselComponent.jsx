@@ -35,7 +35,8 @@ const AboutMeCarouselComponent = () => {
   const [showArrows, setShowArrows] = useState(true);
   const [showShadows, setShowShadows] = useState(false);
   const totalSlides = slides.length - 1;
-
+  let resizeTimeout = useRef(null);
+  
   const handleSlideChange = (index) => {
     if (index >= 0 && index <= totalSlides) {
       setCurrentSlide(index);
@@ -53,7 +54,7 @@ const AboutMeCarouselComponent = () => {
             showArrows && currentSlide !== totalSlides ? "block" : "none",
         }}
       >
-        <img src='/src/assets/images/icons/arrowIcon.png' alt='Next' />
+        <img src='../../../assets/images/icons/arrowIcon.png' alt='Next' />
       </button>
     );
   };
