@@ -10,37 +10,37 @@ const recommendations = [
     name: "Ana Martínez",
     comment:
       "¡Una experiencia absolutamente increíble y enriquecedora! Cada momento fue único y se ofrecieron perspectivas que realmente me hicieron reflexionar.",
-    profileImage: "/src/assets/images/profiles/recommendations/profile1.webp",
+    profileImage: "/images/profiles/recommendations/profile1.webp",
   },
   {
     id: 2,
     name: "Juan Pérez",
     comment: "Aprendí mucho de esta entrevista.",
-    profileImage: "/src/assets/images/profiles/recommendations/profile2.jpg",
+    profileImage: "/images/profiles/recommendations/profile2.jpg",
   },
   {
     id: 3,
     name: "Miguel Gómez",
     comment: "¡Muy perspicaz e inspirador!",
-    profileImage: "/src/assets/images/profiles/recommendations/profile3.jpg",
+    profileImage: "/images/profiles/recommendations/profile3.jpg",
   },
   {
     id: 4,
     name: "David Ramírez",
     comment: "¡Perspectivas fantásticas sobre la industria!",
-    profileImage: "/src/assets/images/profiles/recommendations/profile4.jpg",
+    profileImage: "/images/profiles/recommendations/profile4.jpg",
   },
   {
     id: 5,
     name: "Cristian López",
     comment: "Una entrevista que no te puedes perder.",
-    profileImage: "/src/assets/images/profiles/recommendations/profile5.jpg",
+    profileImage: "/images/profiles/recommendations/profile5.jpg",
   },
   {
     id: 6,
     name: "Sara Wilson",
     comment: "¡Recomiendo encarecidamente esta sesión!",
-    profileImage: "/src/assets/images/profiles/recommendations/profile6.jpg",
+    profileImage: "/images/profiles/recommendations/profile6.jpg",
   },
 ];
 
@@ -51,7 +51,7 @@ const CustomNextArrow = (props) => {
       className='RecommendationsCarouselComponent-control next'
       onClick={onClick}
     >
-      <img src='/src/assets/images/icons/arrowIcon.png' alt='Next' />
+      <img src='/images/icons/arrowIcon.png' alt='Next' />
     </button>
   );
 };
@@ -63,7 +63,7 @@ const CustomPrevArrow = (props) => {
       className='RecommendationsCarouselComponent-control prev'
       onClick={onClick}
     >
-      <img src='/src/assets/images/icons/arrowIcon.png' alt='Previous' />
+      <img src='images/icons/arrowIcon.png' alt='Previous' />
     </button>
   );
 };

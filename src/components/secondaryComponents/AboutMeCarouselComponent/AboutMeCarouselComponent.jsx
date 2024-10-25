@@ -53,7 +53,7 @@ const AboutMeCarouselComponent = () => {
             showArrows && currentSlide !== totalSlides ? "block" : "none",
         }}
       >
-        <img src='/src/assets/images/icons/arrowIcon.png' alt='Next' />
+        <img src='/images/icons/arrowIcon.png' alt='Next' />
       </button>
     );
   };
@@ -66,7 +66,7 @@ const AboutMeCarouselComponent = () => {
         onClick={onClick}
         style={{ display: showArrows && currentSlide !== 0 ? "block" : "none" }}
       >
-        <img src='/src/assets/images/icons/arrowIcon.png' alt='Previous' />
+        <img src='/images/icons/arrowIcon.png' alt='Previous' />
       </button>
     );
   };
