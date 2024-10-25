@@ -6,8 +6,8 @@
   align-items: center;
   width: 1400px;
   justify-content: start;
-  background-image: url("/src/assets/images/profiles/profile.png"),
-    url("/src/assets/images/backgrounds/background-world-map.png");
+  background-image: url("/images/profiles/profile.png"),
+    url("/images/backgrounds/background-world-map.png");
   background-position: 90% 100%, 130% 70%;
   background-size: 450px, 1000px;
   background-repeat: no-repeat, no-repeat;
@@ -49,8 +49,8 @@
         rgba(255, 255, 255, 0.8),
         rgba(255, 255, 255, 0.8)
       ),
-      url("/src/assets/images/profiles/profile.png"),
-      url("/src/assets/images/backgrounds/background-world-map.png");
+      url("/images/profiles/profile.png"),
+      url("/images/backgrounds/background-world-map.png");
     background-position: 0, 90% 10%, 130% 70%;
     background-size: 100%, 450px, 1000px;
     background-repeat: no-repeat, no-repeat, no-repeat;

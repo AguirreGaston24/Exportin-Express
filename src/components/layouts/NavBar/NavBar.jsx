@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./NavBar.css";
 
 // Images
-import logo from "../../../assets/images/logo/logo-negro-transparente.png";
+import logo from "../../../../public/images/logo/logo-negro-transparente.png";
 
 const NavBar = () => {
   const scrollToSection = (sectionId) => {
