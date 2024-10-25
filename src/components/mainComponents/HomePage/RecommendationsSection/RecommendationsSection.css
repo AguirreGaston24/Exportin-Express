@@ -1,0 +1,38 @@
+.HomePage-RecommendationSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 0 60px 0;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+}
+
+.HomePage-RecommendationSection-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+}
+
+.HomePage-RecommendationSection-title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--black);
+}
+
+.HomePage-Recommendation-graphic-element-gray {
+  display: block;
+  width: 300px;
+  height: 2px;
+  background-color: var(--black);
+}
+
+@media (max-width: 750px) {
+  .HomePage-Recommendation-graphic-element-gray {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+.WebinarButtonComponent {
+  width: 280px;
+  height: 60px;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: var(--bright-yellow);
+  color: var(--black);
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.WebinarButtonComponent:hover {
+  background-color: var(--soft-yellow);
+}
+
+.WebinarButtonComponent:active {
+  background-color: var(--dark-orange);
+}

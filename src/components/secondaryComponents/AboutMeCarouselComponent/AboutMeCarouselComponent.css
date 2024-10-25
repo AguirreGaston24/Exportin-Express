@@ -1,0 +1,324 @@
+/* Slick */
+.slick-dots {
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
+.slick-dots li.slick-active button {
+  background-color: var(--bright-yellow);
+}
+
+.AboutMeCarouselComponent {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  font-family: var(--font-family);
+  font-size: var(--font-size-paragraph);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-line-height-paragraph);
+  text-align: justify;
+}
+
+.AboutMeCarouselComponent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 31%;
+  width: 65%;
+  height: 100%;
+  background-color: var(--light-gray-2);
+  border-radius: 5px;
+  z-index: 0;
+}
+
+/* Shadow */
+
+.shadow {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  z-index: 10;
+}
+
+.left-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+  z-index: 1;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.right-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+  z-index: 1;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+/* Inner - Item */
+.AboutMeCarouselComponent-inner {
+  position: relative;
+  align-items: center;
+  padding: 0 0 25px 0;
+}
+
+.AboutMeCarouselComponent-item {
+  padding: 30px;
+  gap: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-align: justify;
+  justify-content: center;
+  width: 100%;
+}
+
+.AboutMeCarouselComponent-item img {
+  height: 380px;
+  display: block;
+  margin-top: 40px;
+}
+
+/* Caption */
+.AboutMeCarouselComponent-caption {
+  position: relative;
+  align-items: start;
+  justify-content: center;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.AboutMeCarouselComponent-caption-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+  gap: 20px;
+}
+
+.AboutMeCarouselComponent-caption-title {
+  color: var(--dark-gray);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.AboutMeCarouselComponent-caption-graphic-element-yellow {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--bright-yellow);
+}
+
+.AboutMeCarouselComponent-caption-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.AboutMeCarouselComponent-caption-additional-text {
+  font-weight: 700;
+}
+
+/* Control */
+.AboutMeCarouselComponent-control {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  background: none;
+  z-index: 1;
+}
+
+.AboutMeCarouselComponent-control.prev {
+  right: 96%;
+  top: 46%;
+}
+
+.AboutMeCarouselComponent-control.next {
+  left: 96%;
+  top: 46%;
+  transform: rotate(180deg);
+}
+
+.AboutMeCarouselComponent-control img {
+  width: 40px;
+  display: block;
+}
+
+/* Indicator */
+.AboutMeCarouselComponent-indicator {
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  height: 30px;
+  width: 1000px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 8.5%;
+}
+
+.AboutMeCarouselComponent-indicator-text {
+  display: block;
+}
+
+.AboutMeCarouselComponent-caption-graphic-element-green {
+  display: block;
+  width: 60px;
+  height: 3px;
+}
+
+@media (max-width: 1150px) {
+  .AboutMeCarouselComponent {
+    font-size: 1.2rem;
+  }
+
+  .AboutMeCarouselComponent-item {
+    gap: 60px;
+  }
+
+  .AboutMeCarouselComponent-item img {
+    height: 280px;
+  }
+
+  .AboutMeCarouselComponent-caption {
+    width: 450px;
+    gap: 10px;
+  }
+
+  .AboutMeCarouselComponent-caption-text-container {
+    gap: 8px;
+    line-height: 1.5;
+  }
+
+  .AboutMeCarouselComponent-control img {
+    width: 37px;
+  }
+
+  .AboutMeCarouselComponent-indicator {
+    top: 0;
+    left: 10%;
+  }
+}
+
+@media (max-width: 950px) {
+  .AboutMeCarouselComponent {
+    font-size: 1.05rem;
+  }
+
+  .AboutMeCarouselComponent-item {
+    gap: 45px;
+  }
+
+  .AboutMeCarouselComponent-item img {
+    height: 250px;
+  }
+
+  .AboutMeCarouselComponent-caption {
+    width: 380px;
+    gap: 8px;
+  }
+
+  .AboutMeCarouselComponent-caption-text-container {
+    gap: 3px;
+  }
+
+  .AboutMeCarouselComponent-control img {
+    width: 32px;
+  }
+
+  .AboutMeCarouselComponent-indicator {
+    top: 0;
+    left: 6.5%;
+  }
+}
+
+@media (max-width: 750px) {
+  .AboutMeCarouselComponent::before {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: none;
+  }
+
+  .AboutMeCarouselComponent-item {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .AboutMeCarouselComponent-item img {
+    height: 200px;
+    margin-top: 0;
+  }
+
+  .AboutMeCarouselComponent-caption {
+    width: 500px;
+    gap: 10px;
+  }
+
+  .AboutMeCarouselComponent-control.prev {
+    right: 92%;
+  }
+
+  .AboutMeCarouselComponent-control.next {
+    left: 92%;
+  }
+
+  .AboutMeCarouselComponent-indicator {
+    left: 45%;
+    top: 92%;
+  }
+}
+
+@media (max-width: 600px) {
+  .AboutMeCarouselComponent {
+    font-size: 0.9rem;
+  }
+
+
+  .AboutMeCarouselComponent-background {
+    border-radius: 0;
+  }
+
+  .AboutMeCarouselComponent-caption {
+    width: 300px;
+    gap: 10px;
+  }
+
+  .AboutMeCarouselComponent-control.prev {
+    display: none;
+  }
+
+  .AboutMeCarouselComponent-control.next {
+    display: none;
+  }
+}

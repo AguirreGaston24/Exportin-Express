@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import FreeTrainingSessionPage from "./pages/FreeTrainingSessionPage";
-import ScheduleConsultationPage from "./pages/ScheduleConsultationPage";
+import HomePage from "./pages/HomePage/HomePage";
+import FreeTrainingSessionPage from "./pages/FreeTrainingSessionPage/FreeTrainingSessionPage";
+import ScheduleConsultationPage from "./pages/ScheduleConsultationPage/ScheduleConsultationPage";
 import "./App.css";
 
 function App() {

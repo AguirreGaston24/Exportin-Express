@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { insertContactDataRequest } from "../../../api/contactDataRequests";
+import { insertContactDataRequest } from "../../../config/contactDataRequests";
 import { useNavigate } from "react-router-dom";
 import { PrimaryButtonComponent } from "../../secondaryComponents/PrimaryButtonComponent";
 
@@ -17,16 +17,14 @@ const FormModalContactDataComponent = () => {
   const onSubmitContactData = async (contactData) => {
     try {
       const response = await insertContactDataRequest(contactData);
-  
+
       if (response.data.success) {
         navigate("/free-training-session");
       }
-      
     } catch (error) {
       if (error.response) {
-        // Error recibido desde el servidor
         const { data } = error.response;
-  
+
         if (data && data.errors) {
           data.errors.forEach((error) => {
             setError(error.path, { type: "manual", message: error.msg });
@@ -35,10 +33,8 @@ const FormModalContactDataComponent = () => {
           console.error("Error de respuesta inesperado:", data);
         }
       } else if (error.request) {
-        // Error de red o solicitud
         console.error("Error de red o de solicitud:", error.message);
       } else {
-        // Error inesperado
         console.error("Error inesperado:", error.message);
       }
     }

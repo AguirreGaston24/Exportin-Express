@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
-import { PrimaryButtonComponent } from "../components/secondaryComponents/PrimaryButtonComponent";
+import WebinarButtonComponent from "../../components/secondaryComponents/WebinarButtonComponent/WebinarButtonComponent";
 
 const FreeTrainingSessionPage = () => {
 
@@ -26,7 +25,7 @@ const FreeTrainingSessionPage = () => {
           obtener tu empleo en el exterior de 2500 USD al mes dale click al
           siguiente BOTÓN.
         </p>
-        <PrimaryButtonComponent onClick={handleRedirect} width="200px" height="200px" fontSize="20px" backgroundColor="red" type="button" textButton="Hola"/>
+        <WebinarButtonComponent />
       </section>
       <footer></footer>
     </div>

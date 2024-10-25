@@ -1,0 +1,72 @@
+.HomePage-about-me-section {
+  display: flex;
+  width: 100%;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  background-color: var(--very-light-gray);
+}
+
+.HomePage-about-me-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.HomePage-about-me-section-title-container {
+  display: flex;
+  align-items: start;
+  width: 100%;
+}
+
+.HomePage-about-me-section-title {
+  display: block;
+  font-weight: 200;
+  font-size: 3.5rem;
+  margin-left: 8%;
+}
+
+.HomePage-about-me-section-carousel-container {
+  width: 1100px;
+}
+
+@media (max-width: 1150px) {
+  .HomePage-about-me-section-title {
+    font-size: 3rem;
+    margin-left: 10%;
+  }
+
+  .HomePage-about-me-section-carousel-container {
+    width: 900px;
+  }
+}
+
+@media (max-width: 950px) {
+  .HomePage-about-me-section-title {
+    font-size: 2rem;
+    margin-left: 6.5%;
+  }
+
+  .HomePage-about-me-section-carousel-container {
+    width: 730px;
+  }
+}
+
+@media (max-width: 750px) {
+  .HomePage-about-me-section-title-container {
+    justify-content: center;
+  }
+
+  .HomePage-about-me-section-title {
+    margin-left: 0;
+  }
+
+  .HomePage-about-me-section-carousel-container {
+    width: 100vw;
+
+  }
+}
+

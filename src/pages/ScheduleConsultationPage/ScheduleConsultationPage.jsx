@@ -1,5 +1,5 @@
 import React from 'react';
-import CalendlyWidgetComponent from '../components/mainComponents/strategicConsultation/CalendlyWidgetComponent';
+import CalendlyWidgetComponent from '../../components/mainComponents/StrategicConsultationComponent/CalendlyWidgetComponent/CalendlyWidgetComponent';
 
 const ScheduleConsultationPage = () => {
     return (
