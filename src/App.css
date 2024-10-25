@@ -6,10 +6,6 @@
   padding: 0;
 }
 
-body {
-  width: 100vw;
-}
-
 :root {
   /* Font */
   --font-family: "Raleway", sans-serif;

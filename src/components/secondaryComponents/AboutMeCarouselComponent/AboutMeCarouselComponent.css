@@ -32,6 +32,8 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--font-line-height-paragraph);
   text-align: justify;
+  overflow: hidden;
+  background-color: green;
 }
 
 .AboutMeCarouselComponent::before {

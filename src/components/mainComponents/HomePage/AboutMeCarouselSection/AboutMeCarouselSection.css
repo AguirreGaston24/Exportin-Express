@@ -1,6 +1,6 @@
 .HomePage-about-me-section {
   display: flex;
-  width: 100%;
+  width: 100vw;
   padding: 40px;
   justify-content: center;
   align-items: center;
@@ -64,9 +64,9 @@
     margin-left: 0;
   }
 
+
+
   .HomePage-about-me-section-carousel-container {
     width: 100vw;
-
   }
 }
-
