@@ -7,7 +7,7 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--font-line-height-paragraph);
   text-align: justify;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .AboutMeCarouselComponent::before {
@@ -26,9 +26,7 @@
 
 .shadow {
   position: absolute;
-  top: 0;
-  width: 30px;
-  height: 100%;
+  height: 250px;
   z-index: 10;
 }
 
@@ -72,7 +70,7 @@
   width: 100%;
 }
 
-.AboutMeCarouselComponent-item img {
+.AboutMeCarouselComponent-item-image-container img {
   height: 340px;
   display: block;
   margin-top: 40px;
@@ -263,21 +261,14 @@
 
   .AboutMeCarouselComponent-indicator {
     top: 0;
-    left: 10.3%;
-  }
-
-  .AboutMeCarouselComponent-control.prev {
-    right: 90%;
-  }
-  
-  .AboutMeCarouselComponent-control.next {
-    left: 90%;
+    left: 8.8%;
   }
 }
 
 @media (max-width: 650px) {
   .AboutMeCarouselComponent {
     font-size: 0.8rem;
+    height: 280px;
   }
 
   .AboutMeCarouselComponent::before {
@@ -285,27 +276,43 @@
     left: 0;
   }
 
-  .AboutMeCarouselComponent-item {
-    flex-direction: column;
-    gap: 0;
-    padding: 15px;
+  .AboutMeCarouselComponent-item-image-container {
+    display: flex;
+    align-items: center;
+    height: 250px;
+    width: 100%;
   }
 
-  .AboutMeCarouselComponent-item img {
+  .AboutMeCarouselComponent-item-image-container img {
+    height: 100%;
+    display: block;
+    width: 100%;
+    opacity: 0.3;
+    object-fit: cover;
+    object-position: 0 30%;
     margin-top: 0;
   }
 
   .AboutMeCarouselComponent-caption {
-    width: 300px;
     gap: 10px;
     padding: 10px;
+    position: absolute;
   }
 
   .AboutMeCarouselComponent-indicator {
-    top: 94%;
+    top: 89%;
     left: 38%;
   }
+  .AboutMeCarouselComponent-control.prev {
+    right: 86%;
+  }
 
+  .AboutMeCarouselComponent-control.next {
+    left: 86%;
+  }
+}
+
+@media (max-width: 500px) {
   .AboutMeCarouselComponent-control.prev {
     display: none;
   }

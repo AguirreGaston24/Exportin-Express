@@ -5,15 +5,15 @@ import "./MainSection.css";
 
 // Components
 import WebinarButtonComponent from "../../../secondaryComponents/WebinarButtonComponent/WebinarButtonComponent";
+import MapWithHeatPoints from "../../../secondaryComponents/MapWithHeatPointsComponent/MapWithHeatPointsComponent";
 
 const MainSection = () => {
   return (
     <section className='HomePage-main-section'>
+      <MapWithHeatPoints />
       <div className='HomePage-main-section-content-container'>
         <h1 className='HomePage-main-section-content-title'>
-          Potenciá tus Resultados <br />
-          En el Extranjero <br />
-          Con el Trabajo de tus Sueños.
+          Conseguí trabajo en el extranjero
         </h1>
         <p className='HomePage-main-section-content-paragraph'>
           Únete a nuestra comunidad de IT Job Seekers y accedé a las mentorias

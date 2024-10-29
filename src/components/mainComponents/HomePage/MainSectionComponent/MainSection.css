@@ -4,22 +4,22 @@
   font-family: var(--font-family);
   flex-direction: row;
   align-items: center;
+  position: relative;
   width: 1350px;
   justify-content: start;
-  background-image: url("/images/profiles/profile.png"),
-    url("/images/backgrounds/background-world-map.png");
-  background-position: 90% 100%, 130% 70%;
-  background-size: 450px, 1000px;
-  background-repeat: no-repeat, no-repeat;
+  background-image: url("/images/profiles/profile.png");
+  background-position: 90% 100%;
+  background-size: 450px;
+  background-repeat: no-repeat;
 }
 
 .HomePage-main-section-content-container {
   display: flex;
   flex-direction: column;
   z-index: 2;
+  gap: 40px;
   align-items: center;
-  margin-left: 50px;
-  padding: 30px;
+  padding: 0 40px;
 }
 
 .HomePage-main-section-content-title {
@@ -34,7 +34,6 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--font-line-height-paragraph);
   width: 600px;
-  margin-bottom: 50px;
 }
 
 @media (max-width: 1400px) {
@@ -46,29 +45,32 @@
 @media (max-width: 1150px) {
   .HomePage-main-section {
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0.8)
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6)
       ),
-      url("/images/profiles/profile.png"),
-      url("/images/backgrounds/background-world-map.png");
-    background-position: 0, 90% 10%, 130% 70%;
-    background-size: 100%, 450px, 1000px;
-    background-repeat: no-repeat, no-repeat, no-repeat;
+      url("/images/profiles/profile.png");
+    background-position: 0, 90% 10%;
+    background-size: 100%, 450px;
+    background-repeat: no-repeat;
   }
 }
 
 @media (max-width: 850px) {
   .HomePage-main-section {
-    background-image: none;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6)
+      );
+    background-position: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
     width: 100%;
-    min-height: auto;
+    min-height: 500px;
   }
 
   .HomePage-main-section-content-container {
     width: 100%;
     margin: 0;
-    gap: 15px;
-    padding: 20px 20px 60px 20px;
   }
 
   .HomePage-main-section-content-title {

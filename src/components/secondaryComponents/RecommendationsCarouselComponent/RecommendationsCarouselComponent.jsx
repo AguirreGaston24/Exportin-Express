@@ -113,12 +113,12 @@ export default function RecommendationsCarousel() {
                 {item.comment}
               </p>
               <div className='RecommendationsCarouselComponent-content'>
-                <button className='RecommendationsCarouselComponent-button'>
-                  Ver Entrevista
-                </button>
                 <h3 className='RecommendationsCarouselComponent-name'>
                   {item.name}
                 </h3>
+                <button className='RecommendationsCarouselComponent-button'>
+                  Ver Entrevista
+                </button>
               </div>
             </div>
           </div>

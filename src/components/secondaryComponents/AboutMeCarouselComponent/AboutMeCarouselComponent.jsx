@@ -35,7 +35,7 @@ const AboutMeCarouselComponent = () => {
   const [showArrows, setShowArrows] = useState(true);
   const [showShadows, setShowShadows] = useState(false);
   const totalSlides = slides.length - 1;
-  
+
   const handleSlideChange = (index) => {
     if (index >= 0 && index <= totalSlides) {
       setCurrentSlide(index);
@@ -102,13 +102,13 @@ const AboutMeCarouselComponent = () => {
       {showShadows && (
         <>
           {currentSlide === 0 ? (
-            <div className='right-shadow'></div>
+            <div className='shadow right-shadow'></div>
           ) : currentSlide === totalSlides ? (
-            <div className='left-shadow'></div>
+            <div className='shadow left-shadow'></div>
           ) : (
             <>
-              <div className='left-shadow'></div>
-              <div className='right-shadow'></div>
+              <div className='shadow left-shadow'></div>
+              <div className='shadow right-shadow'></div>
             </>
           )}
         </>
@@ -117,12 +117,15 @@ const AboutMeCarouselComponent = () => {
         {slides.map((slide, index) => (
           <div key={index} className='AboutMeCarouselComponent-inner'>
             <div className='AboutMeCarouselComponent-item'>
-              <img
-                src={slide.imgSrc}
-                alt={`Slide ${index + 1}`}
-                style={{ userSelect: "none" }}
-                draggable={false}
-              />
+              <div className='AboutMeCarouselComponent-item-image-container'>
+                <img
+                  src={slide.imgSrc}
+                  alt={`Slide ${index + 1}`}
+                  style={{ userSelect: "none" }}
+                  draggable={false}
+                />
+              </div>
+
               <div className='AboutMeCarouselComponent-caption'>
                 <div className='AboutMeCarouselComponent-caption-title-container'>
                   <h3 className='AboutMeCarouselComponent-caption-title'>
