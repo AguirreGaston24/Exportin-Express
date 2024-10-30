@@ -18,14 +18,14 @@ const recommendations = [
     name: "Juan Pérez",
     comment: "Aprendí mucho de esta entrevista.",
     profileImage: "/images/profiles/recommendations/profile2.jpg",
-    videoUrl: "/videos/interviews/video2.mp4",
+    videoUrl: "/videos/interviews/video1.mp4",
   },
   {
     id: 3,
     name: "Miguel Gómez",
     comment: "¡Muy perspicaz e inspirador!",
     profileImage: "/images/profiles/recommendations/profile3.jpg",
-    videoUrl: "/videos/interviews/video3.mp4",
+    videoUrl: "/videos/interviews/video1.mp4",
   },
 ];
 
