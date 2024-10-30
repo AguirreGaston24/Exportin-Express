@@ -1,0 +1,114 @@
+
+/* Overlay */
+.HomePage-FormModalContactDataComponent-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Form */
+
+.HomePage-FormModalContactDataComponent-form {
+  background-color: var(--white);
+  position: relative;
+  padding: 20px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+/* Title */
+
+.HomePage-FormModalContactDataComponent-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* Field */
+
+.HomePage-FormModalContactDataComponent-field {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.HomePage-FormModalContactDataComponent-input {
+  width: 100%;
+  padding: 12px 0 12px 20px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 25px;
+  font-size: 14px;
+}
+
+.HomePage-FormModalContactDataComponent-input::placeholder {
+    color: var(--light-gray-3);
+}
+
+.HomePage-FormModalContactDataComponent-span {
+  position: absolute;
+  left: 90px;
+  font-family: inherit;
+  font-size: 14px;
+  top: 11px;
+}
+
+.HomePage-FormModalContactDataComponent-button {
+  background-color: var(--bright-yellow); 
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-regular);
+  padding: 0;
+  border: none;
+  border-radius: 25px;
+  width: 70%;
+  cursor: pointer;
+}
+
+.HomePage-FormModalContactDataComponent-flagLabelContainer {
+
+}
+
+/* Errors */
+
+.HomePage-FormModalContactDataComponent-error {
+  color: #ff0000;
+  font-size: 0.8rem;
+}
+
+/* Footer */
+
+.HomePage-FormModalContactDataComponent-footer {
+  font-size: 12px;
+  color: #666;
+  margin-top: 15px;
+}
+
+/* Close */
+
+.HomePage-FormModalContactDataComponent-close {
+  position: absolute;
+  top: -6px;
+  color: var(--white);
+  background-color: var(--dark-gray);
+  right: -6px;
+  display: flex;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 20px;
+  border-radius: 50%;
+}

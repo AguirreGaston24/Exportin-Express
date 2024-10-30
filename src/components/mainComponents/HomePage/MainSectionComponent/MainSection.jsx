@@ -7,7 +7,7 @@ import "./MainSection.css";
 import WebinarButtonComponent from "../../../secondaryComponents/WebinarButtonComponent/WebinarButtonComponent";
 import MapWithHeatPoints from "../../../secondaryComponents/MapWithHeatPointsComponent/MapWithHeatPointsComponent";
 
-const MainSection = () => {
+const MainSection = ({ openModal }) => {
   return (
     <section className='HomePage-main-section'>
       <MapWithHeatPoints />
@@ -21,7 +21,7 @@ const MainSection = () => {
           <span className='green-text'>+30k dólares al año.</span>
         </p>
         <WebinarButtonComponent
-          onClick={() => alert("Webinar button clicked!")}
+          openModal={openModal}
           margin='40px 0px 0px 0px'
         />
       </div>

@@ -6,16 +6,10 @@ import "./NavBar.css";
 // Images
 import logo from "../../../../public/images/logo/logo-negro-transparente.png";
 
-const NavBar = () => {
+const NavBar = ({ openModal }) => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     section.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
   };
 
   return (
@@ -33,7 +27,12 @@ const NavBar = () => {
         </ul>
       </div>
       <div className='navbar-button-container'>
-        <button className='navbar-button' onClick={toggleModal}>
+        <button
+          className='navbar-button'
+          onClick={() => {
+            openModal();
+          }}
+        >
           Webinar
         </button>
       </div>
