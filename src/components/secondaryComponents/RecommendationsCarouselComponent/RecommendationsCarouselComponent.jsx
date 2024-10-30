@@ -1,46 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./RecommmendationsCarouselComponent.css";
+import InterviewVideoModalComponent from "../InterviewVideoModalComponent/InterviewVideoModalComponent";
 
 const recommendations = [
   {
     id: 1,
     name: "Ana Martínez",
-    comment:
-      "¡Una experiencia absolutamente increíble y enriquecedora! Cada momento fue único.",
+    comment: "¡Una experiencia absolutamente increíble y enriquecedora!",
     profileImage: "/images/profiles/recommendations/profile1.webp",
+    videoUrl: "/videos/interviews/video1.mp4",
   },
   {
     id: 2,
     name: "Juan Pérez",
     comment: "Aprendí mucho de esta entrevista.",
     profileImage: "/images/profiles/recommendations/profile2.jpg",
+    videoUrl: "/videos/interviews/video2.mp4",
   },
   {
     id: 3,
     name: "Miguel Gómez",
     comment: "¡Muy perspicaz e inspirador!",
     profileImage: "/images/profiles/recommendations/profile3.jpg",
-  },
-  {
-    id: 4,
-    name: "David Ramírez",
-    comment: "¡Perspectivas fantásticas sobre la industria!",
-    profileImage: "/images/profiles/recommendations/profile4.jpg",
-  },
-  {
-    id: 5,
-    name: "Cristian López",
-    comment: "Una entrevista que no te puedes perder.",
-    profileImage: "/images/profiles/recommendations/profile5.jpg",
-  },
-  {
-    id: 6,
-    name: "Sara Wilson",
-    comment: "¡Recomiendo encarecidamente esta sesión!",
-    profileImage: "/images/profiles/recommendations/profile6.jpg",
+    videoUrl: "/videos/interviews/video3.mp4",
   },
 ];
 
@@ -69,6 +54,19 @@ const CustomPrevArrow = (props) => {
 };
 
 export default function RecommendationsCarousel() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState(null);
+
+  const openModal = (url) => {
+    setVideoUrl(url);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setVideoUrl(null);
+    setIsModalOpen(false);
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -78,20 +76,8 @@ export default function RecommendationsCarousel() {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
     responsive: [
-      {
-        breakpoint: 1150,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 750,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
+      { breakpoint: 1150, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 750, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   };
 
@@ -116,7 +102,10 @@ export default function RecommendationsCarousel() {
                 <h3 className='RecommendationsCarouselComponent-name'>
                   {item.name}
                 </h3>
-                <button className='RecommendationsCarouselComponent-button'>
+                <button
+                  className='RecommendationsCarouselComponent-button'
+                  onClick={() => openModal(item.videoUrl)}
+                >
                   Ver Entrevista
                 </button>
               </div>
@@ -124,6 +113,13 @@ export default function RecommendationsCarousel() {
           </div>
         ))}
       </Slider>
+
+      {isModalOpen && (
+        <InterviewVideoModalComponent
+          videoUrl={videoUrl}
+          closeModal={closeModal}
+        />
+      )}
     </div>
   );
 }

@@ -1,0 +1,48 @@
+/* Overlay */
+.InterviewVideoModalComponent-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Content */
+.InterviewVideoModalComponent-content {
+  background-color: var(--white);
+  position: relative;
+  padding: 20px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+/* Video */
+.InterviewVideoModalComponent-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Close */
+.InterviewVideoModalComponent-close {
+  position: absolute;
+  top: -6px;
+  color: var(--white);
+  background-color: var(--dark-gray);
+  right: -6px;
+  display: flex;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 20px;
+  border-radius: 50%;
+}

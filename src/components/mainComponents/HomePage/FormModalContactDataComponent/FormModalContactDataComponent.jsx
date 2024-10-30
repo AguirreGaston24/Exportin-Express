@@ -44,7 +44,7 @@ const FormModalContactDataComponent = ({ closeModal }) => {
     { value: "PR", label: "Puerto Rico", code: "+1787" },
     { value: "UY", label: "Uruguay", code: "+598" },
     { value: "VE", label: "Venezuela", code: "+58" },
-  ];  
+  ];
   const onSubmitContactData = async (contactData) => {
     try {
       if (!contactData.countryCode) {
@@ -68,6 +68,7 @@ const FormModalContactDataComponent = ({ closeModal }) => {
         if (data && data.errors) {
           data.errors.forEach((error) => {
             setError(error.path, { type: "manual", message: error.msg });
+            console.log(error.msg);
           });
         } else {
           console.error("Error de respuesta inesperado:", data);
@@ -81,9 +82,13 @@ const FormModalContactDataComponent = ({ closeModal }) => {
   };
 
   useEffect(() => {
-    document.body.style.overflowY = "hidden";
+    const scrollBarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = `${scrollBarWidth}px`;
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflowY = "auto";
+      document.body.style.paddingRight = "0";
+      document.body.style.overflow = "auto";
     };
   }, []);
 
@@ -213,35 +218,24 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                 {selectedCountry.code}
               </span>
             )}
-         <input
-  id='phone'
-  type='text' // Use type 'text' to avoid issues with number input
-  placeholder='Número con WhatsApp'
-  {...register("phone")}
-  value={phoneNumber}
-  onChange={(e) => {
-    const value = e.target.value;
-    // Allow only numeric values
-    if (/^\d*$/.test(value)) {
-      setPhoneNumber(value);
-      setValue("phone", value);
-    }
-  }}
-  onKeyDown={(e) => {
-    // Allow numeric keys, Backspace, and Tab
-    if (
-      !/[0-9]/.test(e.key) &&
-      e.key !== 'Backspace' &&
-      e.key !== 'Tab'
-    ) {
-      e.preventDefault();
-    }
-  }}
-  style={{
-    paddingLeft: "8rem",
-  }}
-  className='HomePage-FormModalContactDataComponent-input'
-/>
+            <input
+              id='phone'
+              type='tel'
+              placeholder='Número con WhatsApp'
+              {...register("phone")}
+              value={phoneNumber}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (/^\d*$/.test(value)) {
+                  setPhoneNumber(value);
+                  setValue("phone", value);
+                }
+              }}
+              style={{
+                paddingLeft: "8rem",
+              }}
+              className='HomePage-FormModalContactDataComponent-input'
+            />
           </div>
 
           {errors.phone && (
