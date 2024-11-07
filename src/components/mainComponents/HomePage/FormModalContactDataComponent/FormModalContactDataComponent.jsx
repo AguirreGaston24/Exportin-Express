@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { insertContactDataRequest } from "../../../../config/contactDataRequests";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
-import ReactCountryFlag from "react-country-flag";
 import "./FormModalContactDataComponent.css";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -45,6 +44,7 @@ const FormModalContactDataComponent = ({ closeModal }) => {
     { value: "UY", label: "Uruguay", code: "+598" },
     { value: "VE", label: "Venezuela", code: "+58" },
   ];
+
   const onSubmitContactData = async (contactData) => {
     try {
       if (!contactData.countryCode) {
@@ -94,57 +94,57 @@ const FormModalContactDataComponent = ({ closeModal }) => {
 
   return (
     <div
-      className='HomePage-FormModalContactDataComponent-overlay'
+      className="HomePage-FormModalContactDataComponent-overlay"
       onClick={() => closeModal()}
     >
       <form
         onSubmit={handleSubmit(onSubmitContactData)}
-        className='HomePage-FormModalContactDataComponent-form'
+        className="HomePage-FormModalContactDataComponent-form"
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className='HomePage-FormModalContactDataComponent-close'
+          className="HomePage-FormModalContactDataComponent-close"
           onClick={() => {
             closeModal();
           }}
         >
           <AiOutlineClose />
         </span>
-        <h2 className='HomePage-FormModalContactDataComponent-title'>
+        <h2 className="HomePage-FormModalContactDataComponent-title">
           Por favor déjanos tus datos para darte el acceso al entrenamiento de
           INMEDIATO
         </h2>
 
-        <div className='HomePage-FormModalContactDataComponent-field'>
+        <div className="HomePage-FormModalContactDataComponent-field">
           <input
-            id='name'
-            placeholder='Nombre'
+            id="name"
+            placeholder="Nombre"
             {...register("name")}
-            className='HomePage-FormModalContactDataComponent-input'
+            className="HomePage-FormModalContactDataComponent-input"
           />
           {errors.name && (
-            <p className='HomePage-FormModalContactDataComponent-error'>
+            <p className="HomePage-FormModalContactDataComponent-error">
               {errors.name.message}
             </p>
           )}
         </div>
 
-        <div className='HomePage-FormModalContactDataComponent-field'>
+        <div className="HomePage-FormModalContactDataComponent-field">
           <input
-            id='email'
-            type='email'
-            placeholder='E-mail'
+            id="email"
+            type="email"
+            placeholder="E-mail"
             {...register("email")}
-            className='HomePage-FormModalContactDataComponent-input'
+            className="HomePage-FormModalContactDataComponent-input"
           />
           {errors.email && (
-            <p className='HomePage-FormModalContactDataComponent-error'>
+            <p className="HomePage-FormModalContactDataComponent-error">
               {errors.email.message}
             </p>
           )}
         </div>
 
-        <div className='HomePage-FormModalContactDataComponent-field'>
+        <div className="HomePage-FormModalContactDataComponent-field">
           <div
             style={{
               position: "relative",
@@ -157,45 +157,37 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                 options={countryOptions.map((country) => ({
                   ...country,
                   label: (
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <ReactCountryFlag
-                        countryCode={country.value}
-                        svg
-                        style={{
-                          width: "1.5em",
-                          height: "1.5em",
-                          marginRight: "8px", // espacio entre la bandera y el nombre
-                        }}
-                        title={country.label}
-                      />
-                      {country.label}
-                    </div>
+                    <img
+                      src={`https://flagcdn.com/w320/${country.value.toLowerCase()}.png`}
+                      alt={country.label}
+                      style={{
+                        width: "1.5em",
+                        height: "1.5em",
+                        marginRight: "10px",
+                      }}
+                    />
                   ),
                 }))}
                 onChange={(option) => {
                   setSelectedCountry(option);
                   setValue("countryCode", option.code);
-                  setValue("country", option.label.props.title);
+                  setValue("country", option.label);
                 }}
                 value={{
                   value: selectedCountry.value,
                   label: (
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <ReactCountryFlag
-                        countryCode={selectedCountry.value}
-                        svg
-                        style={{
-                          width: "1.5em",
-                          height: "1.5em",
-                          marginRight: "8px", // espacio entre la bandera y el nombre
-                        }}
-                        title={selectedCountry.label}
-                      />
-                      {selectedCountry.label}
-                    </div>
+                    <img
+                      src={`https://flagcdn.com/w320/${selectedCountry.value.toLowerCase()}.png`}
+                      alt={selectedCountry.label}
+                      style={{
+                        width: "1.5em",
+                        height: "1.5em",
+                        marginRight: "10px",
+                      }}
+                    />
                   ),
                 }}
-                className='HomePage-FormModalContactDataComponent-select'
+                className="HomePage-FormModalContactDataComponent-select"
                 styles={{
                   control: (base) => ({
                     ...base,
@@ -221,19 +213,19 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                     overflowY: "auto",
                   }),
                 }}
-                placeholder={<ReactCountryFlag countryCode='AR' svg />}
+                placeholder={<img src="https://flagcdn.com/w320/ar.png" alt="Argentina" style={{ width: "1.5em", height: "1.5em" }} />}
               />
             </div>
 
             {selectedCountry?.code && (
-              <span className='HomePage-FormModalContactDataComponent-span'>
+              <span className="HomePage-FormModalContactDataComponent-span">
                 {selectedCountry.code}
               </span>
             )}
             <input
-              id='phone'
-              type='tel'
-              placeholder='Número con WhatsApp'
+              id="phone"
+              type="tel"
+              placeholder="Número con WhatsApp"
               {...register("phone")}
               value={phoneNumber}
               onChange={(e) => {
@@ -246,23 +238,22 @@ const FormModalContactDataComponent = ({ closeModal }) => {
               style={{
                 paddingLeft: "8rem",
               }}
-              className='HomePage-FormModalContactDataComponent-input'
+              className="HomePage-FormModalContactDataComponent-input"
             />
           </div>
 
           {errors.phone && (
-            <p className='HomePage-FormModalContactDataComponent-error'>
+            <p className="HomePage-FormModalContactDataComponent-error">
               {errors.phone.message}
             </p>
           )}
         </div>
 
-        <button className='HomePage-FormModalContactDataComponent-button'>
+        <button className="HomePage-FormModalContactDataComponent-button">
           ¡Ver AHORA!
         </button>
-        <p className='HomePage-FormModalContactDataComponent-footer'>
-          Solo para profesionales de IT en latinoamérica con más de dos años de
-          experiencia y hablen inglés
+        <p className="HomePage-FormModalContactDataComponent-footer">
+          No te preocupes, no compartiremos tus datos con terceros.
         </p>
       </form>
     </div>
