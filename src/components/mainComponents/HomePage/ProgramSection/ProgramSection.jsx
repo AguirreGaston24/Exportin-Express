@@ -20,7 +20,7 @@ const ProgramSection = ( {id} ) => {
           className='HomePage-ProgramSection-video-background-image'
         />
         <video
-          src='ruta/del/video.mp4'
+          src='/videos/interviews/video2.mp4'
           controls
           className='HomePage-ProgramSection-video'
         ></video>
