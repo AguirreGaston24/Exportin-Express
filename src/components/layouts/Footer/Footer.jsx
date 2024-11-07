@@ -4,6 +4,8 @@ import MapWithHeatPointsVariantComponent from "../../secondaryComponents/MapWith
 
 import "./Footer.css";
 
+import logo from "../../../../public/images/logo/logo-negro-transparente.png";
+
 const Footer = () => {
   return (
     <section className='HomePage-Footer-background'>
@@ -13,10 +15,7 @@ const Footer = () => {
         </div>
         <div className='HomePage-Footer-content'>
           <div className='HomePage-Footer-logo'>
-            <img
-              src='../../../../public/images/logo/logo-negro-transparente.png'
-              alt='Logo'
-            />
+            <img src={logo} alt='Logo' />
           </div>
           <div className='HomePage-Footer-links-social'>
             <div className='HomePage-Footer-social'>

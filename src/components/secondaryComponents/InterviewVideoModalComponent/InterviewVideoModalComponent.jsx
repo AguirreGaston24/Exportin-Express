@@ -16,8 +16,14 @@ const InterviewVideoModalComponent = ({ closeModal, videoUrl }) => {
   }, []);
 
   return (
-    <div className='InterviewVideoModalComponent-overlay'>
-      <div className='InterviewVideoModalComponent-content'>
+    <div
+      className='InterviewVideoModalComponent-overlay'
+      onClick={() => closeModal()}
+    >
+      <div
+        className='InterviewVideoModalComponent-content'
+        onClick={(e) => e.stopPropagation()}
+      >
         <span
           className='InterviewVideoModalComponent-close'
           onClick={closeModal}

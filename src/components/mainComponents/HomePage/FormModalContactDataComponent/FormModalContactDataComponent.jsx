@@ -93,10 +93,14 @@ const FormModalContactDataComponent = ({ closeModal }) => {
   }, []);
 
   return (
-    <div className='HomePage-FormModalContactDataComponent-overlay'>
+    <div
+      className='HomePage-FormModalContactDataComponent-overlay'
+      onClick={() => closeModal()}
+    >
       <form
         onSubmit={handleSubmit(onSubmitContactData)}
         className='HomePage-FormModalContactDataComponent-form'
+        onClick={(e) => e.stopPropagation()}
       >
         <span
           className='HomePage-FormModalContactDataComponent-close'
@@ -246,7 +250,7 @@ const FormModalContactDataComponent = ({ closeModal }) => {
         </div>
 
         <button className='HomePage-FormModalContactDataComponent-button'>
-          Ver el entrenamiento AHORA
+          ¡Ver AHORA!
         </button>
         <p className='HomePage-FormModalContactDataComponent-footer'>
           Solo para profesionales de IT en latinoamérica con más de dos años de
