@@ -94,57 +94,57 @@ const FormModalContactDataComponent = ({ closeModal }) => {
 
   return (
     <div
-      className="HomePage-FormModalContactDataComponent-overlay"
+      className='HomePage-FormModalContactDataComponent-overlay'
       onClick={() => closeModal()}
     >
       <form
         onSubmit={handleSubmit(onSubmitContactData)}
-        className="HomePage-FormModalContactDataComponent-form"
+        className='HomePage-FormModalContactDataComponent-form'
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className="HomePage-FormModalContactDataComponent-close"
+          className='HomePage-FormModalContactDataComponent-close'
           onClick={() => {
             closeModal();
           }}
         >
           <AiOutlineClose />
         </span>
-        <h2 className="HomePage-FormModalContactDataComponent-title">
+        <h2 className='HomePage-FormModalContactDataComponent-title'>
           Por favor déjanos tus datos para darte el acceso al entrenamiento de
           INMEDIATO
         </h2>
 
-        <div className="HomePage-FormModalContactDataComponent-field">
+        <div className='HomePage-FormModalContactDataComponent-field'>
           <input
-            id="name"
-            placeholder="Nombre"
+            id='name'
+            placeholder='Nombre'
             {...register("name")}
-            className="HomePage-FormModalContactDataComponent-input"
+            className='HomePage-FormModalContactDataComponent-input'
           />
           {errors.name && (
-            <p className="HomePage-FormModalContactDataComponent-error">
+            <p className='HomePage-FormModalContactDataComponent-error'>
               {errors.name.message}
             </p>
           )}
         </div>
 
-        <div className="HomePage-FormModalContactDataComponent-field">
+        <div className='HomePage-FormModalContactDataComponent-field'>
           <input
-            id="email"
-            type="email"
-            placeholder="E-mail"
+            id='email'
+            type='email'
+            placeholder='E-mail'
             {...register("email")}
-            className="HomePage-FormModalContactDataComponent-input"
+            className='HomePage-FormModalContactDataComponent-input'
           />
           {errors.email && (
-            <p className="HomePage-FormModalContactDataComponent-error">
+            <p className='HomePage-FormModalContactDataComponent-error'>
               {errors.email.message}
             </p>
           )}
         </div>
 
-        <div className="HomePage-FormModalContactDataComponent-field">
+        <div className='HomePage-FormModalContactDataComponent-field'>
           <div
             style={{
               position: "relative",
@@ -157,15 +157,17 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                 options={countryOptions.map((country) => ({
                   ...country,
                   label: (
-                    <img
-                      src={`https://flagcdn.com/w320/${country.value.toLowerCase()}.png`}
-                      alt={country.label}
-                      style={{
-                        width: "1.5em",
-                        height: "1.5em",
-                        marginRight: "10px",
-                      }}
-                    />
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <img
+                        src={`/images/country-flags/${country.value.toLowerCase()}.png`}
+                        alt={country.label}
+                        style={{
+                          width: "1.5em",
+                          height: "1.5em",
+                          marginRight: "10px",
+                        }}
+                      />
+                    </div>
                   ),
                 }))}
                 onChange={(option) => {
@@ -176,18 +178,20 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                 value={{
                   value: selectedCountry.value,
                   label: (
-                    <img
-                      src={`https://flagcdn.com/w320/${selectedCountry.value.toLowerCase()}.png`}
-                      alt={selectedCountry.label}
-                      style={{
-                        width: "1.5em",
-                        height: "1.5em",
-                        marginRight: "10px",
-                      }}
-                    />
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <img
+                        src={`/images/country-flags/${selectedCountry.value.toLowerCase()}.png`}
+                        alt={selectedCountry.label}
+                        style={{
+                          width: "1.5em",
+                          height: "1.5em",
+                          marginRight: "10px",
+                        }}
+                      />
+                    </div>
                   ),
                 }}
-                className="HomePage-FormModalContactDataComponent-select"
+                className='HomePage-FormModalContactDataComponent-select'
                 styles={{
                   control: (base) => ({
                     ...base,
@@ -213,19 +217,28 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                     overflowY: "auto",
                   }),
                 }}
-                placeholder={<img src="https://flagcdn.com/w320/ar.png" alt="Argentina" style={{ width: "1.5em", height: "1.5em" }} />}
+                placeholder={
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <img
+                      src='/images/country-flags/ar.png'
+                      alt='Argentina'
+                      style={{ width: "1.5em", height: "1.5em" }}
+                    />
+                    Argentina
+                  </div>
+                }
               />
             </div>
 
             {selectedCountry?.code && (
-              <span className="HomePage-FormModalContactDataComponent-span">
+              <span className='HomePage-FormModalContactDataComponent-span'>
                 {selectedCountry.code}
               </span>
             )}
             <input
-              id="phone"
-              type="tel"
-              placeholder="Número con WhatsApp"
+              id='phone'
+              type='tel'
+              placeholder='Número con WhatsApp'
               {...register("phone")}
               value={phoneNumber}
               onChange={(e) => {
@@ -238,22 +251,22 @@ const FormModalContactDataComponent = ({ closeModal }) => {
               style={{
                 paddingLeft: "8rem",
               }}
-              className="HomePage-FormModalContactDataComponent-input"
+              className='HomePage-FormModalContactDataComponent-input'
             />
           </div>
 
           {errors.phone && (
-            <p className="HomePage-FormModalContactDataComponent-error">
+            <p className='HomePage-FormModalContactDataComponent-error'>
               {errors.phone.message}
             </p>
           )}
         </div>
 
-        <button className="HomePage-FormModalContactDataComponent-button">
+        <button className='HomePage-FormModalContactDataComponent-button'>
           ¡Ver AHORA!
         </button>
-        <p className="HomePage-FormModalContactDataComponent-footer">
-          No te preocupes, no compartiremos tus datos con terceros.
+        <p className='HomePage-FormModalContactDataComponent-footer'>
+          Solo para profesionales de IT en Latinoamérica con más de dos años de experiencia y que hablen inglés
         </p>
       </form>
     </div>
