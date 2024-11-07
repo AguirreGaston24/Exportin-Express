@@ -157,15 +157,19 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                 options={countryOptions.map((country) => ({
                   ...country,
                   label: (
-                    <ReactCountryFlag
-                      countryCode={country.value}
-                      svg
-                      style={{
-                        width: "1.5em",
-                        height: "1.5em",
-                      }}
-                      title={country.label}
-                    />
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <ReactCountryFlag
+                        countryCode={country.value}
+                        svg
+                        style={{
+                          width: "1.5em",
+                          height: "1.5em",
+                          marginRight: "8px", // espacio entre la bandera y el nombre
+                        }}
+                        title={country.label}
+                      />
+                      {country.label}
+                    </div>
                   ),
                 }))}
                 onChange={(option) => {
@@ -176,15 +180,19 @@ const FormModalContactDataComponent = ({ closeModal }) => {
                 value={{
                   value: selectedCountry.value,
                   label: (
-                    <ReactCountryFlag
-                      countryCode={selectedCountry.value}
-                      svg
-                      style={{
-                        width: "1.5em",
-                        height: "1.5em",
-                      }}
-                      title={selectedCountry.label}
-                    />
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <ReactCountryFlag
+                        countryCode={selectedCountry.value}
+                        svg
+                        style={{
+                          width: "1.5em",
+                          height: "1.5em",
+                          marginRight: "8px", // espacio entre la bandera y el nombre
+                        }}
+                        title={selectedCountry.label}
+                      />
+                      {selectedCountry.label}
+                    </div>
                   ),
                 }}
                 className='HomePage-FormModalContactDataComponent-select'
