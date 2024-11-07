@@ -5,29 +5,27 @@ import "slick-carousel/slick/slick-theme.css";
 import "./RecommmendationsCarouselComponent.css";
 import InterviewVideoModalComponent from "../InterviewVideoModalComponent/InterviewVideoModalComponent";
 
-import video from "/videos/interviews/video1.mp4";
-
 const recommendations = [
   {
     id: 1,
     name: "Ana Martínez",
     comment: "¡Una experiencia absolutamente increíble y enriquecedora!",
     profileImage: "/images/profiles/recommendations/profile1.webp",
-    videoUrl: {video},
+    videoUrl: "../../../../public/videos/interviews/video1.mp4",
   },
   {
     id: 2,
     name: "Juan Pérez",
     comment: "Aprendí mucho de esta entrevista.",
     profileImage: "/images/profiles/recommendations/profile2.jpg",
-    videoUrl: {video},
+    videoUrl: "../../../../public/videos/interviews/video1.mp4",
   },
   {
     id: 3,
     name: "Miguel Gómez",
     comment: "¡Muy perspicaz e inspirador!",
     profileImage: "/images/profiles/recommendations/profile3.jpg",
-    videoUrl: {video},
+    videoUrl: "../../../../public/videos/interviews/video1.mp4",
   },
 ];
 
