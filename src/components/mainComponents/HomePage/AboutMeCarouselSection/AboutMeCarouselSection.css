@@ -6,14 +6,13 @@
   align-items: center;
   font-family: var(--font-family);
   background-color: var(--very-light-gray);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .HomePage-about-me-section-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   flex-direction: column;
 }
 
@@ -26,8 +25,9 @@
 .HomePage-about-me-section-title {
   display: block;
   font-weight: 200;
+  padding: 10px;
   font-size: 3.5rem;
-  margin-left: 11.5%;
+  margin-left: 11%;
 }
 
 .HomePage-about-me-section-carousel-container {
@@ -37,7 +37,7 @@
 @media (max-width: 1250px) {
   .HomePage-about-me-section-title {
     font-size: 3rem;
-    margin-left: 10.8%;
+    margin-left: 10%;
   }
 
   .HomePage-about-me-section-carousel-container {
@@ -48,7 +48,7 @@
 @media (max-width: 1050px) {
   .HomePage-about-me-section-title {
     font-size: 2rem;
-    margin-left: 9%;
+    margin-left: 8%;
   }
 
   .HomePage-about-me-section-carousel-container {
@@ -59,7 +59,7 @@
 @media (max-width: 850px) {
   .HomePage-about-me-section-title {
     font-size: 1.6rem;
-    margin-left: 8.8%;
+    margin-left: 7%;
   }
 
   .HomePage-about-me-section-carousel-container {
@@ -74,7 +74,9 @@
   }
 
   .HomePage-about-me-section-title {
+    font-size: 3.5rem;
     margin-left: 0;
+    text-align: center;
   }
 
   .HomePage-about-me-section-carousel-container {

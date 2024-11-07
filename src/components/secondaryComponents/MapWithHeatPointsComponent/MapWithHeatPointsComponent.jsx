@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
 import backgroundWorldMap from "../../../../public/images/backgrounds/background-world-map.svg";
-
 import "./MapWithHeatPoints.css";
 
-const MapWithHeatPoints = () => {
-
+const MapWithHeatPointsComponent = () => {
   const points = [
     { cx: 850, cy: 1000 },
     { cx: 1050, cy: 1620 },
@@ -42,10 +40,10 @@ const MapWithHeatPoints = () => {
   }, [growing]);
 
   return (
-    <div className='map-container'>
+    <div className="MapWithHeatPointsComponent-container">
       <ReactSVG
         src={backgroundWorldMap}
-        className='map-svg'
+        className="MapWithHeatPoints-svg"
         beforeInjection={(svg) => {
           svg.setAttribute("width", "100%");
           svg.setAttribute("height", "100%");
@@ -60,7 +58,7 @@ const MapWithHeatPoints = () => {
             outerCircle.setAttribute("cx", point.cx);
             outerCircle.setAttribute("cy", point.cy);
             outerCircle.setAttribute("r", radio);
-            outerCircle.classList.add("outer-circle");
+            outerCircle.classList.add("MapWithHeatPointsComponent-outer-circle");
             svg.appendChild(outerCircle);
 
             const innerCircle = document.createElementNS(
@@ -71,7 +69,7 @@ const MapWithHeatPoints = () => {
             innerCircle.setAttribute("cy", point.cy);
             innerCircle.setAttribute("r", 20);
             innerCircle.setAttribute("fill", "red");
-            innerCircle.classList.add("pulsating");
+            innerCircle.classList.add("MapWithHeatPointsComponent-pulsating");
             svg.appendChild(innerCircle);
           });
         }}
@@ -80,4 +78,4 @@ const MapWithHeatPoints = () => {
   );
 };
 
-export default MapWithHeatPoints;
+export default MapWithHeatPointsComponent;

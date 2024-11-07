@@ -1,0 +1,117 @@
+.HomePage-StepsEmploymentSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 1350px;
+  padding: 20px;
+  justify-content: center;
+  font-family: var(--font-family);
+  overflow: hidden;
+}
+
+.HomePage-StepsEmploymentSection-title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--black);
+  width: 700px;
+  margin-bottom: 20px;
+}
+
+.HomePage-StepsEmploymentSection-steps {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.HomePage-StepsEmploymentSection-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  width: 1050px;
+  position: relative;
+}
+
+.HomePage-StepsEmploymentSection-step.reverse {
+  flex-direction: row-reverse;
+}
+
+.HomePage-StepsEmploymentSection-image-container {
+  min-width: 510px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.HomePage-StepsEmploymentSection-image {
+  width: 480px;
+  position: absolute;
+  top: -20px;
+}
+
+.HomePage-StepsEmploymentSection-description {
+  font-size: var(--font-size-paragraph);
+  font-weight: var(--font-weight-regular);
+  line-height: 2.5rem;
+  max-width: 510px;
+  text-align-last: left;
+  text-align: justify;
+}
+
+@media (max-width: 1400px) {
+  .HomePage-StepsEmploymentSection {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1150px) {
+  .HomePage-StepsEmploymentSection-steps {
+    width: 100%;
+  }
+
+  .HomePage-StepsEmploymentSection-step {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .HomePage-StepsEmploymentSection-step.reverse {
+    flex-direction: column;
+  }
+
+  .HomePage-StepsEmploymentSection-title {
+    width: 100%;
+  }
+
+  .HomePage-StepsEmploymentSection-description {
+    width: 100%;
+    max-width: none;
+  }
+
+  .HomePage-StepsEmploymentSection-image-container {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 500px) { 
+  .HomePage-StepsEmploymentSection-image.start {
+    left: 40px;
+  }
+  
+  .HomePage-StepsEmploymentSection-image.medium {
+    left: 60px;
+  }
+  
+  .HomePage-StepsEmploymentSection-image.end {
+    width: 420px;
+    left: 30px;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 
 import RecommendationCarouselComponent from "../../../secondaryComponents/RecommendationsCarouselComponent/RecommendationsCarouselComponent";
 
+
 // CSS
 import "./RecommendationsSection.css";
 

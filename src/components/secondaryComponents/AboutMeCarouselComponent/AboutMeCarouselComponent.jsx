@@ -10,27 +10,28 @@ const AboutMeCarouselComponent = () => {
       imgSrc: "/images/profiles/profile1.png",
       label: "MI AVENTURA",
       description:
-        "Ingeniero Mecánico argentino viviendo en España. Antes de conseguir mi primer trabajo remoto, enfrenté de primera mano los desafíos de insertarme profesionalmente en el extranjero. Desde competir en un mercado global hasta la falta de contactos.",
+        "Ingeniero Mecánico argentino viviendo en España, enfrentando desafíos laborales en el extranjero, desde competir en un mercado global hasta la falta de contactos.",
       additionalText:
-        "Mi desafío fue diseñar un sistema que me permitiera encontrar el trabajo de mis sueños, independizándome de las irregularidades de mi país.",
+        "Diseñé un sistema para encontrar el trabajo de mis sueños y ganar independencia.",
     },
     {
       imgSrc: "/images/profiles/profile1.png",
       label: "MI PRIMER TRABAJO REMOTO",
       description:
-        "Después de varios intentos fallidos, logré obtener mi primera posición remota. Esto no solo me dio estabilidad económica, sino también la libertad de trabajar desde cualquier lugar. Aprendí la importancia de la resiliencia y la adaptación en un entorno laboral cambiante.",
+        "Después de varios intentos, conseguí mi primera posición remota, lo que me brindó estabilidad y libertad de ubicación. Aprendí la importancia de la resiliencia.",
       additionalText:
-        "El mayor aprendizaje fue entender cómo aprovechar mis habilidades en un contexto global, abriéndome nuevas oportunidades que antes parecían inalcanzables.",
+        "Entendí cómo aprovechar mis habilidades en un contexto global, abriendo oportunidades antes inalcanzables.",
     },
     {
       imgSrc: "/images/profiles/profile1.png",
       label: "COMPARTIENDO EXPERIENCIAS",
       description:
-        "Con mi carrera ya en marcha, decidí compartir mi experiencia para ayudar a otros profesionales a conseguir trabajos remotos. Empecé a desarrollar recursos y estrategias que facilitaran la transición al trabajo remoto, especialmente para aquellos que se encontraban en situaciones similares a la mía.",
+        "Decidí ayudar a otros profesionales a conseguir trabajos remotos, desarrollando recursos para facilitar esa transición.",
       additionalText:
-        "Mi objetivo ahora es inspirar y guiar a otros en su camino hacia la independencia laboral, brindando las herramientas necesarias para prosperar en un mercado laboral competitivo.",
+        "Mi objetivo es inspirar y guiar a otros hacia la independencia laboral en un mercado competitivo.",
     },
   ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showArrows, setShowArrows] = useState(true);
   const [showShadows, setShowShadows] = useState(false);
@@ -82,20 +83,6 @@ const AboutMeCarouselComponent = () => {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setShowArrows(window.innerWidth >= 500);
-      setShowShadows(window.innerWidth < 500);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className='AboutMeCarouselComponent'>

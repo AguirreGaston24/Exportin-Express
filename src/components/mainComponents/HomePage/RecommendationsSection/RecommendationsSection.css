@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   font-family: var(--font-family);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .HomePage-RecommendationSection-title-container {
@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+  text-align: center;
 }
 
 .HomePage-RecommendationSection-title {

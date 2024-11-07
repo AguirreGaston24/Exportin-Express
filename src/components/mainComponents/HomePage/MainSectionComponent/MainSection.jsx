@@ -7,9 +7,9 @@ import "./MainSection.css";
 import WebinarButtonComponent from "../../../secondaryComponents/WebinarButtonComponent/WebinarButtonComponent";
 import MapWithHeatPoints from "../../../secondaryComponents/MapWithHeatPointsComponent/MapWithHeatPointsComponent";
 
-const MainSection = ({ openModal }) => {
+const MainSection = ({ openModal, id }) => {
   return (
-    <section className='HomePage-main-section'>
+    <section id={id} className='HomePage-main-section'>
       <MapWithHeatPoints />
       <div className='HomePage-main-section-content-container'>
         <h1 className='HomePage-main-section-content-title'>
