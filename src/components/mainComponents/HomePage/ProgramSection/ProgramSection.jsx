@@ -20,7 +20,7 @@ const ProgramSection = ( {id} ) => {
           className='HomePage-ProgramSection-video-background-image'
         />
         <video
-          src='/videos/interviews/video2.mp4'
+          src='https://res.cloudinary.com/opnux/video/upload/Videos/video3.mp4'
           controls
           className='HomePage-ProgramSection-video'
         ></video>
