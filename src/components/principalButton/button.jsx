@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 
-const Button = () => {
+const Button = ({label}) => {
 
     const navigate = useNavigate();
     const navigation = () => {
@@ -12,7 +12,7 @@ const Button = () => {
         <>
             <div className='navbar-button-container'>
                 <button className='navbar-button' onClick={navigation}>
-                    Webinar
+                    {label}
                 </button>
             </div>
         </>

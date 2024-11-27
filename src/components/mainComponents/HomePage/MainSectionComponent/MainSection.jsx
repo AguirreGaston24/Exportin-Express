@@ -6,6 +6,8 @@ import "./MainSection.css";
 // Components
 import WebinarButtonComponent from "../../../secondaryComponents/WebinarButtonComponent/WebinarButtonComponent";
 import MapWithHeatPoints from "../../../secondaryComponents/MapWithHeatPointsComponent/MapWithHeatPointsComponent";
+import VideoPlayer from "../../../videoPlayer/video1";
+import Button from "../../../principalButton/button";
 
 const MainSection = ({ openModal, id }) => {
   return (
@@ -20,10 +22,7 @@ const MainSection = ({ openModal, id }) => {
           con las que mis clientes han logrado trabajos de{" "}
           <span className='green-text'>+96k dólares al año.</span>
         </p>
-        <WebinarButtonComponent
-          openModal={openModal}
-          margin='40px 0px 0px 0px'
-        />
+      <Button label="Inicia tu masterclass"/>
       </div>
     </section>
   );

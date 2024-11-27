@@ -6,6 +6,7 @@ import "./NavBar.css";
 // Images
 import logo from "../../../../public/images/logo/logo-negro-transparente.png";
 import Button from "../../principalButton/button";
+import VideoPlayer from "../../videoPlayer/video1";
 
 const NavBar = ({ openModal, scrollToSection }) => {
 
@@ -33,7 +34,9 @@ const NavBar = ({ openModal, scrollToSection }) => {
           </li>
         </ul>
       </div>
-      <Button />
+      <Button label="Masterclass" />
+      <VideoPlayer />
+      
     </nav>
   );
 };

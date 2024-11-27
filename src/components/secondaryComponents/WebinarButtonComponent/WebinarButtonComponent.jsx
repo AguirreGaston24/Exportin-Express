@@ -1,16 +1,12 @@
 import React from "react";
 import "./WebinarButtonComponent.css";
+import Button from "../../principalButton/button";
 
-const WebinarButtonComponent = ({ openModal }) => {
+const WebinarButtonComponent = () => {
   return (
-    <button
-      className='WebinarButtonComponent'
-      onClick={() => {
-        openModal();
-      }}
-    >
-      Accedé al WEBINAR
-    </button>
+    <>
+      <Button label="Hola"/>
+    </>
   );
 };
 
