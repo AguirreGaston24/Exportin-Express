@@ -3,13 +3,7 @@ import { useNavigate } from "react-router-dom"; // Asegúrate de importar useNav
 import "./WebinarButtonComponent.css";
 import Button from "../../principalButton/button";
 
-<<<<<<< HEAD
-const WebinarButtonComponent = () => {
-  return (
-    <>
-      <Button label="Hola"/>
-    </>
-=======
+
 const WebinarButtonComponent = ({ openModal }) => {
   const navigate = useNavigate();
 
@@ -26,7 +20,6 @@ const WebinarButtonComponent = ({ openModal }) => {
     >
         Agenda una llamada
     </button>
->>>>>>> 1db616602a2627c5a535dfacfc234ef75774bb5f
   );
 };
 
