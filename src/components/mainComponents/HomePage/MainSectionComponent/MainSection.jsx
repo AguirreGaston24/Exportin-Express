@@ -13,12 +13,12 @@ const MainSection = ({ openModal, id }) => {
       <MapWithHeatPoints />
       <div className='HomePage-main-section-content-container'>
         <h1 className='HomePage-main-section-content-title'>
-          Conseguí trabajo en el extranjero
+          Consigue trabajo en el extranjero
         </h1>
         <p className='HomePage-main-section-content-paragraph'>
           Únete a nuestra comunidad de IT Job Seekers y accedé a las mentorias
           con las que mis clientes han logrado trabajos de{" "}
-          <span className='green-text'>+30k dólares al año.</span>
+          <span className='green-text'>+96k dólares al año.</span>
         </p>
         <WebinarButtonComponent
           openModal={openModal}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -33,10 +33,10 @@ const CustomNextArrow = (props) => {
   const { onClick } = props;
   return (
     <button
-      className='RecommendationsCarouselComponent-control next'
+      className="RecommendationsCarouselComponent-control next"
       onClick={onClick}
     >
-      <img src='/images/icons/arrowIcon.png' alt='Next' />
+      <img src="/images/icons/arrowIcon.png" alt="Next" />
     </button>
   );
 };
@@ -45,10 +45,10 @@ const CustomPrevArrow = (props) => {
   const { onClick } = props;
   return (
     <button
-      className='RecommendationsCarouselComponent-control prev'
+      className="RecommendationsCarouselComponent-control prev"
       onClick={onClick}
     >
-      <img src='images/icons/arrowIcon.png' alt='Previous' />
+      <img src="/images/icons/arrowIcon.png" alt="Previous" />
     </button>
   );
 };
@@ -56,6 +56,8 @@ const CustomPrevArrow = (props) => {
 export default function RecommendationsCarousel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState(null);
+  const [autoplay, setAutoplay] = useState(true); // Estado para manejar el autoplay
+  const sliderRef = useRef(null); // Referencia al slider
 
   const openModal = (url) => {
     setVideoUrl(url);
@@ -67,14 +69,32 @@ export default function RecommendationsCarousel() {
     setIsModalOpen(false);
   };
 
+  // Maneja la interacción del usuario y desactiva el autoplay
+  const handleUserInteraction = (action) => {
+    setAutoplay(false); // Desactiva el autoplay
+
+    if (action === "prev" && sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+    if (action === "next" && sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
+    autoplay: autoplay, // Controla el autoplay dinámicamente
+    autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 3,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+    prevArrow: (
+      <CustomPrevArrow onClick={() => handleUserInteraction("prev")} />
+    ),
+    nextArrow: (
+      <CustomNextArrow onClick={() => handleUserInteraction("next")} />
+    ),
     responsive: [
       { breakpoint: 1150, settings: { slidesToShow: 2, slidesToScroll: 2 } },
       { breakpoint: 750, settings: { slidesToShow: 1, slidesToScroll: 1 } },
@@ -82,28 +102,32 @@ export default function RecommendationsCarousel() {
   };
 
   return (
-    <div className='RecommendationsCarouselComponent-container'>
-      <Slider {...settings} className='RecommendationsCarouselComponent-slider'>
+    <div className="RecommendationsCarouselComponent-container">
+      <Slider
+        ref={sliderRef} // Conecta la referencia al slider
+        {...settings}
+        className="RecommendationsCarouselComponent-slider"
+      >
         {recommendations.map((item) => (
           <div
             key={item.id}
-            className='RecommendationsCarouselComponent-slide-container'
+            className="RecommendationsCarouselComponent-slide-container"
           >
-            <div className='RecommendationsCarouselComponent-slide'>
+            <div className="RecommendationsCarouselComponent-slide">
               <img
                 src={item.profileImage}
                 alt={item.name}
-                className='RecommendationsCarouselComponent-profile-image'
+                className="RecommendationsCarouselComponent-profile-image"
               />
-              <p className='RecommendationsCarouselComponent-comment'>
+              <p className="RecommendationsCarouselComponent-comment">
                 {item.comment}
               </p>
-              <div className='RecommendationsCarouselComponent-content'>
-                <h3 className='RecommendationsCarouselComponent-name'>
+              <div className="RecommendationsCarouselComponent-content">
+                <h3 className="RecommendationsCarouselComponent-name">
                   {item.name}
                 </h3>
                 <button
-                  className='RecommendationsCarouselComponent-button'
+                  className="RecommendationsCarouselComponent-button"
                   onClick={() => openModal(item.videoUrl)}
                 >
                   Ver Entrevista

@@ -5,8 +5,12 @@ import "./NavBar.css";
 
 // Images
 import logo from "../../../../public/images/logo/logo-negro-transparente.png";
+import Button from "../../principalButton/button";
 
 const NavBar = ({ openModal, scrollToSection }) => {
+
+
+
   return (
     <nav className='navbar'>
       <div className='navbar-logo-container'>
@@ -14,7 +18,7 @@ const NavBar = ({ openModal, scrollToSection }) => {
           className='navbar-logo'
           src={logo}
           alt='Logo'
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           style={{ cursor: 'pointer' }}
         />
       </div>
@@ -29,11 +33,7 @@ const NavBar = ({ openModal, scrollToSection }) => {
           </li>
         </ul>
       </div>
-      <div className='navbar-button-container'>
-        <button className='navbar-button' onClick={openModal}>
-          Webinar
-        </button>
-      </div>
+      <Button />
     </nav>
   );
 };
