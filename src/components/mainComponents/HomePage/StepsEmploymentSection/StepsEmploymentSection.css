@@ -4,13 +4,7 @@
 }
 
 .HomePage-StepsEmploymentSection-title {
-<<<<<<< HEAD
-  position: sticky;
-  top: 20px;
-  background: white;
-  z-index: 2;
-  font-size: 2rem;
-=======
+
   font-size: xx-large;
   max-width: 800px;
   font-weight: 600;
@@ -30,7 +24,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: start;
->>>>>>> 71fa11464f29659117815843a0d48f488fd96bc6
   text-align: center;
   padding: 10px;
 }
@@ -63,8 +56,6 @@
   max-width: 100%;
   height: auto;
 }
-<<<<<<< HEAD
-=======
 
 @media (max-width: 1400px) {
   .HomePage-StepsEmploymentSection {
@@ -126,4 +117,3 @@
     left: 30px;
   }
 }
->>>>>>> 71fa11464f29659117815843a0d48f488fd96bc6
