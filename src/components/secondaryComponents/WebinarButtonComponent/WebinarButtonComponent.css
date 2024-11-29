@@ -1,8 +1,8 @@
 .WebinarButtonComponent {
   width: 280px;
   height: 60px;
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: bold;
   background-color: var(--bright-yellow);
   color: var(--black);
   border: none;
@@ -11,6 +11,10 @@
   display: block;
   margin: auto;
   transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .WebinarButtonComponent:hover {

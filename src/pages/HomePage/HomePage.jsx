@@ -31,6 +31,12 @@ const HomePage = () => {
     }
   };
 
+  const navItems = [
+    { label: 'Sobre mí', target: 'HomePage-section1' },
+    { label: 'Tres claves de éxito', target: 'HomePage-section2' },
+    { label: 'Nuestro programa', target: 'HomePage-section3' },
+  ];
+
   return (
     <div>
       <header className='HomePage-header'>

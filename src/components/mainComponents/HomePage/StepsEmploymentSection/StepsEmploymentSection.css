@@ -12,11 +12,10 @@
 }
 
 .HomePage-StepsEmploymentSection-title {
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-bold);
-  color: var(--black);
-  width: 700px;
-  margin-bottom: 20px;
+  font-size: xx-large;
+  max-width: 800px;
+  font-weight: 600;
+  margin-bottom: 40px;
 }
 
 .HomePage-StepsEmploymentSection-steps {
@@ -101,15 +100,25 @@
 
 }
 
-@media (max-width: 500px) { 
+@media (max-width: 740px) {
+
+  .HomePage-StepsEmploymentSection-title {
+    font-size: larger;
+    max-width: 800px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 500px) {
   .HomePage-StepsEmploymentSection-image.start {
     left: 40px;
   }
-  
+
   .HomePage-StepsEmploymentSection-image.medium {
     left: 60px;
   }
-  
+
   .HomePage-StepsEmploymentSection-image.end {
     width: 420px;
     left: 30px;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./StepsEmploymentSection.css";
 
-export default function StepsEmploymentSection( {id} ) {
+export default function StepsEmploymentSection({ id }) {
   return (
     <section id={id} className='HomePage-StepsEmploymentSection'>
       <h2 className='HomePage-StepsEmploymentSection-title'>
@@ -10,10 +10,9 @@ export default function StepsEmploymentSection( {id} ) {
       <div className='HomePage-StepsEmploymentSection-steps'>
         <div className='HomePage-StepsEmploymentSection-step'>
           <p className='HomePage-StepsEmploymentSection-description'>
-            <strong>Descubre</strong> oportunidades laborales invisibles
-            analizando tendencias y aplicando el método{" "}
-            <em>Hidden Market Framework</em>, mientras te abres paso hacia
-            <strong> empleos altamente remunerados</strong> en el extranjero.
+            <strong>Descubre</strong> cómo puedes obtener un trabajo remoto altamente remunerado con el método{" "}
+            <em>Hidden Market Framework</em>, que te brinde estabilidad económica y libertad geográfica,
+            <strong> sin invertir miles de horas aplicando a </strong> cualquier candidatura.
           </p>
           <div className='HomePage-StepsEmploymentSection-image-container'>
             <img
@@ -26,9 +25,9 @@ export default function StepsEmploymentSection( {id} ) {
 
         <div className='HomePage-StepsEmploymentSection-step reverse'>
           <p className='HomePage-StepsEmploymentSection-description'>
-            <strong>Implementa</strong> un sistema de seguimiento para tu red de
-            contactos que te conecte con oportunidades laborales reales de más
-            de <strong>2500 USD</strong> al mes, antes que nadie.
+            <strong>Optimiza</strong> tu Perfil Profesional de Alto Impacto para
+            que brille ante los ojos de los reclutadores, incluso si no cumples
+            con el <strong>100% de los requisitos</strong>.
           </p>
           <div className='HomePage-StepsEmploymentSection-image-container'>
             <img
@@ -41,10 +40,11 @@ export default function StepsEmploymentSection( {id} ) {
 
         <div className='HomePage-StepsEmploymentSection-step'>
           <p className='HomePage-StepsEmploymentSection-description'>
-            <strong>Optimiza</strong> tu Perfil Profesional de Alto Impacto para
-            que brille ante los ojos de los reclutadores, incluso si no cumples
-            con el <strong>100% de los requisitos</strong>.
+            <strong>Implementa</strong> un sistema de seguimiento para tu red de
+            contactos que te conecte con oportunidades laborales reales de más
+            de <strong>2500 USD</strong> al mes, antes que nadie.
           </p>
+
           <div className='HomePage-StepsEmploymentSection-image-container'>
             <img
               src='/images/graphics/steps-employment-graphic3.png'

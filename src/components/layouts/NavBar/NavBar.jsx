@@ -4,28 +4,17 @@ import React from "react";
 import "./NavBar.css";
 
 // Images
-import logo from "../../../../public/images/logo/logo-negro-transparente.png";
 import Button from "../../principalButton/button";
-import VideoPlayer from "../../videoPlayer/video1";
+import Logo from "../logo/logo";
 
-const NavBar = ({ openModal, scrollToSection }) => {
-
-
+const NavBar = ({ scrollToSection }) => {
 
   return (
     <nav className='navbar'>
-      <div className='navbar-logo-container'>
-        <img
-          className='navbar-logo'
-          src={logo}
-          alt='Logo'
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          style={{ cursor: 'pointer' }}
-        />
-      </div>
+   <Logo/>
       <div className='navbar-list-container'>
         <ul className='navbar-list'>
-          <li onClick={() => scrollToSection("HomePage-section1")}>Sobre mí</li>
+          <li onClick={() => scrollToSection("HomePage-section1")}>Sobre mi</li>
           <li onClick={() => scrollToSection("HomePage-section2")}>
             Tres claves de éxito
           </li>
@@ -35,8 +24,6 @@ const NavBar = ({ openModal, scrollToSection }) => {
         </ul>
       </div>
       <Button label="Masterclass" />
-      <VideoPlayer />
-      
     </nav>
   );
 };

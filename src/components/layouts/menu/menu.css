@@ -1,0 +1,29 @@
+.menu {
+    font-size: 40px;
+    /* Asegúrate de que haya espacio interno equilibrado */
+    cursor: pointer;
+    color: black;
+    transition: transform 1s ease, background-color 0.1s ease;
+    display: flex;
+    /* Flexbox para centrar contenido */
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    width: 100px;
+    /* Define un ancho fijo o relativo */
+    height: 100px;
+    /* Define una altura fija o relativa */
+}
+
+
+.menu:hover {
+    animation-duration: 300s;
+    transform: scale(1.2);
+}
+
+@media(min-width:840px) {
+    .menu {
+        display: none;
+    }
+}
