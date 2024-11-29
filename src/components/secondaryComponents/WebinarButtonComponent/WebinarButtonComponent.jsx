@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Asegúrate de importar useNavigate
 import "./WebinarButtonComponent.css";
-import Button from "../../principalButton/button";
 
 const WebinarButtonComponent = ({ openModal }) => {
   const navigate = useNavigate();

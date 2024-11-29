@@ -19,9 +19,8 @@
 }
 
 .HomePage-RecommendationSection-title {
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-bold);
-  color: var(--black);
+font-size: x-large;
+font-weight: 500;
 }
 
 .HomePage-Recommendation-graphic-element-gray {

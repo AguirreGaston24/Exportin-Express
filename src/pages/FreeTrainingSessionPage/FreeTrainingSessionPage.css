@@ -1,0 +1,278 @@
+.navbar-box {
+    position: relative;
+    /* Asegura que cualquier contenido encima de la imagen se posicione correctamente */
+    background-image: url('/images/nico/1.jpg'), linear-gradient(to right, rgba(252, 240, 5, 0.638), rgba(234, 243, 57, 0.562));
+    background-position: center;
+    /* Centra la imagen de fondo */
+    background-size: cover;
+    /* Asegura que la imagen cubra todo el contenedor */
+    background-blend-mode: overlay;
+    /* Mezcla la imagen y el gradiente de forma suave */
+    font-family: var(--font-family);
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    /* Activa flexbox en el section */
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    text-align: center;
+}
+
+.nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    cursor: pointer;
+    font-size: 16px;
+    color: #333333;
+    font-size: inherit;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin-left: 40px;
+}
+
+.first-section--paragraph {
+    font-size: large;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+    /* Espacio debajo del párrafo */
+    text-align: center;
+    /* Centra el texto si es necesario */
+}
+
+.section-container--box {
+    display: flex;
+    /* Usa flexbox para control de alineación */
+    flex-direction: column;
+    /* Los elementos se alinean en una columna */
+    align-items: center;
+    /* Centra los elementos en el contenedor */
+    justify-content: center;
+    /* Alinea verticalmente */
+}
+
+iframe {
+    width: 80%;
+    /* Ajusta el tamaño del video si lo necesitas */
+    max-width: 800px;
+    /* Limita el tamaño máximo del video */
+    margin-top: 20px;
+    /* Espacio por encima del video */
+    display: block;
+    /* Elimina las propiedades de flex */
+    margin-left: auto;
+    margin-right: auto;
+    /* Centra el iframe horizontalmente */
+    margin-bottom: 20px;
+}
+
+@media(max-width:840px) {
+    ul {
+        display: none;
+    }
+}
+
+
+
+/* SEGUNDA SECCION */
+h2 {
+    font-size: 35px;
+    font-weight: bold;
+    position: relative;
+    /* Asegúrate de que el contenedor sea relativo */
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    /* Necesario para que el pseudo-elemento se muestre */
+    position: absolute;
+    /* Posición absoluta dentro del contenedor */
+    bottom: 0;
+    /* Ubica el borde en la parte inferior del contenedor */
+    left: 0;
+    /* Centra el borde horizontalmente */
+    transform: translateX(-50%);
+    /* Asegura que el borde se centre correctamente */
+    width: 200px;
+    /* Ajusta el ancho del borde */
+    height: 2px;
+    /* El grosor del "borde" */
+    background-color: var(--bright-yellow);
+    /* El color del borde */
+}
+
+strong {
+    color: var(--bright-yellow);
+}
+
+.second-section {
+    display: flex;
+    flex-direction: column;
+    /* Diseño en columna por defecto */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.second-section--paragraph {
+    max-width: 600px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.second-section-img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (min-width: 740px) {
+    .second-section {
+        flex-direction: row;
+        /* Cambia a diseño de fila */
+        justify-content: space-between;
+        /* Espacia los elementos en lados opuestos */
+        align-items: center;
+        /* Alinea verticalmente */
+        text-align: left;
+        /* Alinea el texto a la izquierda */
+        gap: 40px;
+    }
+
+    .second-section-content {
+        flex: 1;
+        /* La columna del texto ocupa espacio flexible */
+    }
+
+    .second-section-img {
+        height: auto;
+        /* La columna de la imagen ocupa espacio flexible */
+        max-width: 400px;
+        /* Limita el ancho de la imagen a la mitad */
+    }
+}
+
+@media (min-width: 740px) {
+    h2 {
+        font-size: 50px;
+        /* Incrementa el tamaño del texto */
+        padding-bottom: 15px;
+        /* Aumenta el espacio inferior */
+    }
+
+    h2::after {
+        width: 300px;
+        /* Amplía el ancho del "borde" */
+        height: 3px;
+        /* Haz el borde un poco más grueso */
+    }
+}
+
+@media (min-width: 740px) {
+    .second-section--paragraph {
+        max-width: 800px;
+        /* Incrementa el ancho máximo en pantallas grandes */
+        font-size: 1.1rem;
+        /* Aumenta ligeramente el tamaño del texto */
+        line-height: 1.4;
+        /* Mejora la legibilidad al agregar más espacio entre líneas */
+    }
+}
+
+/* TERCERA SECCION */
+.customer-tittle {
+    font-size: 2rem;
+    /* Título más grande */
+    font-weight: bold;
+    /* Negrita */
+    text-align: center;
+    /* Centra el texto del título */
+    margin-bottom: 20px;
+    /* Espacio debajo del título */
+}
+
+.customers-container {
+    border: 2px solid red;
+    display: flex;
+    /* Activa flexbox */
+    flex-direction: column;
+    /* Alinea elementos en columna */
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+    text-align: center;
+    /* Centra cualquier texto dentro */
+    gap: 20px;
+    /* Espacio entre los elementos */
+    padding: 20px;
+    /* Espacio interno del contenedor */
+}
+
+/* CUARTA SECCION */
+
+.four-section-container {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    text-align: center;
+    /* Asegura que el texto también esté centrado */
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.four-section-title {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.four-section-box {
+    border-left: rgba(252, 240, 5, 0.638);
+    padding-left: 20px;
+    position: relative;
+    /* Asegúrate de que el contenedor sea relativo */
+}
+
+.four-section-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    /* Posiciona la línea en la parte superior del contenedor */
+    left: 0;
+    /* Coloca la línea en el lado izquierdo */
+    transform: translateY(-50%);
+    /* Asegura que la línea esté centrada verticalmente */
+    height: 65%;
+    /* Hace que la línea ocupe toda la altura del contenedor */
+    width: 6px;
+    /* El grosor de la línea */
+    background-color: var(--bright-yellow);
+    /* El color de la línea */
+}
+
+.four-section-paragraph {
+    background-color: rgba(252, 240, 5, 0.638);
+    margin-bottom: 20px;
+}

@@ -1,0 +1,146 @@
+.six-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Centra horizontalmente */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal de la sección */
+.six-section-container {
+    padding: 10px;
+    background-image: linear-gradient(to left, rgba(252, 240, 5, 0.638), rgba(234, 243, 57, 0.562));
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    transition: all 1s ease-in-out;
+    /* Hacer la transición más lenta */
+    width: 80%;
+}
+
+.six-section-container.open {
+    flex-direction: column;
+    /* Cambiar de horizontal a vertical */
+}
+
+
+
+.h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centrar contenido horizontalmente */
+    gap: 20px;
+    /* Espaciado entre los elementos */
+    width: 100%;
+    /* Opcional, para asegurar que ocupe todo el ancho */
+    margin-bottom: 20px;
+
+}
+
+/* Caja que contiene el título y el botón */
+.six-section-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.six-section-title {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el logo */
+.six-section-logo {
+    color: #e5bf26;
+    margin-right: 10px;
+    transition: transform 1s ease-in-out;
+    /* Transición más suave y lenta */
+}
+
+/* Estilo para el título */
+.six-section-box h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-right: 10px;
+    flex: 1;
+    text-align: left;
+}
+
+/* Estilo para el botón */
+.six-section-box button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: gray;
+    transition: color 1s ease-in-out;
+    /* Lenta transición del color */
+}
+
+.six-section-box button:hover {
+    color: #e5bf26;
+}
+
+
+
+/* Estilo para el contenido */
+.six-section-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    padding-left: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    opacity: 0;
+    /* Inicialmente invisible */
+    max-height: 0;
+    /* Altura inicial 0 */
+    transition: opacity 2s ease-in-out, max-height 2s ease-in-out;
+}
+
+.six-section-container.open .six-section-paragraph {
+    opacity: 1;
+    /* Se vuelve visible */
+    max-height: 1000px;
+    /* Se expande para mostrar el contenido */
+}
+
+
+.faq-image {
+    width: 300px;
+    height: 200px;
+    margin-top: 20px;
+    /* Espaciado superior opcional */
+}
+
+/* Media query para pantallas grandes (a partir de 740px) */
+@media (min-width: 740px) {
+    .faq-image {
+        display: block;
+        /* Oculta la imagen en pantallas medianas y grandes */
+    }
+}
+
+/* Media query para pantallas grandes (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .faq-image {
+        display: block;
+        /* Asegura que la imagen no se vea en pantallas grandes */
+    }
+}

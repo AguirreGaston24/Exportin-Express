@@ -4,11 +4,33 @@
 }
 
 .HomePage-StepsEmploymentSection-title {
+<<<<<<< HEAD
   position: sticky;
   top: 20px;
   background: white;
   z-index: 2;
   font-size: 2rem;
+=======
+  font-size: xx-large;
+  max-width: 800px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.HomePage-StepsEmploymentSection-steps {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.HomePage-StepsEmploymentSection-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+>>>>>>> 71fa11464f29659117815843a0d48f488fd96bc6
   text-align: center;
   padding: 10px;
 }
@@ -41,3 +63,67 @@
   max-width: 100%;
   height: auto;
 }
+<<<<<<< HEAD
+=======
+
+@media (max-width: 1400px) {
+  .HomePage-StepsEmploymentSection {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1150px) {
+  .HomePage-StepsEmploymentSection-steps {
+    width: 100%;
+  }
+
+  .HomePage-StepsEmploymentSection-step {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .HomePage-StepsEmploymentSection-step.reverse {
+    flex-direction: column;
+  }
+
+  .HomePage-StepsEmploymentSection-title {
+    width: 100%;
+  }
+
+  .HomePage-StepsEmploymentSection-description {
+    width: 100%;
+    max-width: none;
+  }
+
+  .HomePage-StepsEmploymentSection-image-container {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 740px) {
+
+  .HomePage-StepsEmploymentSection-title {
+    font-size: larger;
+    max-width: 800px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .HomePage-StepsEmploymentSection-image.start {
+    left: 40px;
+  }
+
+  .HomePage-StepsEmploymentSection-image.medium {
+    left: 60px;
+  }
+
+  .HomePage-StepsEmploymentSection-image.end {
+    width: 420px;
+    left: 30px;
+  }
+}
+>>>>>>> 71fa11464f29659117815843a0d48f488fd96bc6
