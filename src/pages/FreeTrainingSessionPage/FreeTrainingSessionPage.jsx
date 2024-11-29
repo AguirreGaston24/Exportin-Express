@@ -1,7 +1,7 @@
 import React from "react";
 import WebinarButtonComponent from "../../components/secondaryComponents/WebinarButtonComponent/WebinarButtonComponent";
 import SemanaList from "../../components/secondaryComponents/semanaList/semanaList"
-import FAQSection from "../../components/secondaryComponents/asked/asked"
+// import FAQSection from "../../components/secondaryComponents/asked/asked"
 import Logo from "../../components/layouts/logo/logo";
 
 // CSS
