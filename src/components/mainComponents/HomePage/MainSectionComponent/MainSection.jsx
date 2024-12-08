@@ -19,7 +19,7 @@ const MainSection = ({ openModal, id }) => {
         </h1>
         <p className='HomePage-main-section-content-paragraph'>
           Únete a nuestra comunidad de IT Job Seekers y accedé a las mentorias
-          con las que mis clientes han logrado trabajos de{" "}
+          con las que mis clientes han logrado trabajos hasta{" "}
           <span className='green-text'>+96k dólares al año.</span>
         </p>
       <Button label="Inicia tu masterclass"/>
