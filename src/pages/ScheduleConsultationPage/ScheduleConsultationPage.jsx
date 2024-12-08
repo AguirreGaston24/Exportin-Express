@@ -1,5 +1,7 @@
 import React from 'react';
 import CalendlyWidgetComponent from '../../components/mainComponents/StrategicConsultationComponent/CalendlyWidgetComponent/CalendlyWidgetComponent';
+import './ScheduleConsultationPage.css';
+
 
 const ScheduleConsultationPage = () => {
     return (
@@ -8,6 +10,6 @@ const ScheduleConsultationPage = () => {
             <CalendlyWidgetComponent />
         </div>
     );
-}
+};
 
 export default ScheduleConsultationPage;
