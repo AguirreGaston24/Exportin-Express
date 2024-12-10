@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import WebinarButtonComponent from "../../components/secondaryComponents/WebinarButtonComponent/WebinarButtonComponent";
 import SemanaList from "../../components/secondaryComponents/semanaList/semanaList"
 import Logo from "../../components/layouts/logo/logo";
-
+import MapWithHeatPointsVariantComponent from "../../components/secondaryComponents/MapWithHeatPointsVariantComponent/MapWithHeatPointsVariantComponent";
+import "../../components/layouts/Footer/Footer.css";
+import logo1 from "../../../public/images/logo/logo-negro-transparente.png";
 // CSS
 import "./FreeTrainingSessionPage.css"
+import Menu from "../../components/layouts/menu/menu";
 import Footer from "../../components/layouts/Footer/Footer";
-import FormModalContactDataComponent from "../../components/mainComponents/HomePage/FormModalContactDataComponent/FormModalContactDataComponent";
-import ArrowButton from "../../components/arrowButtonTop/arrowButton";
 
 
 const FreeTrainingSessionPage = () => {
@@ -161,7 +162,18 @@ const FreeTrainingSessionPage = () => {
       </section>
       <WebinarButtonComponent /> */}
 
-      <Footer />
+<section className='HomePage-Footer-background'>
+      <div className='HomePage-Footer-container'>
+        <div className='HomePage-Footer-map'>
+          <MapWithHeatPointsVariantComponent />
+        </div>
+        <div className='HomePage-Footer-content'>
+          <div className='HomePage-Footer-logo'>
+            <img src={logo1} alt='Logo' />
+          </div>
+        </div>
+      </div>
+    </section>
     </section>
   );
 };

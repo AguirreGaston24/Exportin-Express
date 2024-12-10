@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // CSS
 import "./MainSection.css";
@@ -8,6 +8,13 @@ import MapWithHeatPoints from "../../../secondaryComponents/MapWithHeatPointsCom
 import Button from "../../../principalButton/button";
 
 const MainSection = ({ openModal, id }) => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    // Activa la animación al cargar la página
+    setAnimate(true);
+  }, []);
+
   return (
     <section id={id} className='HomePage-main-section'>
         <MapWithHeatPoints />

@@ -76,3 +76,22 @@
     pointer-events: none;
   }
 }
+
+/* NavBar.css */
+
+/* Animación de entrada desde arriba */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Clase para aplicar la animación */
+.slide-in-top {
+  animation: slideInFromTop 1s ease-out forwards;
+}

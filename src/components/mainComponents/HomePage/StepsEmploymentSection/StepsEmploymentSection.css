@@ -43,23 +43,34 @@
 }
 
 .HomePage-StepsEmploymentSection-text {
-  font-size: 1.5rem;
+  width: 700px; /* Define un ancho fijo */
+  height: 150px; /* Define una altura fija */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  max-width: 800px;
-  margin-bottom: 20px;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-size: 1.5rem; /* Ajusta el tamaño del texto según sea necesario */
+  overflow: hidden; /* Oculta cualquier texto que exceda el tamaño */
 }
 
 .HomePage-StepsEmploymentSection-image {
-  width: 300px;
-  height: auto;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Asegúrate de que el contenedor tenga altura definida */
+  width: 100%; /* Asegúrate de que el contenedor tenga anchura definida */
+  overflow: hidden; /* Esto es útil si las imágenes tienen tamaños mayores */
 }
 
 .HomePage-StepsEmploymentSection-graphic {
-  max-width: 100%;
-  height: auto;
+  height: 100%; /* Asegúrate de que el contenedor tenga altura definida */
+  width: 100%;
+  object-fit: contain; /* Escala la imagen sin distorsionar */
+  position: relative; /* Permite ajustes adicionales con 'top', 'left' si necesario */
 }
+
+
+
 
 @media (max-width: 1400px) {
   .HomePage-StepsEmploymentSection {

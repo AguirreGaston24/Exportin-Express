@@ -1,6 +1,6 @@
 import React from "react";
 
-import RecommendationCarouselComponent from "../../../secondaryComponents/RecommendationsCarouselComponent/RecommendationsCarouselComponent";
+import RecommendationsCarousel from "../../../secondaryComponents/RecommendationsCarouselComponent/RecommendationsCarouselComponent";
 
 
 // CSS
@@ -13,7 +13,7 @@ const RecommendationsSection = () => {
         <h2 className='HomePage-RecommendationSection-title'>¿Listo para trabajar en el extranjero?</h2>
         <span className='HomePage-Recommendation-graphic-element-gray'></span>
       </div>
-      <RecommendationCarouselComponent />
+      <RecommendationsCarousel />
     </section>
   );
 };

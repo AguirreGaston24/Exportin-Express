@@ -5,63 +5,63 @@ import "slick-carousel/slick/slick-theme.css";
 import "./RecommmendationsCarouselComponent.css";
 import InterviewVideoModalComponent from "../InterviewVideoModalComponent/InterviewVideoModalComponent";
 
-const recommendations = [
-  {
-    id: 1,
-    name: "Ana Martínez",
-    comment: "¡Una experiencia absolutamente increíble y enriquecedora!",
-    profileImage: "/images/profiles/recommendations/profile1.webp",
-    videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
-  },
-  {
-    id: 2,
-    name: "Juan Pérez",
-    comment: "Aprendí mucho de esta entrevista.",
-    profileImage: "/images/profiles/recommendations/profile2.jpg",
-    videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
-  },
-  {
-    id: 3,
-    name: "Miguel Gómez",
-    comment: "¡Muy perspicaz e inspirador!",
-    profileImage: "/images/profiles/recommendations/profile3.jpg",
-    videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
-  },
-];
+const CustomNextArrow = ({ onClick }) => (
+  <button
+    className="RecommendationsCarouselComponent-control next"
+    onClick={onClick}
+  >
+    <img src="/images/icons/arrowIcon.png" alt="Next" />
+  </button>
+);
 
-const CustomNextArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <button
-      className="RecommendationsCarouselComponent-control next"
-      onClick={onClick}
-    >
-      <img src="/images/icons/arrowIcon.png" alt="Next" />
-    </button>
-  );
-};
-
-const CustomPrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <button
-      className="RecommendationsCarouselComponent-control prev"
-      onClick={onClick}
-    >
-      <img src="/images/icons/arrowIcon.png" alt="Previous" />
-    </button>
-  );
-};
+const CustomPrevArrow = ({ onClick }) => (
+  <button
+    className="RecommendationsCarouselComponent-control prev"
+    onClick={onClick}
+  >
+    <img src="/images/icons/arrowIcon.png" alt="Previous" />
+  </button>
+);
 
 export default function RecommendationsCarousel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState(null);
-  const [autoplay, setAutoplay] = useState(true); // Estado para manejar el autoplay
   const sliderRef = useRef(null); // Referencia al slider
+  const [autoplayDisabled, setAutoplayDisabled] = useState(false); // Maneja si el autoplay está desactivado
+
+  const recommendations = [
+    {
+      id: 1,
+      name: "Ana Martínez",
+      comment: "¡Una experiencia absolutamente increíble y enriquecedora!",
+      profileImage: "/images/profiles/recommendations/profile1.webp",
+      videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
+    },
+    {
+      id: 2,
+      name: "Juan Pérez",
+      comment: "Aprendí mucho de esta entrevista.",
+      profileImage: "/images/profiles/recommendations/profile2.jpg",
+      videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
+    },
+    {
+      id: 3,
+      name: "Miguel Gómez",
+      comment: "¡Muy perspicaz e inspirador!",
+      profileImage: "/images/profiles/recommendations/profile3.jpg",
+      videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
+    },
+  ];
 
   const openModal = (url) => {
     setVideoUrl(url);
     setIsModalOpen(true);
+
+    // Pausa el autoplay cuando se abre el modal
+    if (sliderRef.current) {
+      sliderRef.current.slickPause();
+      setAutoplayDisabled(true); // Desactiva permanentemente el autoplay
+    }
   };
 
   const closeModal = () => {
@@ -69,23 +69,23 @@ export default function RecommendationsCarousel() {
     setIsModalOpen(false);
   };
 
-  // Maneja la interacción del usuario y desactiva el autoplay
   const handleUserInteraction = (action) => {
-    setAutoplay(false); // Desactiva el autoplay
+    if (sliderRef.current) {
+      // Desactiva el autoplay al interactuar
+      sliderRef.current.slickPause();
+      setAutoplayDisabled(true); // Desactiva permanentemente el autoplay
 
-    if (action === "prev" && sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-    if (action === "next" && sliderRef.current) {
-      sliderRef.current.slickNext();
+      // Navega entre las diapositivas
+      if (action === "prev") sliderRef.current.slickPrev();
+      if (action === "next") sliderRef.current.slickNext();
     }
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-    autoplay: autoplay, // Controla el autoplay dinámicamente
+    autoplay: !autoplayDisabled, // El autoplay depende del estado
     autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 3,
