@@ -15,18 +15,30 @@
 
 .HomePage-main-section-content-container {
   display: flex;
+  position: absolute;
+  top: 30px;
   flex-direction: column;
   z-index: 2;
   gap: 40px;
-  align-items: center;
   padding: 0 40px;
+  max-width: 1000px;
+  /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto;
+  /* Centra el contenido horizontalmente */
+  padding: 0 20px;
+  /* Añade un relleno interno a los lados para espacio en pantallas pequeñas */
+  box-sizing: border-box;
+  /* Asegura que el padding no afecte el tamaño total */
 }
+
+
 
 .HomePage-main-section-content-title {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-bold);
   color: var(--black);
-  width: 600px;
+  width: 80%;
+  margin-bottom: 20px;
 }
 
 .HomePage-main-section-content-paragraph {
@@ -34,6 +46,7 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--font-line-height-paragraph);
   width: 600px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1400px) {
@@ -44,10 +57,8 @@
 
 @media (max-width: 1150px) {
   .HomePage-main-section {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0.6)
-      ),
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6)),
       url("/images/profiles/profile.png");
     background-position: 0, 90% 10%;
     background-size: 100%, 450px;
@@ -57,10 +68,8 @@
 
 @media (max-width: 850px) {
   .HomePage-main-section {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0.6)
-      );
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6));
     background-position: 0;
     background-size: 100%;
     background-repeat: no-repeat;

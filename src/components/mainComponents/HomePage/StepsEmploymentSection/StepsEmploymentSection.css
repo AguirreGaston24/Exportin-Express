@@ -1,14 +1,18 @@
 .HomePage-StepsEmploymentSection {
   position: relative;
-  height: 300vh; /* Altura extendida para permitir scroll */
+  height: 150vh;
+  display: flex; /* Habilita flexbox */
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
 }
 
 .HomePage-StepsEmploymentSection-title {
-
   font-size: xx-large;
-  max-width: 800px;
   font-weight: 600;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .HomePage-StepsEmploymentSection-steps {

@@ -85,63 +85,65 @@ const AboutMeCarouselComponent = () => {
   };
 
   return (
-    <div className='AboutMeCarouselComponent'>
-      {showShadows && (
-        <>
-          {currentSlide === 0 ? (
-            <div className='shadow right-shadow'></div>
-          ) : currentSlide === totalSlides ? (
-            <div className='shadow left-shadow'></div>
-          ) : (
-            <>
-              <div className='shadow left-shadow'></div>
+    <section className="AboutMe-Container">
+      <div className='AboutMeCarouselComponent'>
+        {showShadows && (
+          <>
+            {currentSlide === 0 ? (
               <div className='shadow right-shadow'></div>
-            </>
-          )}
-        </>
-      )}
-      <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <div key={index} className='AboutMeCarouselComponent-inner'>
-            <div className='AboutMeCarouselComponent-item'>
-              <div className='AboutMeCarouselComponent-item-image-container'>
-                <img
-                  src={slide.imgSrc}
-                  alt={`Slide ${index + 1}`}
-                  style={{ userSelect: "none" }}
-                  draggable={false}
-                />
-              </div>
-
-              <div className='AboutMeCarouselComponent-caption'>
-                <div className='AboutMeCarouselComponent-caption-title-container'>
-                  <h3 className='AboutMeCarouselComponent-caption-title'>
-                    {slide.label}
-                  </h3>
-                  <span className='AboutMeCarouselComponent-caption-graphic-element-yellow'></span>
+            ) : currentSlide === totalSlides ? (
+              <div className='shadow left-shadow'></div>
+            ) : (
+              <>
+                <div className='shadow left-shadow'></div>
+                <div className='shadow right-shadow'></div>
+              </>
+            )}
+          </>
+        )}
+        <Slider {...settings}>
+          {slides.map((slide, index) => (
+            <div key={index} className='AboutMeCarouselComponent-inner'>
+              <div className='AboutMeCarouselComponent-item'>
+                <div className='AboutMeCarouselComponent-item-image-container'>
+                  <img
+                    src={slide.imgSrc}
+                    alt={`Slide ${index + 1}`}
+                    style={{ userSelect: "none" }}
+                    draggable={false}
+                  />
                 </div>
-                <div className='AboutMeCarouselComponent-caption-text-container'>
-                  <p className='AboutMeCarouselComponent-caption-text'>
-                    {slide.description}
-                  </p>
-                  {slide.additionalText && (
-                    <p className='AboutMeCarouselComponent-caption-additional-text'>
-                      {slide.additionalText}
+
+                <div className='AboutMeCarouselComponent-caption'>
+                  <div className='AboutMeCarouselComponent-caption-title-container'>
+                    <h3 className='AboutMeCarouselComponent-caption-title'>
+                      {slide.label}
+                    </h3>
+                    <span className='AboutMeCarouselComponent-caption-graphic-element-yellow'></span>
+                  </div>
+                  <div className='AboutMeCarouselComponent-caption-text-container'>
+                    <p className='AboutMeCarouselComponent-caption-text'>
+                      {slide.description}
                     </p>
-                  )}
+                    {slide.additionalText && (
+                      <p className='AboutMeCarouselComponent-caption-additional-text'>
+                        {slide.additionalText}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-      <div className='AboutMeCarouselComponent-indicator'>
-        <span className='AboutMeCarouselComponent-caption-graphic-element-green'></span>
-        <span className='AboutMeCarouselComponent-indicator-text'>
-          {`${currentSlide + 1}/${slides.length}`}{" "}
-        </span>
+          ))}
+        </Slider>
+        <div className='AboutMeCarouselComponent-indicator'>
+          <span className='AboutMeCarouselComponent-caption-graphic-element-green'></span>
+          <span className='AboutMeCarouselComponent-indicator-text'>
+            {`${currentSlide + 1}/${slides.length}`}{" "}
+          </span>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

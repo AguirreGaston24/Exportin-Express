@@ -10,7 +10,7 @@ const RecommendationsSection = () => {
   return (
     <section className='HomePage-RecommendationSection'>
       <div className='HomePage-RecommendationSection-title-container'>
-        <h2 className='HomePage-RecommendationSection-title'>¿Listo para dar el salto?</h2>
+        <h2 className='HomePage-RecommendationSection-title'>¿Listo para trabajar en el extranjero?</h2>
         <span className='HomePage-Recommendation-graphic-element-gray'></span>
       </div>
       <RecommendationCarouselComponent />

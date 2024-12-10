@@ -1,12 +1,14 @@
 .HomePage-about-me-section {
   display: flex;
-  padding: 20px;
-  width: 100%;
   justify-content: center;
   align-items: center;
   font-family: var(--font-family);
   background-color: var(--very-light-gray);
   overflow: hidden;
+  max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 0 20px; /* Añade un relleno interno a los lados para espacio en pantallas pequeñas */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
 .HomePage-about-me-section-container {

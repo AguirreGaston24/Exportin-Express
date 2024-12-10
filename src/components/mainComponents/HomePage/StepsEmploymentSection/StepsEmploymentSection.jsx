@@ -3,17 +3,18 @@ import "./StepsEmploymentSection.css";
 
 const steps = [
   {
-    text: "Descubre oportunidades laborales invisibles analizando tendencias y aplicando el método Hidden Market Framework, mientras te abres paso hacia empleos altamente remunerados en el extranjero.",
+    text: "Descubre cómo puedes obtener un trabajo remoto altamente remunerado con el método Hidden Market Framework, que te brinde estabilidad económica y libertad geográfica, sin invertir miles de horas aplicando a cualquier candidatura",
     image: "/images/graphics/steps-employment-graphic1.png",
-  },
-  {
-    text: "Implementa un sistema de seguimiento para tu red de contactos que te conecte con oportunidades laborales reales de más de 2500 USD al mes, antes que nadie.",
-    image: "/images/graphics/steps-employment-graphic2.png",
   },
   {
     text: "Optimiza tu Perfil Profesional de Alto Impacto para que brille ante los ojos de los reclutadores, incluso si no cumples con el 100% de los requisitos.",
     image: "/images/graphics/steps-employment-graphic3.png",
   },
+  {
+    text: "Implementa un sistema de seguimiento para tu red de contactos que te conecte con oportunidades laborales reales de más de 2500 USD al mes, antes que nadie.",
+    image: "/images/graphics/steps-employment-graphic2.png",
+  },
+
 ];
 
 export default function StepsEmploymentSection({ id }) {

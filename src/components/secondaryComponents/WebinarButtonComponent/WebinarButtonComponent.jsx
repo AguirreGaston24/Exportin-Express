@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; // Asegúrate de importar useNavigate
 import "./WebinarButtonComponent.css";
 
-const WebinarButtonComponent = ({ openModal }) => {
+const WebinarButtonComponent = ({ onClick, className }) => {
   const navigate = useNavigate();
 
   const handleRedirect = () => {
@@ -10,13 +10,8 @@ const WebinarButtonComponent = ({ openModal }) => {
   };
 
   return (
-    <button
-      className="WebinarButtonComponent"
-      onClick={() => {
-        handleRedirect(); // Llama a handleRedirect para redirigir
-      }}
-    >
-        Agenda una llamada
+    <button className={`WebinarButtonComponent ${className}`} onClick={onClick}>
+      Agenda una llamada
     </button>
   );
 };

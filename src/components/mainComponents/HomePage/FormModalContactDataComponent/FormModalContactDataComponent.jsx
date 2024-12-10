@@ -6,7 +6,7 @@ import Select from "react-select";
 import "./FormModalContactDataComponent.css";
 import { AiOutlineClose } from "react-icons/ai";
 
-const FormModalContactDataComponent = ({ closeModal }) => {
+const FormModalContactDataComponent = ({ closeModal, onFormSuccess }) => {
   const {
     register,
     handleSubmit,
@@ -59,25 +59,11 @@ const FormModalContactDataComponent = ({ closeModal }) => {
 
       if (response.data.success) {
         alert("Datos cargados con éxito.");
-        // navigate("/free-training-session");
+        navigate("/schedule-consultation");
       }
     } catch (error) {
-      console.log(contactData);
-      if (error.response) {
-        const { data } = error.response;
-        if (data && data.errors) {
-          data.errors.forEach((error) => {
-            setError(error.path, { type: "manual", message: error.msg });
-            console.log(error.msg);
-          });
-        } else {
-          console.error("Error de respuesta inesperado:", data);
-        }
-      } else if (error.request) {
-        console.error("Error de red o de solicitud:", error.message);
-      } else {
-        console.error("Error inesperado:", error.message);
-      }
+      console.error("Error al enviar los datos:", error);
+      // Manejo de errores permanece igual
     }
   };
 

@@ -9,7 +9,31 @@
     background-blend-mode: overlay;
     /* Mezcla la imagen y el gradiente de forma suave */
     font-family: var(--font-family);
-    margin-bottom: 30px;
+}
+
+.scroll-to-top {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(234, 231, 231);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.1s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: rgb(192, 192, 192);
+    transform: scale(1.2);
 }
 
 .container {
@@ -29,27 +53,12 @@
     align-items: center;
 }
 
-li {
-    cursor: pointer;
-    font-size: 16px;
-    color: #333333;
-    font-size: inherit;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-ul {
-    list-style: none;
-    display: flex;
-    gap: 50px;
-    margin-left: 40px;
-}
 
 .first-section--paragraph {
     font-size: large;
     font-weight: bold;
     color: #333333;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     /* Espacio debajo del párrafo */
     text-align: center;
     /* Centra el texto si es necesario */
@@ -87,10 +96,98 @@ iframe {
     }
 }
 
+.video-container {
+    position: relative;
+    display: inline-block;
+}
 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-size: 18px;
+    pointer-events: none;
+    /* No permite clics */
+}
+
+.video-container iframe {
+    pointer-events: none;
+    /* Bloquea clics en el video */
+}
+
+.cta-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Aplica el efecto de pulso a los elementos strong */
+.first-section--strong {
+    display: inline-block;
+    /* Necesario para que funcione bien con transform */
+    animation: pulse 1.5s infinite;
+    /* La animación se repite infinitamente */
+    color: #05BC75;
+    /* Opcional: resalta el texto */
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* Define la animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* Aumenta ligeramente el tamaño */
+        opacity: 0.9;
+        /* Reduce ligeramente la opacidad */
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.first-section--paragraph_red {
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    color: red;
+    /* Si deseas mantener el color rojo */
+    font-weight: bold;
+    /* Opcional: hace el texto más llamativo */
+    margin-top: 3px;
+    /* Espaciado superior opcional */
+}
+
+.first-section--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
 /* SEGUNDA SECCION */
-h2 {
+.second-section-title {
     font-size: 35px;
     font-weight: bold;
     position: relative;
@@ -98,14 +195,14 @@ h2 {
     padding-bottom: 10px;
 }
 
-h2::after {
+.second-section-title::after {
     content: '';
     /* Necesario para que el pseudo-elemento se muestre */
     position: absolute;
     /* Posición absoluta dentro del contenedor */
     bottom: 0;
     /* Ubica el borde en la parte inferior del contenedor */
-    left: 0;
+    right: 0;
     /* Centra el borde horizontalmente */
     transform: translateX(-50%);
     /* Asegura que el borde se centre correctamente */
@@ -122,16 +219,17 @@ strong {
 }
 
 .second-section {
+    border: 2px solid red;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
-    /* Diseño en columna por defecto */
-    justify-content: center;
+    /* Apila los elementos (imagen y contenido) en columna */
     align-items: center;
-    text-align: center;
+    /* Centra los elementos horizontalmente */
     gap: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    /* Espaciado entre la imagen y el contenido */
 }
+
 
 .second-section--paragraph {
     max-width: 600px;
@@ -140,10 +238,19 @@ strong {
 }
 
 .second-section-img {
-    max-width: 80%;
+    width: 100%;
+    /* Ajusta al ancho del contenedor */
+    max-width: 600px;
+    /* Opcional: Limita el tamaño máximo de la imagen */
     height: auto;
-    border-radius: 10px;
+    /* Mantiene las proporciones */
+    border-radius: 20px;
 }
+
+.second-section-content {
+    text-align: center; /* Centra el texto dentro del contenedor */
+    max-width: 800px; /* Opcional: Ajusta el ancho máximo del texto */
+  }
 
 @media (min-width: 740px) {
     .second-section {
@@ -164,7 +271,7 @@ strong {
     }
 
     .second-section-img {
-        height: auto;
+        height: 300px;
         /* La columna de la imagen ocupa espacio flexible */
         max-width: 400px;
         /* Limita el ancho de la imagen a la mitad */
@@ -172,14 +279,14 @@ strong {
 }
 
 @media (min-width: 740px) {
-    h2 {
+    .second-section-title {
         font-size: 50px;
         /* Incrementa el tamaño del texto */
         padding-bottom: 15px;
         /* Aumenta el espacio inferior */
     }
 
-    h2::after {
+    .second-section-title::after {
         width: 300px;
         /* Amplía el ancho del "borde" */
         height: 3px;
