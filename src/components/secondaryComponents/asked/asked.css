@@ -1,0 +1,81 @@
+/* Estilos para el contenedor de las preguntas y respuestas */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos para cada ítem de FAQ (pregunta y respuesta) */
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0; /* Línea de separación entre preguntas */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el encabezado de cada FAQ (pregunta) */
+  .faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-question {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #252525; /* Color gris oscuro */
+  }
+  
+  /* Estilos para el botón de toggle (+ o −) */
+  .faq-toggle-btn {
+    padding: 8px 16px;
+    background-color: #FFBA06; /* Azul */
+    color: #252525;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-toggle-btn:hover {
+    background-color: #FDF55F; /* Azul más oscuro al pasar el ratón */
+  }
+  
+  /* Estilos para la respuesta (contenido visible al hacer clic) */
+  .faq-answer {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #252525; /* Color gris */
+    padding-left: 16px;
+    border-left: 4px solid #FFBA06; /* Línea a la izquierda de la respuesta */
+    transition: max-height 0.3s ease-out;
+  }
+  
+  @media (max-width: 740px) {
+    /* Ajustes para el contenedor */
+    .faq-section {
+      padding: 15px;
+      max-width: 100%; /* Para que ocupe todo el ancho en móviles */
+    }
+  
+    /* Ajustes para el encabezado y la pregunta */
+    .faq-header {
+      align-items: flex-start; /* Alineación a la izquierda */
+    }
+  
+    .faq-question {
+      font-size: 1.1rem; /* Reducir el tamaño de fuente para dispositivos pequeños */
+    }
+  
+    /* Botón de toggle */
+    .faq-toggle-btn {
+      font-size: 1.1rem;
+      padding: 6px 12px; /* Reducir el tamaño del botón */
+    }
+  
+    /* Respuesta */
+    .faq-answer {
+      font-size: 0.95rem; /* Reducir el tamaño de la fuente de la respuesta */
+      padding-left: 12px; /* Ajustar el relleno */
+    }
+  }

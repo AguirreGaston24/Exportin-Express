@@ -8,7 +8,12 @@
   font-family: var(--font-family);
   margin-bottom: 70px;
   overflow: hidden;
-  width: 1350px;
+  max-width: 1200px;
+  /* Cambia este valor según el ancho máximo deseado */
+  margin: 0 auto;
+  /* Centra el contenedor horizontalmente */
+  padding: 0 20px;
+  border: solid blue 2px;
 }
 
 .HomePage-ProgramSection-content {
@@ -76,39 +81,6 @@
   cursor: pointer;
 }
 
-@media (max-width: 1400px) {
-  .HomePage-ProgramSection {
-    width: 100%;
-  }
-}
 
-@media (max-width: 1150px) {
-  .HomePage-ProgramSection-content {
-    flex-direction: column;
-  }
 
-  .HomePage-ProgramSection-title {
-    text-align: center;
-    width: 100%;
-  }
 
-  .HomePage-ProgramSection-graphic-element-gray {
-    display: none;
-  }
-
-  .HomePage-ProgramSection-description {
-    max-width: 100%;
-  }
-
-  .HomePage-ProgramSection-video-background-image {
-    width: 460px;
-    left: -80px;
-    height: 360px;
-    position: absolute;
-  }
-
-  .HomePage-ProgramSection-video {
-    width: 320px;
-    height: 200px;
-  }
-}

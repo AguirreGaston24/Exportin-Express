@@ -1,7 +1,8 @@
 .HomePage-WebinarAccessSection {
+  border: solid blue 2px;
   text-align: center;
   display: flex;
-  width: 1350px;
+  max-width: 1200px;
   padding: 20px;
   font-family: var(--font-family);
   font-size: 1.5rem;
@@ -41,14 +42,5 @@
   width: 630px;
 }
 
-@media (max-width: 1400px) { 
-  .HomePage-WebinarAccessSection {
-    width: 100%;
-  }
-}
 
-@media (max-width: 750px) {
-  .HomePage-WebinarAccessSection-text {
-    width: 100%;
-  }
-}
+

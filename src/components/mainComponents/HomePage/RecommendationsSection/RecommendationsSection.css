@@ -1,12 +1,15 @@
 .HomePage-RecommendationSection {
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: 30px 0 30px 0;
   justify-content: center;
   align-items: center;
   font-family: var(--font-family);
   overflow: hidden;
+  max-width: 1200px;
+  /* Cambia este valor según el ancho máximo deseado */
+  /* Centra el contenedor horizontalmente */
+  border: solid blue 2px;
 }
 
 .HomePage-RecommendationSection-title-container {
@@ -30,8 +33,4 @@ font-weight: 500;
   background-color: var(--black);
 }
 
-@media (max-width: 750px) {
-  .HomePage-Recommendation-graphic-element-gray {
-    display: none;
-  }
-}
+

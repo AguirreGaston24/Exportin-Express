@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { IoMdPaper } from "react-icons/io";
 import "./semanaList.css";
-import WebinarButtonComponent from '../WebinarButtonComponent/WebinarButtonComponent';
 
 const SemanaContent = ({ semana, contenido }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,7 +40,6 @@ const SemanaList = () => {
 
   return (
     <section className='six-section'>
-      <h1 className='six-section-title'>Lista de pasos</h1>
       <div className='h'>
         {semanas.map((semanaData, index) => (
           <SemanaContent
@@ -51,7 +49,6 @@ const SemanaList = () => {
           />
         ))}
       </div>
-        <WebinarButtonComponent />
     </section>
   );
 };

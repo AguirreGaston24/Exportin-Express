@@ -1,3 +1,5 @@
+    /* PRIMERA SECCION */
+
 .navbar-box {
     position: relative;
     /* Asegura que cualquier contenido encima de la imagen se posicione correctamente */
@@ -18,8 +20,8 @@
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: rgb(234, 231, 231);
-    color: #fff;
+    background-color: #FFBA06;
+    color: #252525;
     border: none;
     border-radius: 50%;
     font-size: 20px;
@@ -28,13 +30,14 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: background-color 0.1s ease, transform 0.3s ease;
+    /* Sincroniza la duración de todas las propiedades */
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .scroll-to-top:hover {
-    background-color: rgb(192, 192, 192);
     transform: scale(1.2);
 }
+
 
 .container {
     display: flex;
@@ -44,6 +47,7 @@
     align-items: center;
     /* Centra verticalmente el contenido */
     text-align: center;
+
 }
 
 .nav {
@@ -73,6 +77,8 @@
     /* Centra los elementos en el contenedor */
     justify-content: center;
     /* Alinea verticalmente */
+    border: 2px solid blue;
+    margin-bottom: 30px;
 }
 
 iframe {
@@ -202,11 +208,11 @@ iframe {
     /* Posición absoluta dentro del contenedor */
     bottom: 0;
     /* Ubica el borde en la parte inferior del contenedor */
-    right: 0;
+    left: 12%;
     /* Centra el borde horizontalmente */
     transform: translateX(-50%);
     /* Asegura que el borde se centre correctamente */
-    width: 200px;
+    width: 100px;
     /* Ajusta el ancho del borde */
     height: 2px;
     /* El grosor del "borde" */
@@ -219,7 +225,6 @@ strong {
 }
 
 .second-section {
-    border: 2px solid red;
     max-width: 900px;
     display: flex;
     flex-direction: column;
@@ -228,6 +233,8 @@ strong {
     /* Centra los elementos horizontalmente */
     gap: 20px;
     /* Espaciado entre la imagen y el contenido */
+    margin-bottom: 30px;
+    border: 2px solid blue;
 }
 
 
@@ -248,9 +255,11 @@ strong {
 }
 
 .second-section-content {
-    text-align: center; /* Centra el texto dentro del contenedor */
-    max-width: 800px; /* Opcional: Ajusta el ancho máximo del texto */
-  }
+    text-align: center;
+    /* Centra el texto dentro del contenedor */
+    max-width: 800px;
+    /* Opcional: Ajusta el ancho máximo del texto */
+}
 
 @media (min-width: 740px) {
     .second-section {
@@ -287,10 +296,22 @@ strong {
     }
 
     .second-section-title::after {
-        width: 300px;
-        /* Amplía el ancho del "borde" */
-        height: 3px;
-        /* Haz el borde un poco más grueso */
+        content: '';
+        /* Necesario para que el pseudo-elemento se muestre */
+        position: absolute;
+        /* Posición absoluta dentro del contenedor */
+        bottom: 0;
+        /* Ubica el borde en la parte inferior del contenedor */
+        right: 0;
+        /* Centra el borde horizontalmente */
+        transform: translateX(-50%);
+        /* Asegura que el borde se centre correctamente */
+        width: 100px;
+        /* Ajusta el ancho del borde */
+        height: 2px;
+        /* El grosor del "borde" */
+        background-color: var(--bright-yellow);
+        /* El color del borde */
     }
 }
 
@@ -306,80 +327,120 @@ strong {
 }
 
 /* TERCERA SECCION */
-.customer-tittle {
-    font-size: 2rem;
-    /* Título más grande */
-    font-weight: bold;
-    /* Negrita */
-    text-align: center;
-    /* Centra el texto del título */
-    margin-bottom: 20px;
-    /* Espacio debajo del título */
-}
 
-.customers-container {
-    border: 2px solid red;
-    display: flex;
-    /* Activa flexbox */
-    flex-direction: column;
-    /* Alinea elementos en columna */
-    justify-content: center;
-    /* Centra los elementos verticalmente */
-    align-items: center;
-    /* Centra los elementos horizontalmente */
-    text-align: center;
-    /* Centra cualquier texto dentro */
-    gap: 20px;
-    /* Espacio entre los elementos */
-    padding: 20px;
-    /* Espacio interno del contenedor */
+.three-section-container{
+    border: solid 2px blue;
+    margin-bottom: 30px;
 }
 
 /* CUARTA SECCION */
 
 .four-section-container {
+    border: 2px solid red;
     display: flex;
     justify-content: center;
     /* Centra horizontalmente */
-    align-items: center;
-    /* Centra verticalmente */
     text-align: center;
-    /* Asegura que el texto también esté centrado */
-    flex-direction: column;
+    /* Centra el texto */
     margin-bottom: 40px;
+    flex-direction: column;
+    gap: 30px;
+    /* Apilados en pantallas pequeñas */
+}
+
+@media (min-width: 740px) {
+    .four-section-container {
+        border: 2px solid blue;
+        flex-direction: row;
+        /* Horizontales en pantallas grandes */
+    }
+}
+
+.four-section-sessions {
+    display: flex;
+    flex-direction: column;
+    /* Elementos apilados */
+    align-items: flex-start;
+    /* Alinea elementos al inicio (parte superior) */
+    justify-content: flex-start;
+    /* Alinea los elementos en la parte superior del eje principal */
+    border: 2px solid pink;
+    padding-top: 30px;
+
 }
 
 .four-section-title {
-    font-size: xx-large;
+    font-size: 50px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
+}
+
+@media (max-width:740px) {
+    .four-section-title {
+        font-size: 35px;
+        font-weight: bold;
+        margin-bottom: 80px;
+    }
 }
 
 .four-section-box {
-    border-left: rgba(252, 240, 5, 0.638);
+    border-left: 6px solid rgba(252, 240, 5, 0.638);
     padding-left: 20px;
     position: relative;
-    /* Asegúrate de que el contenedor sea relativo */
 }
 
 .four-section-box::after {
     content: '';
     position: absolute;
     bottom: 0;
-    /* Posiciona la línea en la parte superior del contenedor */
     left: 0;
-    /* Coloca la línea en el lado izquierdo */
-    transform: translateY(-50%);
-    /* Asegura que la línea esté centrada verticalmente */
     height: 65%;
-    /* Hace que la línea ocupe toda la altura del contenedor */
     width: 6px;
-    /* El grosor de la línea */
     background-color: var(--bright-yellow);
-    /* El color de la línea */
+}
+
+.four-section-list {
+    border: 2px solid red;
 }
 
 .four-section-paragraph {
-    background-color: rgba(252, 240, 5, 0.638);
-    margin-bottom: 20px;
+    margin-bottom: 80px;
+}
+
+
+@media (min-width:740px) {
+    .four-section-button--mobile {
+        display: none;
+    }
+}
+
+@media (max-width:740px) {
+    .four-section-button--desktop {
+        display: none;
+    }
+}
+
+/* QUINTA SECCION */
+
+.five-section-container {
+    border: solid 2px blue;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.five-section-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:740px) {
+    .five-section-title {
+        font-size: 35px;
+        font-weight: bold;
+        margin-bottom: 80px;
+    }
 }

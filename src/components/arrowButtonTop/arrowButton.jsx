@@ -13,7 +13,7 @@ const ArrowButton = () => {
     return (
         <>
             <button onClick={scrollToTop} id="scrollToTopButton" className="scroll-to-top">
-                <FaLongArrowAltUp />
+                <FaLongArrowAltUp/>
             </button>
         </>
     )

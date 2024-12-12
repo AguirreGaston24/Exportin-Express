@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import "./asked.css"
+
 
 const FAQItem = ({ question, answer }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,18 +10,18 @@ const FAQItem = ({ question, answer }) => {
   };
 
   return (
-    <div className="border-b border-gray-300 pb-4 mb-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-xl font-semibold text-gray-800">{question}</h1>
+    <div className="faq-item">
+      <div className="faq-header">
+        <h1 className="faq-question">{question}</h1>
         <button
-          className="toggle-btn px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+          className="faq-toggle-btn"
           onClick={toggleContent}
         >
           {isVisible ? '−' : '+'}
         </button>
       </div>
       {isVisible && (
-        <p className="content mt-2 text-gray-700 pl-4 border-l-4 border-blue-300">
+        <p className="faq-answer">
           {answer}
         </p>
       )}
@@ -29,23 +31,18 @@ const FAQItem = ({ question, answer }) => {
 
 const FAQSection = () => {
   const faqs = [
-    { question: "¿Cuándo comienza el programa?", answer: "El programa comienza en enero de 2024." },
-    { question: "¿Cuál es la duración del programa?", answer: "El programa tiene una duración de 12 semanas." },
-    { question: "¿Cualquiera puede aplicar al programa?", answer: "Sí, está abierto a cualquier persona interesada en mejorar sus habilidades profesionales." },
-    { question: "¿Podés garantizarme resultados?", answer: "Aunque no podemos garantizar resultados específicos, ofrecemos las mejores herramientas y apoyo para asegurar tu éxito." },
+    { question: "¿Cuándo comienza el programa?", answer: "Si hay cupos disponibles, podemos iniciar con tu proceso inmediatamente tras haber confirmado que estás listo para comenzar. Para ello el primer paso es ver el video de esta página y agendar una sesión de claridad con nosotros para ver si podemos ayudarte." },
+    { question: "¿Cuál es la duración del programa?", answer: "Hasta conseguir el objetivo. Estimamos que se logre antes de los 3 meses. Para los casos que pasados los 3 meses no lo logran, se plantea una revisión del caso, para entender los por qué detrás del resultado. En caso que hayas demostrado tu compromiso, te seguiremos acompañando hasta lograrlo, porque estamos seguros que es una cuestión de tiempo. Pero si el problema fue que no estuviste presente ni tomaste acción en lo que se te propuso, no seguiremos con la ayuda.  En este sentido, pedimos a nuestros clientes el mismo compromiso que tenemos nosotros con ellos, por lo que si no estás listo para comprometerne con el proceso, te sugerimos que no avances." },
+    { question: "¿Cualquiera puede aplicar al programa?", answer: "No, El programa es SOLO para profesionales de IT con o sin experiencia pero con conocimientos demostrables. Además, debes manejar, al menos, un B2 de inglés oral. No importa si necesitas retomar tus prácticas, te ayudamos con eso con talleres semanales de conversación. Otro requisito importante es ser una persona comprometida con lograrlo, no importa los problemas que tengas, pero sí que importa que estés listo para seguir un paso a paso claro que te ayude a lograrlo." },
+    { question: "¿Podés garantizarme resultados?", answer: "Puedo garantizarte dos cosas: la primera es que tendrás a tu disposición un método paso a paso y la guía de profesionales que han servido a muchos otros profesionales para conseguir el trabajo de sus sueños. Y la segunda es que, si cumples con las tareas que se te asignan, te acompañaremos hasta cumplir tu objetivo.  Sin embargo, el logro de resultados dependerá de tu compromiso y dedicación.  No se trata de magia" },
   ];
 
   return (
-    <section className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Preguntas frecuentes</h1>
+    <div className="faq-section">
       {faqs.map((faq, index) => (
-        <FAQItem
-          key={index}
-          question={faq.question}
-          answer={faq.answer}
-        />
+        <FAQItem key={index} question={faq.question} answer={faq.answer} />
       ))}
-    </section>
+    </div>
   );
 };
 

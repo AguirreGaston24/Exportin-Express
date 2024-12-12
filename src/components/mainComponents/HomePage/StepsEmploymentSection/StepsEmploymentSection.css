@@ -5,6 +5,12 @@
   flex-direction: column; /* Asegura que los elementos estén en columna */
   justify-content: center; /* Centra verticalmente */
   align-items: center; /* Centra horizontalmente */
+  max-width: 1200px;
+  /* Cambia este valor según el ancho máximo deseado */
+  margin: 0 auto;
+  /* Centra el contenedor horizontalmente */
+  padding: 0 20px;
+  border: solid blue 2px;
 }
 
 .HomePage-StepsEmploymentSection-title {
@@ -69,66 +75,3 @@
   position: relative; /* Permite ajustes adicionales con 'top', 'left' si necesario */
 }
 
-
-
-
-@media (max-width: 1400px) {
-  .HomePage-StepsEmploymentSection {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1150px) {
-  .HomePage-StepsEmploymentSection-steps {
-    width: 100%;
-  }
-
-  .HomePage-StepsEmploymentSection-step {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .HomePage-StepsEmploymentSection-step.reverse {
-    flex-direction: column;
-  }
-
-  .HomePage-StepsEmploymentSection-title {
-    width: 100%;
-  }
-
-  .HomePage-StepsEmploymentSection-description {
-    width: 100%;
-    max-width: none;
-  }
-
-  .HomePage-StepsEmploymentSection-image-container {
-    width: 100%;
-  }
-
-}
-
-@media (max-width: 740px) {
-
-  .HomePage-StepsEmploymentSection-title {
-    font-size: larger;
-    max-width: 800px;
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 500px) {
-  .HomePage-StepsEmploymentSection-image.start {
-    left: 40px;
-  }
-
-  .HomePage-StepsEmploymentSection-image.medium {
-    left: 60px;
-  }
-
-  .HomePage-StepsEmploymentSection-image.end {
-    width: 420px;
-    left: 30px;
-  }
-}

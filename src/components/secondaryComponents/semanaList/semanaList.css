@@ -21,7 +21,7 @@
     gap: 10px;
     transition: all 1s ease-in-out;
     /* Hacer la transición más lenta */
-    width: 80%;
+    width: 100%;
 }
 
 .six-section-container.open {
@@ -49,7 +49,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
     margin-bottom: 10px;
     width: 100%;
@@ -84,18 +83,43 @@
 
 /* Estilo para el botón */
 .six-section-box button {
-    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    /* Ajusta según el tamaño deseado */
+    height: 25px;
+    /* Mantén el mismo valor que width para crear un círculo */
+    background-color: #FFBA06;
     border: none;
-    font-size: 1.5rem;
+    /* Sin borde adicional */
+    border-radius: 50%;
+    /* Hace el fondo completamente circular */
+    font-size: 20px;
+    /* Tamaño del ícono */
     cursor: pointer;
-    color: gray;
-    transition: color 1s ease-in-out;
-    /* Lenta transición del color */
+    color: #252525;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* Transiciones suaves */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para un efecto más atractivo */
 }
 
 .six-section-box button:hover {
-    color: #e5bf26;
+    background-color: #e0a905;
+    /* Cambia el color al pasar el cursor */
+    transform: scale(1.1);
+    /* Aumenta ligeramente el tamaño para un efecto interactivo */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra más intensa */
 }
+
+/* Opcional: Estilo para el ícono dentro del botón */
+.six-section-box button i {
+    font-size: 10px;
+    /* Ajusta el tamaño del ícono */
+}
+
 
 
 

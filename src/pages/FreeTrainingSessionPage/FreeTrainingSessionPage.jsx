@@ -7,8 +7,9 @@ import "../../components/layouts/Footer/Footer.css";
 import logo1 from "../../../public/images/logo/logo-negro-transparente.png";
 // CSS
 import "./FreeTrainingSessionPage.css"
-import Menu from "../../components/layouts/menu/menu";
-import Footer from "../../components/layouts/Footer/Footer";
+import ArrowButton from "../../components/arrowButtonTop/arrowButton";
+import FAQSection from "../../components/secondaryComponents/asked/asked";
+import RecommendationsSection from "../../components/mainComponents/HomePage/RecommendationsSection/RecommendationsSection";
 
 
 const FreeTrainingSessionPage = () => {
@@ -101,6 +102,7 @@ const FreeTrainingSessionPage = () => {
           </div>
         </div>
       </section>
+
       <section>
         <div className="section-container">
           <div className="second-section">
@@ -124,56 +126,67 @@ const FreeTrainingSessionPage = () => {
         </div>
       </section>
 
-      {/* <section>
-        <div className="customers-container">
-          <h1 className="customer-tittle">¿Qué dicen nuestros clientes?</h1>
+      <section>
+        <div className="section-container">
+          <div className="three-section-container">
+            <RecommendationsSection />
+          </div>
         </div>
-      </section> */}
+      </section>
 
       <section>
         <div className="section-container">
           <div className="four-section-container">
-            <h1 className="four-section-title">Sesiones</h1>
-            <div className="four-section-box">
-              <p className="four-section-paragraph">
-                Tendrás 3 encuentros semanales, grabados para que puedas retomarlos en cualquier momento.
-                Cada semana nos encontraremos en una sesión 1 a 1 para ver a detalle tu proceso, revisar los pasos dados
-                y dejar claro cómo continuar. Además, tendrás acceso a una mentoría grupal todos los miércoles para catapultar
-                su proceso y acelerar tus resultados. Como bonus, te ponemos a disposición un taller de práctica de inglés
-                para que vayas poniendo en movimiento ese uso del lenguaje.
-              </p>
+            <div className="four-section-sessions">
+              <h2 className="four-section-title">
+                ¿Cómo <strong>te ayudamos</strong> a lograrlo?
+              </h2>
+              <div className="four-section-box">
+                <p className="four-section-paragraph">
+                  Tendrás 3 encuentros semanales, grabados para que puedas retomarlos en cualquier momento.
+                  Cada semana nos encontraremos en una sesión 1 a 1 para ver a detalle tu proceso, revisar los pasos dados
+                  y dejar claro cómo continuar. Además, tendrás acceso a una mentoría grupal todos los miércoles para catapultar
+                  su proceso y acelerar tus resultados. Como bonus, te ponemos a disposición un taller de práctica de inglés
+                  para que vayas poniendo en movimiento ese uso del lenguaje.
+                </p>
+                <WebinarButtonComponent className="four-section-button--desktop" />
+              </div>
+            </div>
+            <div className="four-section-list">
+              <SemanaList />
+              <WebinarButtonComponent className="four-section-button--mobile" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div className="section-container">
+          <div className="five-section-container">
+            <h2 className="five-section-title">
+              Preguntas Frecuentes
+            </h2>
+            <div>
+              <FAQSection />
             </div>
             <WebinarButtonComponent />
           </div>
         </div>
       </section>
 
-      <section>
-        <div className="section-container">
-          <SemanaList />
-        </div>
-      </section>
-
-      {/* <section>
-
-        <div>
-          <FAQSection />
-        </div>
-      </section>
-      <WebinarButtonComponent /> */}
-
-<section className='HomePage-Footer-background'>
-      <div className='HomePage-Footer-container'>
-        <div className='HomePage-Footer-map'>
-          <MapWithHeatPointsVariantComponent />
-        </div>
-        <div className='HomePage-Footer-content'>
-          <div className='HomePage-Footer-logo'>
-            <img src={logo1} alt='Logo' />
+      <section className='HomePage-Footer-background'>
+        <div className='HomePage-Footer-container'>
+          <div className='HomePage-Footer-map'>
+            <MapWithHeatPointsVariantComponent />
+          </div>
+          <div className='HomePage-Footer-content'>
+            <div className='HomePage-Footer-logo'>
+              <img src={logo1} alt='Logo' />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </section>
   );
 };
