@@ -77,8 +77,8 @@
     /* Centra los elementos en el contenedor */
     justify-content: center;
     /* Alinea verticalmente */
-    border: 2px solid blue;
     margin-bottom: 30px;
+
 }
 
 iframe {
@@ -234,7 +234,7 @@ strong {
     gap: 20px;
     /* Espaciado entre la imagen y el contenido */
     margin-bottom: 30px;
-    border: 2px solid blue;
+    
 }
 
 
@@ -329,14 +329,13 @@ strong {
 /* TERCERA SECCION */
 
 .three-section-container{
-    border: solid 2px blue;
+   
     margin-bottom: 30px;
 }
 
 /* CUARTA SECCION */
 
 .four-section-container {
-    border: 2px solid red;
     display: flex;
     justify-content: center;
     /* Centra horizontalmente */
@@ -350,7 +349,7 @@ strong {
 
 @media (min-width: 740px) {
     .four-section-container {
-        border: 2px solid blue;
+        
         flex-direction: row;
         /* Horizontales en pantallas grandes */
     }
@@ -364,7 +363,6 @@ strong {
     /* Alinea elementos al inicio (parte superior) */
     justify-content: flex-start;
     /* Alinea los elementos en la parte superior del eje principal */
-    border: 2px solid pink;
     padding-top: 30px;
 
 }
@@ -400,7 +398,6 @@ strong {
 }
 
 .four-section-list {
-    border: 2px solid red;
 }
 
 .four-section-paragraph {
@@ -423,10 +420,9 @@ strong {
 /* QUINTA SECCION */
 
 .five-section-container {
-    border: solid 2px blue;
     display: flex;
     flex-direction: column;
-
+    margin-bottom: 30px;
 }
 
 .five-section-title {

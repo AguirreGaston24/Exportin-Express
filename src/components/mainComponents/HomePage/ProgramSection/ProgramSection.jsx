@@ -3,7 +3,7 @@ import "./ProgramSection.css";
 
 const ProgramSection = ( {id} ) => {
   return (
-    <section id={id} className='HomePage-ProgramSection'>
+    <section id={id} className='HomePage-ProgramSection section-container section-margin-bottom '>
       <div className='HomePage-ProgramSection-content'>
         <h2 className='HomePage-ProgramSection-title'>Nuestro Programa</h2>
         <span className='HomePage-ProgramSection-graphic-element-gray'></span>

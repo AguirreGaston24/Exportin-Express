@@ -1,110 +1,123 @@
+/* HomePage Styles */
 .HomePage-main-section {
-  border: solid 2px red;
   display: flex;
-  min-height: 500px;
-  font-family: var(--font-family);
   flex-direction: row;
+  /* Contenido y Nico en fila */
   align-items: center;
+  justify-content: space-between;
+  min-height: 500px;
   position: relative;
-  width: 1350px;
-  justify-content: start;
+  /* Permite posicionar el mapa como fondo */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Oculta cualquier contenido fuera del contenedor */
+}
+
+.HomePage-main-section::before {
+  content: "";
+  /* Mapa como fondo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.05);
+  /* Color de fondo para contraste */
+}
+
+.HomePage-map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  /* Por debajo de todo */
+}
+
+
+.HomePage-main-section-image {
+  width: 400px;
+  /* Ancho fijo para desktop */
+  height: 450px;
+  /* Alto fijo */
   background-image: url("/images/profiles/profile.png");
-  background-position: 90% 100%;
-  background-size: 450px;
   background-repeat: no-repeat;
-  margin-bottom: 30px;
+  background-position: center;
+  background-size: cover;
+  /* La imagen cubrirá el área sin deformarse */
+  margin: 0 auto;
+  /* Centra la imagen horizontalmente */
 }
 
 .HomePage-main-section-content-container {
-  border: solid blue 2px;
   display: flex;
-  position: absolute;
-  top: 30px;
-  left: 100px;
   flex-direction: column;
-  z-index: 2;
-  gap: 40px;
-  max-width: 1000px;
-  /* Ajusta el ancho máximo según tus necesidades */
-  margin: 0 auto;
-  /* Centra el contenido horizontalmente */
-  /* Añade un relleno interno a los lados para espacio en pantallas pequeñas */
-  box-sizing: border-box;
-  /* Asegura que el padding no afecte el tamaño total */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 50%;
+  /* Texto ocupa 50% */
 }
 
-
-
 .HomePage-main-section-content-title {
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-bold);
+  font-size: 40px;
+  font-weight: bold;
   color: var(--black);
-  width: 80%;
-  margin-bottom: 20px;
+  max-width: 100%;
 }
 
 .HomePage-main-section-content-paragraph {
   font-size: var(--font-size-paragraph);
   font-weight: var(--font-weight-regular);
   line-height: var(--font-line-height-paragraph);
-  width: 600px;
-  margin-bottom: 20px;
+  max-width: 100%;
+  margin: 0;
 }
 
-@media (max-width: 1400px) {
-  .HomePage-main-section {
-    width: 100%;
-  }
+.green-text {
+  color: var(--green);
+  font-weight: var(--font-weight-bold);
 }
 
-@media (max-width: 1150px) {
+/* Estilos responsivos */
+@media (max-width: 900px) {
   .HomePage-main-section {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0.6)),
-      url("/images/profiles/profile.png");
-    background-position: 0, 90% 10%;
-    background-size: 100%, 450px;
-    background-repeat: no-repeat;
-  }
-}
-
-@media (max-width: 850px) {
-  .HomePage-main-section {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0.6));
-    background-position: 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 500px;
+    flex-direction: column;
+    /* Cambia a diseño vertical */
+    align-items: center;
+    padding: 20px;
   }
 
   .HomePage-main-section-content-container {
-    border: solid blue 2px;
-    display: flex;
-    position: absolute;
-    top: 30px;
-    left: 0px;
-    flex-direction: column;
-    z-index: 2;
-    gap: 40px;
-    max-width: 1000px;
-    /* Ajusta el ancho máximo según tus necesidades */
-    margin: 0 auto;
-    /* Centra el contenido horizontalmente */
-    /* Añade un relleno interno a los lados para espacio en pantallas pequeñas */
-    box-sizing: border-box;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
   }
 
+  .HomePage-main-section-image {
+    width: 150px;
+    /* Ancho más pequeño en mobile */
+    height: 180px;
+    /* Alto más pequeño */
+  }
+}
+
+@media (max-width: 500px) {
   .HomePage-main-section-content-title {
-    width: 100%;
-    text-align: center;
     font-size: 30px;
+    font-weight: bold;
+    color: var(--black);
+    max-width: 100%;
   }
 
   .HomePage-main-section-content-paragraph {
-    width: 100%;
-    text-align: center;
-    font-size: 25px;
+    font-size: 20px;
+  }
+
+  .HomePage-main-section-image {
+    height: 200px;
   }
 }

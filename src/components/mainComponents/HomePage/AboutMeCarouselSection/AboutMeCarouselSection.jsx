@@ -10,7 +10,7 @@ const AboutMeCarouselSection = ({ id }) => {
   }, []);
 
   return (
-    <section id={id} className={`HomePage-about-me-section ${animate ? "slide-in-left" : ""}`}>
+    <section id={id} className={`HomePage-about-me-section ${animate ? "slide-in-left" : ""} section-container section-margin-bottom`}>
       <div className="HomePage-about-me-section-container">
         <div className="HomePage-about-me-section-title-container">
           <h2 className="HomePage-about-me-section-title">

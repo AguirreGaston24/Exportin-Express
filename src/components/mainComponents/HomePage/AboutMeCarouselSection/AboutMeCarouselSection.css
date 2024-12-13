@@ -1,58 +1,83 @@
+/* Sección principal */
 .HomePage-about-me-section {
-  border: solid blue 2px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-family);
-  background-color: var(--very-light-gray);
   overflow: hidden;
+  width: 100%;
+  padding: 40px 20px;
+  /* Espaciado interno */
   max-width: 1200px;
+  /* Límite para pantallas grandes */
+
 }
 
-@media(max-width:600px){
-
+@media (max-width: 600px) {
   .HomePage-about-me-section {
-    border: solid blue 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--font-family);
-    background-color: var(--very-light-gray);
-    overflow: hidden;
-    max-width: 440px;
-    /* Cambia este valor según el ancho máximo deseado */
-    /* Centra el contenedor horizontalmente */
-    padding: 0 20px;
+    max-width: 100%;
+    /* Ancho completo en pantallas pequeñas */
+    padding: 20px;
+    /* Reducir padding */
   }
 }
 
-
+/* Contenedor principal */
 .HomePage-about-me-section-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+  /* Asegura que ocupe todo el ancho */
+  max-width: 800px;
+  /* Límite en desktop */
+  position: relative;
+  /* Necesario para posicionar elementos absolutamente */
+  overflow: visible;
 }
 
+/* Contenedor del título */
 .HomePage-about-me-section-title-container {
-  display: flex;
-  align-items: start;
   width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  /* Centra el texto */
+  position: relative;
+  /* Necesario para posicionar elementos absolutamente */
+  z-index: 5;
 }
 
 .HomePage-about-me-section-title {
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-bold);
+  font-size: 40px;
+  /* Tamaño base */
+  font-weight: bold;
   color: var(--black);
-  width: 100%;
-  margin-bottom: 20px;
 }
 
+@media (max-width: 600px) {
+  .HomePage-about-me-section-title {
+    font-size: 40px;
+    font-weight: bold;
+    /* Reducir en mobile */
+  }
+}
+
+/* Contenedor del carrusel */
 .HomePage-about-me-section-carousel-container {
-  width: 1350px;
+  width: 100%;
+  /* Ajusta al ancho disponible */
+  max-width: 1000px;
+  /* Límite en pantallas grandes */
+  overflow: visible;
+  margin: 0 auto;
 }
 
-
+@media (max-width: 600px) {
+  .HomePage-about-me-section-carousel-container {
+    max-width: 100%;
+    /* Ajusta al ancho completo en mobile */
+  }
+}
 
 /* Animación de entrada desde la izquierda */
 @keyframes slideInFromLeft {
@@ -60,13 +85,13 @@
     transform: translateX(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-/* Clase para aplicar la animación */
 .slide-in-left {
   animation: slideInFromLeft 1s ease-out forwards;
 }

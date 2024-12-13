@@ -19,7 +19,6 @@ body {
   --font-weight-regular: 400;
   --font-size-title: 2rem;
   --font-size-paragraph: 1.4rem;
-  --font-line-height-paragraph: 2rem;
 
   /* Colors */
   --white: #ffffff;
@@ -47,11 +46,16 @@ body {
 }
 
 .section-container {
-  max-width: 900px;
-  /* Cambia este valor según el ancho máximo deseado */
+  max-width: 1000px;
   margin: 0 auto;
-  /* Centra el contenedor horizontalmente */
-  padding: 0 20px;
+}
+
+.section-margin-top {
+  margin-top: 30px; /* Ajusta el valor según necesites */
+}
+
+.section-margin-bottom {
+  margin-bottom: 30px; /* Ajusta el valor según necesites */
 }
 
 .section-container--box {

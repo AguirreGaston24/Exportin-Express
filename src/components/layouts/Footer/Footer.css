@@ -72,6 +72,18 @@
   justify-content: end;
 }
 
+a{
+  padding-left: 4px;
+  color: #05BC75;
+  font-weight: bold;
+}
+
+.HomePage-Footer--strong{
+  font-weight: bold;
+padding-left: 4px;
+color: black;
+}
+
 @media (max-width: 1400px) {
   .HomePage-Footer-container {
     width: 100%;

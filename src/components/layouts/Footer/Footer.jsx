@@ -46,11 +46,11 @@ const Footer = () => {
             </div>
             <div className='HomePage-Footer-copy'>
               <p className='HomePage-Footer-copy-text'>
-                © {new Date().getFullYear()} Tu Nombre o Empresa. Todos los
+                © {new Date().getFullYear()} <strong className="HomePage-Footer--strong">Exporting Express</strong>. Todos los
                 derechos reservados.
               </p>
               <p className='HomePage-Footer-copy-creator'>
-                Creado por Tu Nombre.
+                Creado por <a target="blank" href="https://obxel.vercel.app">Obxel</a>.
               </p>
             </div>
           </div>

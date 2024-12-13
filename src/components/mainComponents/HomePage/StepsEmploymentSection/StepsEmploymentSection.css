@@ -1,46 +1,27 @@
 .HomePage-StepsEmploymentSection {
   position: relative;
-  height: 150vh;
-  display: flex; /* Habilita flexbox */
-  flex-direction: column; /* Asegura que los elementos estén en columna */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 1200px;
-  /* Cambia este valor según el ancho máximo deseado */
   margin: 0 auto;
-  /* Centra el contenedor horizontalmente */
   padding: 0 20px;
-  border: solid blue 2px;
 }
 
 .HomePage-StepsEmploymentSection-title {
-  font-size: xx-large;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: bold;
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
-}
-
-.HomePage-StepsEmploymentSection-steps {
-  display: flex;
-  gap: 80px;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.HomePage-StepsEmploymentSection-step {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: start;
   text-align: center;
-  padding: 10px;
+  width: 100%;
 }
 
 .HomePage-StepsEmploymentSection-content {
-  position: sticky;
-  top: 100px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,30 +29,88 @@
   justify-content: center;
 }
 
+.HomePage-StepsEmploymentSection-progress {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.HomePage-StepsEmploymentSection-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #FFBA06, #f7ca58);
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: width 3s ease-out; /* Transición suave de 3 segundos */
+}
+
 .HomePage-StepsEmploymentSection-text {
-  width: 700px; /* Define un ancho fijo */
-  height: 150px; /* Define una altura fija */
+  width: 700px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1.5rem; /* Ajusta el tamaño del texto según sea necesario */
-  overflow: hidden; /* Oculta cualquier texto que exceda el tamaño */
+  font-size: 25px;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 3s ease-out; /* Transición suave para el texto */
 }
 
 .HomePage-StepsEmploymentSection-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Asegúrate de que el contenedor tenga altura definida */
-  width: 100%; /* Asegúrate de que el contenedor tenga anchura definida */
-  overflow: hidden; /* Esto es útil si las imágenes tienen tamaños mayores */
+  height: 300px; /* Tamaño fijo para el contenedor */
+  width: 300px; /* Tamaño fijo para el contenedor */
+  overflow: hidden;
 }
 
 .HomePage-StepsEmploymentSection-graphic {
-  height: 100%; /* Asegúrate de que el contenedor tenga altura definida */
-  width: 100%;
-  object-fit: contain; /* Escala la imagen sin distorsionar */
-  position: relative; /* Permite ajustes adicionales con 'top', 'left' si necesario */
+  width: 100%; /* Se ajusta al tamaño del contenedor */
+  height: 100%; /* Se ajusta al tamaño del contenedor */
+  object-fit: cover; /* Cubre todo el contenedor */
 }
+
+/* Breakpoint para pantallas menores a 900px */
+@media (max-width: 900px) {
+  .HomePage-StepsEmploymentSection-title {
+    font-size: 35px;
+  }
+
+  .HomePage-StepsEmploymentSection-text {
+    width: 90%;
+    font-size: 22px;
+  }
+
+  .HomePage-StepsEmploymentSection-image {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+/* Breakpoint para pantallas menores a 740px */
+@media (max-width: 740px) {
+  .HomePage-StepsEmploymentSection-title {
+    font-size: 30px;
+  }
+
+  .HomePage-StepsEmploymentSection-text {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .HomePage-StepsEmploymentSection-image {
+    height: 200px;
+    width: 200px;
+  }
+
+  .HomePage-StepsEmploymentSection-progress {
+    height: 8px;
+  }
+}
+
 

@@ -16,20 +16,32 @@ const MainSection = ({ openModal, id }) => {
   }, []);
 
   return (
-    <section id={id} className='HomePage-main-section'>
+    <>
+ 
+    <section id={id} className="HomePage-main-section section-container section-margin-bottom">
+      {/* Mapa como fondo */}
+      <div className="HomePage-map-container">
         <MapWithHeatPoints />
-        <div className='HomePage-main-section-content-container'>
-          <h1 className='HomePage-main-section-content-title'>
-            Consigue trabajo en el extranjero
-          </h1>
-          <p className='HomePage-main-section-content-paragraph'>
-            Únete a nuestra comunidad de IT Job Seekers y accedé a las mentorias
-            con las que mis clientes han logrado trabajos hasta {' '}
-            <span className='green-text'>96k dólares al año.</span>
-          </p>
-          <Button label="Inicia tu masterclass" />
-        </div>
+      </div>
+      {/* Contenido */}
+      <div className="HomePage-main-section-content-container">
+        <h1 className="HomePage-main-section-content-title">
+          Consigue trabajo en el extranjero
+        </h1>
+        <p className="HomePage-main-section-content-paragraph">
+          Únete a nuestra comunidad de IT Job Seekers y accedé a las mentorías
+          con las que mis clientes han logrado trabajos hasta{" "}
+          <span className="green-text">96k dólares al año.</span>
+        </p>
+        <Button label="Inicia tu masterclass" />
+      </div>
+
+      {/* Imagen de Nicolás */}
+      <div className="HomePage-main-section-image"></div>
     </section>
+    </>
+
+
   );
 };
 

@@ -10,6 +10,7 @@ import "./FreeTrainingSessionPage.css"
 import ArrowButton from "../../components/arrowButtonTop/arrowButton";
 import FAQSection from "../../components/secondaryComponents/asked/asked";
 import RecommendationsSection from "../../components/mainComponents/HomePage/RecommendationsSection/RecommendationsSection";
+import FormModalContactDataComponent from "../../components/mainComponents/HomePage/FormModalContactDataComponent/FormModalContactDataComponent";
 
 
 const FreeTrainingSessionPage = () => {

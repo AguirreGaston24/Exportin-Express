@@ -5,7 +5,7 @@ import WebinarButtonComponent from "../../../secondaryComponents/WebinarButtonCo
 
 const WebinarAccessSection = ( { openModal } ) => {
   return (
-    <section className='HomePage-WebinarAccessSection'>
+    <section className='HomePage-WebinarAccessSection section-container section-margin-bottom'>
       <span className='HomePage-WebinarAccessSection-line start'></span>
       <div className='HomePage-WebinarAccessSection-content'>
         <p className='HomePage-WebinarAccessSection-text'>
