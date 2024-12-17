@@ -104,14 +104,20 @@
 
     .video-container {
         position: relative;
-        display: flex; /* Usa Flexbox para centrar */
-        justify-content: center; /* Centra horizontalmente */
-        align-items: center; /* Centra verticalmente */
-        width: 100%; /* Asegúrate de que el contenedor ocupe todo el espacio */
-        height: 100%; /* Define la altura o herédala del contenedor padre */
-        box-sizing: border-box; /* Incluye los bordes dentro del ancho/alto */
+        display: flex;
+        /* Usa Flexbox para centrar */
+        justify-content: center;
+        /* Centra horizontalmente */
+        align-items: center;
+        /* Centra verticalmente */
+        width: 100%;
+        /* Asegúrate de que el contenedor ocupe todo el espacio */
+        height: 100%;
+        /* Define la altura o herédala del contenedor padre */
+        box-sizing: border-box;
+        /* Incluye los bordes dentro del ancho/alto */
     }
-    
+
     .overlay {
         position: absolute;
         top: 0;
@@ -127,11 +133,13 @@
         font-size: 18px;
         pointer-events: none;
     }
-    
+
     .video-container iframe {
-        pointer-events: none; /* Bloquea clics en el video */
+        pointer-events: none;
+        /* Bloquea clics en el video */
         z-index: 2;
     }
+
     .cta-button {
         margin-top: 20px;
         padding: 10px 20px;
@@ -151,10 +159,10 @@
         /* Necesario para que funcione bien con transform */
         animation: pulse 1.5s infinite;
         /* La animación se repite infinitamente */
-        color: #05BC75;
+        color: white;
         /* Opcional: resalta el texto */
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     /* Define la animación de pulso */
@@ -165,7 +173,7 @@
         }
 
         50% {
-            transform: scale(1.1);
+            transform: scale(1.05);
             /* Aumenta ligeramente el tamaño */
             opacity: 0.9;
             /* Reduce ligeramente la opacidad */
@@ -193,6 +201,27 @@
         flex-direction: column;
         justify-content: center;
         margin-bottom: 20px;
+    }
+
+    @media(max-width:600px) {
+        .first-section--paragraph {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 5px;
+            /* Espacio debajo del párrafo */
+            text-align: center;
+            /* Centra el texto si es necesario */
+        }
+        .first-section--strong {
+            display: inline-block;
+            /* Necesario para que funcione bien con transform */
+            animation: pulse 1.5s infinite;
+            /* La animación se repite infinitamente */
+            /* Opcional: resalta el texto */
+            padding-left: 6px;
+            padding-right: 6px;
+        }
     }
 
     /* SEGUNDA SECCION */
@@ -252,7 +281,7 @@
         /* Ajusta al ancho del contenedor */
         max-width: 600px;
         /* Opcional: Limita el tamaño máximo de la imagen */
-        height: 1500px; 
+        height: 1500px;
         /* Mantiene las proporciones */
         border-radius: 20px;
     }

@@ -54,9 +54,8 @@ const FreeTrainingSessionPage = () => {
               <div className="first-section--container">
                 <ArrowButton />
                 <p className="first-section--paragraph">
-                  Cómo podés obtener un <strong className="first-section--strong">trabajo remoto para el exterior</strong> de <strong className="first-section--strong">hasta 8.000 USD al mes</strong>,
-                  sin aplicar a infinitas candidaturas y en <strong className="first-section--strong">menos de 3 meses</strong> Con el método "Hidden Market Framework
-                </p>
+                  Cómo podés obtener un<strong className="first-section--strong">trabajo remoto para el exterior</strong>de<strong className="first-section--strong">hasta 8.000 USD al mes,</strong>
+                  sin aplicar a infinitas candidaturas y en <strong className="first-section--strong">menos de 3 meses,</strong>con el método "Hidden Market Framework</p>
                 <p className="first-section--paragraph_red">Solo para profesionales IT</p>
               </div>
 
