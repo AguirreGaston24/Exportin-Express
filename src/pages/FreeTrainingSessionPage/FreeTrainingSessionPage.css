@@ -1,298 +1,207 @@
     /* PRIMERA SECCION */
 
-.navbar-box {
-    position: relative;
-    /* Asegura que cualquier contenido encima de la imagen se posicione correctamente */
-    background-image: url('/images/nico/1.jpg'), linear-gradient(to right, rgba(252, 240, 5, 0.638), rgba(234, 243, 57, 0.562));
-    background-position: center;
-    /* Centra la imagen de fondo */
-    background-size: cover;
-    /* Asegura que la imagen cubra todo el contenedor */
-    background-blend-mode: overlay;
-    /* Mezcla la imagen y el gradiente de forma suave */
-    font-family: var(--font-family);
-}
-
-.scroll-to-top {
-    display: flex;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #FFBA06;
-    color: #252525;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    /* Sincroniza la duración de todas las propiedades */
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.scroll-to-top:hover {
-    transform: scale(1.2);
-}
-
-
-.container {
-    display: flex;
-    /* Activa flexbox en el section */
-    justify-content: center;
-    /* Centra horizontalmente el contenido */
-    align-items: center;
-    /* Centra verticalmente el contenido */
-    text-align: center;
-
-}
-
-.nav {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.first-section--paragraph {
-    font-size: large;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 5px;
-    /* Espacio debajo del párrafo */
-    text-align: center;
-    /* Centra el texto si es necesario */
-}
-
-.section-container--box {
-    display: flex;
-    /* Usa flexbox para control de alineación */
-    flex-direction: column;
-    /* Los elementos se alinean en una columna */
-    align-items: center;
-    /* Centra los elementos en el contenedor */
-    justify-content: center;
-    /* Alinea verticalmente */
-    margin-bottom: 30px;
-
-}
-
-iframe {
-    width: 80%;
-    /* Ajusta el tamaño del video si lo necesitas */
-    max-width: 800px;
-    /* Limita el tamaño máximo del video */
-    margin-top: 20px;
-    /* Espacio por encima del video */
-    display: block;
-    /* Elimina las propiedades de flex */
-    margin-left: auto;
-    margin-right: auto;
-    /* Centra el iframe horizontalmente */
-    margin-bottom: 20px;
-}
-
-@media(max-width:840px) {
-    ul {
-        display: none;
-    }
-}
-
-.video-container {
-    position: relative;
-    display: inline-block;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    font-size: 18px;
-    pointer-events: none;
-    /* No permite clics */
-}
-
-.video-container iframe {
-    pointer-events: none;
-    /* Bloquea clics en el video */
-}
-
-.cta-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.container {
-    text-align: center;
-}
-
-/* Aplica el efecto de pulso a los elementos strong */
-.first-section--strong {
-    display: inline-block;
-    /* Necesario para que funcione bien con transform */
-    animation: pulse 1.5s infinite;
-    /* La animación se repite infinitamente */
-    color: #05BC75;
-    /* Opcional: resalta el texto */
-    padding-left: 12px;
-    padding-right: 12px;
-}
-
-/* Define la animación de pulso */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
+    .navbar-box {
+        position: relative;
+        /* Asegura que cualquier contenido encima de la imagen se posicione correctamente */
+        background-image: url('/images/nico/1.jpg'), linear-gradient(to right, rgba(252, 240, 5, 0.638), rgba(234, 243, 57, 0.562));
+        background-position: center;
+        /* Centra la imagen de fondo */
+        background-size: cover;
+        /* Asegura que la imagen cubra todo el contenedor */
+        background-blend-mode: overlay;
+        /* Mezcla la imagen y el gradiente de forma suave */
+        font-family: var(--font-family);
     }
 
-    50% {
-        transform: scale(1.1);
-        /* Aumenta ligeramente el tamaño */
-        opacity: 0.9;
-        /* Reduce ligeramente la opacidad */
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.first-section--paragraph_red {
-    text-align: center;
-    /* Centra el texto horizontalmente */
-    color: red;
-    /* Si deseas mantener el color rojo */
-    font-weight: bold;
-    /* Opcional: hace el texto más llamativo */
-    margin-top: 3px;
-    /* Espaciado superior opcional */
-}
-
-.first-section--container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-/* SEGUNDA SECCION */
-.second-section-title {
-    font-size: 35px;
-    font-weight: bold;
-    position: relative;
-    /* Asegúrate de que el contenedor sea relativo */
-    padding-bottom: 10px;
-}
-
-.second-section-title::after {
-    content: '';
-    /* Necesario para que el pseudo-elemento se muestre */
-    position: absolute;
-    /* Posición absoluta dentro del contenedor */
-    bottom: 0;
-    /* Ubica el borde en la parte inferior del contenedor */
-    left: 12%;
-    /* Centra el borde horizontalmente */
-    transform: translateX(-50%);
-    /* Asegura que el borde se centre correctamente */
-    width: 100px;
-    /* Ajusta el ancho del borde */
-    height: 2px;
-    /* El grosor del "borde" */
-    background-color: var(--bright-yellow);
-    /* El color del borde */
-}
-
-strong {
-    color: var(--bright-yellow);
-}
-
-.second-section {
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    /* Apila los elementos (imagen y contenido) en columna */
-    align-items: center;
-    /* Centra los elementos horizontalmente */
-    gap: 20px;
-    /* Espaciado entre la imagen y el contenido */
-    margin-bottom: 30px;
-    
-}
-
-
-.second-section--paragraph {
-    max-width: 600px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.second-section-img {
-    width: 100%;
-    /* Ajusta al ancho del contenedor */
-    max-width: 600px;
-    /* Opcional: Limita el tamaño máximo de la imagen */
-    height: auto;
-    /* Mantiene las proporciones */
-    border-radius: 20px;
-}
-
-.second-section-content {
-    text-align: center;
-    /* Centra el texto dentro del contenedor */
-    max-width: 800px;
-    /* Opcional: Ajusta el ancho máximo del texto */
-}
-
-@media (min-width: 740px) {
-    .second-section {
-        flex-direction: row;
-        /* Cambia a diseño de fila */
-        justify-content: space-between;
-        /* Espacia los elementos en lados opuestos */
+    .scroll-to-top {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #FFBA06;
+        color: #252525;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        justify-content: center;
         align-items: center;
+        z-index: 1000;
+        /* Sincroniza la duración de todas las propiedades */
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .scroll-to-top:hover {
+        transform: scale(1.2);
+    }
+
+
+    .container {
+        display: flex;
+        /* Activa flexbox en el section */
+        justify-content: center;
+        /* Centra horizontalmente el contenido */
+        align-items: center;
+        /* Centra verticalmente el contenido */
+        text-align: center;
+
+    }
+
+    .nav {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .first-section--paragraph {
+        font-size: large;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 5px;
+        /* Espacio debajo del párrafo */
+        text-align: center;
+        /* Centra el texto si es necesario */
+    }
+
+    .section-container--box {
+        display: flex;
+        /* Usa flexbox para control de alineación */
+        flex-direction: column;
+        /* Los elementos se alinean en una columna */
+        align-items: center;
+        /* Centra los elementos en el contenedor */
+        justify-content: center;
         /* Alinea verticalmente */
-        text-align: left;
-        /* Alinea el texto a la izquierda */
-        gap: 40px;
+        margin-bottom: 30px;
+
     }
 
-    .second-section-content {
-        flex: 1;
-        /* La columna del texto ocupa espacio flexible */
+    iframe {
+        width: 100%;
+        /* Ajusta el tamaño del video si lo necesitas */
+        max-width: 800px;
+        /* Limita el tamaño máximo del video */
+        margin-top: 20px;
+        /* Espacio por encima del video */
+        display: block;
+        /* Elimina las propiedades de flex */
+        margin-left: auto;
+        margin-right: auto;
+        /* Centra el iframe horizontalmente */
+        margin-bottom: 20px;
     }
 
-    .second-section-img {
-        height: 300px;
-        /* La columna de la imagen ocupa espacio flexible */
-        max-width: 400px;
-        /* Limita el ancho de la imagen a la mitad */
+    @media(max-width:840px) {
+        ul {
+            display: none;
+        }
     }
-}
 
-@media (min-width: 740px) {
+    .video-container {
+        position: relative;
+        display: flex; /* Usa Flexbox para centrar */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        width: 100%; /* Asegúrate de que el contenedor ocupe todo el espacio */
+        height: 100%; /* Define la altura o herédala del contenedor padre */
+        box-sizing: border-box; /* Incluye los bordes dentro del ancho/alto */
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        font-size: 18px;
+        pointer-events: none;
+    }
+    
+    .video-container iframe {
+        pointer-events: none; /* Bloquea clics en el video */
+        z-index: 2;
+    }
+    .cta-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    /* Aplica el efecto de pulso a los elementos strong */
+    .first-section--strong {
+        display: inline-block;
+        /* Necesario para que funcione bien con transform */
+        animation: pulse 1.5s infinite;
+        /* La animación se repite infinitamente */
+        color: #05BC75;
+        /* Opcional: resalta el texto */
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Define la animación de pulso */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.1);
+            /* Aumenta ligeramente el tamaño */
+            opacity: 0.9;
+            /* Reduce ligeramente la opacidad */
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .first-section--paragraph_red {
+        text-align: center;
+        /* Centra el texto horizontalmente */
+        color: red;
+        /* Si deseas mantener el color rojo */
+        font-weight: bold;
+        /* Opcional: hace el texto más llamativo */
+        margin-top: 3px;
+        /* Espaciado superior opcional */
+    }
+
+    .first-section--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    /* SEGUNDA SECCION */
     .second-section-title {
-        font-size: 50px;
-        /* Incrementa el tamaño del texto */
-        padding-bottom: 15px;
-        /* Aumenta el espacio inferior */
+        font-size: 35px;
+        font-weight: bold;
+        position: relative;
+        /* Asegúrate de que el contenedor sea relativo */
+        padding-bottom: 10px;
     }
 
     .second-section-title::after {
@@ -302,7 +211,7 @@ strong {
         /* Posición absoluta dentro del contenedor */
         bottom: 0;
         /* Ubica el borde en la parte inferior del contenedor */
-        right: 0;
+        left: 12%;
         /* Centra el borde horizontalmente */
         transform: translateX(-50%);
         /* Asegura que el borde se centre correctamente */
@@ -313,130 +222,223 @@ strong {
         background-color: var(--bright-yellow);
         /* El color del borde */
     }
-}
 
-@media (min-width: 740px) {
+    strong {
+        color: var(--bright-yellow);
+    }
+
+    .second-section {
+        max-width: 900px;
+        display: flex;
+        flex-direction: column;
+        /* Apila los elementos (imagen y contenido) en columna */
+        align-items: center;
+        /* Centra los elementos horizontalmente */
+        gap: 20px;
+        /* Espaciado entre la imagen y el contenido */
+        margin-bottom: 30px;
+
+    }
+
+
     .second-section--paragraph {
+        max-width: 600px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .second-section-img {
+        width: 100%;
+        /* Ajusta al ancho del contenedor */
+        max-width: 600px;
+        /* Opcional: Limita el tamaño máximo de la imagen */
+        height: 1500px; 
+        /* Mantiene las proporciones */
+        border-radius: 20px;
+    }
+
+    .second-section-content {
+        text-align: center;
+        /* Centra el texto dentro del contenedor */
         max-width: 800px;
-        /* Incrementa el ancho máximo en pantallas grandes */
-        font-size: 1.1rem;
-        /* Aumenta ligeramente el tamaño del texto */
-        line-height: 1.4;
-        /* Mejora la legibilidad al agregar más espacio entre líneas */
+        /* Opcional: Ajusta el ancho máximo del texto */
     }
-}
 
-/* TERCERA SECCION */
+    @media (min-width: 740px) {
+        .second-section {
+            flex-direction: row;
+            /* Cambia a diseño de fila */
+            justify-content: space-between;
+            /* Espacia los elementos en lados opuestos */
+            align-items: center;
+            /* Alinea verticalmente */
+            text-align: left;
+            /* Alinea el texto a la izquierda */
+            gap: 40px;
+        }
 
-.three-section-container{
-   
-    margin-bottom: 30px;
-}
+        .second-section-content {
+            flex: 1;
+            /* La columna del texto ocupa espacio flexible */
+        }
 
-/* CUARTA SECCION */
+        .second-section-img {
+            height: 100%;
+            /* La columna de la imagen ocupa espacio flexible */
+            max-width: 400px;
+            /* Limita el ancho de la imagen a la mitad */
+        }
+    }
 
-.four-section-container {
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    text-align: center;
-    /* Centra el texto */
-    margin-bottom: 40px;
-    flex-direction: column;
-    gap: 30px;
-    /* Apilados en pantallas pequeñas */
-}
+    @media (min-width: 740px) {
+        .second-section-title {
+            font-size: 50px;
+            /* Incrementa el tamaño del texto */
+            padding-bottom: 15px;
+            /* Aumenta el espacio inferior */
+        }
 
-@media (min-width: 740px) {
+        .second-section-title::after {
+            content: '';
+            /* Necesario para que el pseudo-elemento se muestre */
+            position: absolute;
+            /* Posición absoluta dentro del contenedor */
+            bottom: 0;
+            /* Ubica el borde en la parte inferior del contenedor */
+            right: 0;
+            /* Centra el borde horizontalmente */
+            transform: translateX(-50%);
+            /* Asegura que el borde se centre correctamente */
+            width: 100px;
+            /* Ajusta el ancho del borde */
+            height: 2px;
+            /* El grosor del "borde" */
+            background-color: var(--bright-yellow);
+            /* El color del borde */
+        }
+    }
+
+    @media (min-width: 740px) {
+        .second-section--paragraph {
+            max-width: 800px;
+            /* Incrementa el ancho máximo en pantallas grandes */
+            font-size: 1.1rem;
+            /* Aumenta ligeramente el tamaño del texto */
+            line-height: 1.4;
+            /* Mejora la legibilidad al agregar más espacio entre líneas */
+        }
+    }
+
+    /* TERCERA SECCION */
+
+    .three-section-container {
+
+        margin-bottom: 30px;
+    }
+
+    /* CUARTA SECCION */
+
     .four-section-container {
-        
-        flex-direction: row;
-        /* Horizontales en pantallas grandes */
+        display: flex;
+        justify-content: center;
+        /* Centra horizontalmente */
+        text-align: center;
+        /* Centra el texto */
+        margin-bottom: 40px;
+        flex-direction: column;
+        gap: 30px;
+        /* Apilados en pantallas pequeñas */
     }
-}
 
-.four-section-sessions {
-    display: flex;
-    flex-direction: column;
-    /* Elementos apilados */
-    align-items: flex-start;
-    /* Alinea elementos al inicio (parte superior) */
-    justify-content: flex-start;
-    /* Alinea los elementos en la parte superior del eje principal */
-    padding-top: 30px;
+    @media (min-width: 740px) {
+        .four-section-container {
 
-}
+            flex-direction: row;
+            /* Horizontales en pantallas grandes */
+        }
+    }
 
-.four-section-title {
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 80px;
-}
+    .four-section-sessions {
+        display: flex;
+        flex-direction: column;
+        /* Elementos apilados */
+        align-items: flex-start;
+        /* Alinea elementos al inicio (parte superior) */
+        justify-content: flex-start;
+        /* Alinea los elementos en la parte superior del eje principal */
+        padding-top: 30px;
 
-@media (max-width:740px) {
+    }
+
     .four-section-title {
-        font-size: 35px;
+        font-size: 50px;
         font-weight: bold;
         margin-bottom: 80px;
     }
-}
 
-.four-section-box {
-    border-left: 6px solid rgba(252, 240, 5, 0.638);
-    padding-left: 20px;
-    position: relative;
-}
-
-.four-section-box::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 65%;
-    width: 6px;
-    background-color: var(--bright-yellow);
-}
-
-.four-section-list {
-}
-
-.four-section-paragraph {
-    margin-bottom: 80px;
-}
-
-
-@media (min-width:740px) {
-    .four-section-button--mobile {
-        display: none;
+    @media (max-width:740px) {
+        .four-section-title {
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 80px;
+        }
     }
-}
 
-@media (max-width:740px) {
-    .four-section-button--desktop {
-        display: none;
+    .four-section-box {
+        border-left: 6px solid rgba(252, 240, 5, 0.638);
+        padding-left: 20px;
+        position: relative;
     }
-}
 
-/* QUINTA SECCION */
+    .four-section-box::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 65%;
+        width: 6px;
+        background-color: var(--bright-yellow);
+    }
 
-.five-section-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
+    .four-section-list {}
 
-.five-section-title {
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 80px;
-    display: flex;
-    justify-content: center;
-}
+    .four-section-paragraph {
+        margin-bottom: 80px;
+    }
 
-@media (max-width:740px) {
+
+    @media (min-width:740px) {
+        .four-section-button--mobile {
+            display: none;
+        }
+    }
+
+    @media (max-width:740px) {
+        .four-section-button--desktop {
+            display: none;
+        }
+    }
+
+    /* QUINTA SECCION */
+
+    .five-section-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
     .five-section-title {
-        font-size: 35px;
+        font-size: 50px;
         font-weight: bold;
         margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
     }
-}
+
+    @media (max-width:740px) {
+        .five-section-title {
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 80px;
+        }
+    }

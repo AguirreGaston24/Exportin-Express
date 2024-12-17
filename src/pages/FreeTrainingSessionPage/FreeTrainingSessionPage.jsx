@@ -67,6 +67,7 @@ const FreeTrainingSessionPage = () => {
                   </div>
                 )}
                 <iframe
+                className=""
                   width="560"
                   height="315"
                   src="https://www.youtube.com/embed/S0Cme39D-PE"
@@ -120,7 +121,7 @@ const FreeTrainingSessionPage = () => {
             </div>
             <img
               className="second-section-img"
-              src="/images/nico/2.jpg"
+              src="/images/nico/3.jpg"
               alt="Imagen del programa"
             />
           </div>
