@@ -2,9 +2,10 @@
   position: absolute;
   overflow: hidden;
   z-index: -1;
-  width: 800px;
-  height: 100%;
-  right: 0;
+  width: 70%;
+  height:100%;
+  right: 100px;
+  top: 32px;
 }
 
 .MapWithHeatPointsComponent-pulsating {

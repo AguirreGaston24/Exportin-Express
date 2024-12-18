@@ -1,30 +1,29 @@
 /* HomePage Styles */
 .HomePage-main-section {
   display: flex;
-  flex-direction: row;
-  /* Contenido y Nico en fila */
-  align-items: center;
-  justify-content: space-between;
-  min-height: 500px;
-  position: relative;
-  /* Permite posicionar el mapa como fondo */
-  padding: 40px 20px;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh; /* Sección ocupa el 100% de la pantalla */
+  position: relative; /* Permite posicionar el mapa como fondo */
   box-sizing: border-box;
-  overflow: hidden;
-  /* Oculta cualquier contenido fuera del contenedor */
+  overflow: hidden; /* Oculta contenido que desborde */
+  width: 100%;
 }
 
+/* Mapa como fondo */
 .HomePage-main-section::before {
   content: "";
-  /* Mapa como fondo */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  background: rgba(0, 0, 0, 0.05);
-  /* Color de fondo para contraste */
+  z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+.HomePage-subcontainer{
+  width: 100%;
+  gap: 40px;
 }
 
 .HomePage-map-container {
@@ -33,46 +32,41 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
-  /* Por debajo de todo */
+  z-index: -2; /* Mapa aún más atrás para respetar las capas */
 }
 
-
+/* Imagen de Nicolás */
 .HomePage-main-section-image {
-  width: 400px;
-  /* Ancho fijo para desktop */
-  height: 450px;
-  /* Alto fijo */
+  width: 40%; /* Ancho fijo para desktop */
+  height: 80%; /* Alto fijo */
   background-image: url("/images/profiles/profile.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  /* La imagen cubrirá el área sin deformarse */
-  margin: 0 auto;
-  /* Centra la imagen horizontalmente */
+  background-size: cover; /* La imagen cubrirá el área sin deformarse */
+  margin-top: 35px;
 }
 
+/* Contenedor del contenido */
 .HomePage-main-section-content-container {
+  position: relative; /* Garantiza que el contenido esté encima del mapa */
+  z-index: 1; /* Asegura que el contenido se vea */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
-  max-width: 50%;
-  /* Texto ocupa 50% */
+  gap: 40px;
+  max-width: 500px;
 }
 
+/* Títulos y párrafos */
 .HomePage-main-section-content-title {
   font-size: 40px;
   font-weight: bold;
-  color: var(--black);
   max-width: 100%;
 }
 
 .HomePage-main-section-content-paragraph {
-  font-size: var(--font-size-paragraph);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--font-line-height-paragraph);
+  font-size: 30px;
   max-width: 100%;
   margin: 0;
 }
@@ -83,41 +77,41 @@
 }
 
 /* Estilos responsivos */
-@media (max-width: 900px) {
+@media (max-width: 840px) {
   .HomePage-main-section {
-    flex-direction: column;
-    /* Cambia a diseño vertical */
+    flex-direction: column; /* Cambia a diseño vertical */
     align-items: center;
     padding: 20px;
   }
 
   .HomePage-main-section-content-container {
-    max-width: 100%;
+    max-width: 100%; /* Texto ocupa todo el ancho */
     align-items: center;
     text-align: center;
   }
 
   .HomePage-main-section-image {
-    width: 150px;
-    /* Ancho más pequeño en mobile */
-    height: 180px;
-    /* Alto más pequeño */
+    width: 35%; /* Ancho más pequeño en mobile */
+    height: 70%; /* Alto más pequeño */
   }
-}
-
-@media (max-width: 500px) {
+  .HomePage-subcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
   .HomePage-main-section-content-title {
     font-size: 30px;
     font-weight: bold;
     color: var(--black);
     max-width: 100%;
   }
-
   .HomePage-main-section-content-paragraph {
     font-size: 20px;
-  }
-
-  .HomePage-main-section-image {
-    height: 200px;
+    max-width: 100%;
+    margin: 0;
   }
 }
+
+
