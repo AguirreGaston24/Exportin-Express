@@ -42,4 +42,10 @@
 }
 
 
-
+@media(max-width:740px){
+  .HomePage-WebinarAccessSection-text {
+    max-width: 630px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

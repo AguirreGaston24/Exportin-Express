@@ -55,6 +55,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
     }
 
 
@@ -78,7 +79,6 @@
         justify-content: center;
         /* Alinea verticalmente */
         margin-bottom: 30px;
-
     }
 
     iframe {
@@ -200,10 +200,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-bottom: 20px;
     }
 
-    @media(max-width:600px) {
+    @media(max-width:720px) {
         .first-section--paragraph {
             font-size: 15px;
             font-weight: bold;
@@ -213,6 +212,7 @@
             text-align: center;
             /* Centra el texto si es necesario */
         }
+
         .first-section--strong {
             display: inline-block;
             /* Necesario para que funcione bien con transform */
@@ -221,6 +221,14 @@
             /* Opcional: resalta el texto */
             padding-left: 6px;
             padding-right: 6px;
+        }
+
+        .nav {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
     }
 
@@ -266,7 +274,7 @@
         gap: 20px;
         /* Espaciado entre la imagen y el contenido */
         margin-bottom: 30px;
-
+        padding-top: 50px;
     }
 
 
