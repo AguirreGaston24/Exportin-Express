@@ -10,7 +10,7 @@ const WebinarButtonComponent = ({ onClick, className }) => {
   };
 
   return (
-    <button className={`WebinarButtonComponent ${className}`} onClick={onClick}>
+    <button className={`WebinarButtonComponent ${className}`} onClick={handleRedirect}>
       Agenda una llamada
     </button>
   );

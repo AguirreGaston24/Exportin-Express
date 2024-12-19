@@ -32,24 +32,38 @@ export default function RecommendationsCarousel() {
   const recommendations = [
     {
       id: 1,
-      name: "Ana Martínez",
-      comment: "¡Una experiencia absolutamente increíble y enriquecedora!",
+      name: "Ezequiel G.",
+      comment: "¡Hoy trabajo remoto de lo que me apasiona y para España. Me despierto todos los días motivado.!",
       profileImage: "/images/profiles/recommendations/profile1.webp",
-      videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
+      videoUrl: "https://www.youtube.com/embed/zX7MgzucDV0",
     },
     {
       id: 2,
-      name: "Juan Pérez",
-      comment: "Aprendí mucho de esta entrevista.",
+      name: "Alixon F.",
+      comment: "El trabajo que conseguí es un trabajo soñado.",
       profileImage: "/images/profiles/recommendations/profile2.jpg",
-      videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
+      videoUrl: "https://www.youtube.com/embed/92CnZHU4tL8",
     },
     {
       id: 3,
-      name: "Miguel Gómez",
-      comment: "¡Muy perspicaz e inspirador!",
+      name: "Joaquín R.",
+      comment: "¡En 2 meses conseguí trabajo para una empresa de USA. El lunes es mi primer día.!",
       profileImage: "/images/profiles/recommendations/profile3.jpg",
-      videoUrl: "https://res.cloudinary.com/opnux/video/upload/Videos/video1.mp4",
+      videoUrl: "https://www.youtube.com/embed/X5BbVyywEIA",
+    },
+    {
+      id: 4,
+      name: "Emilio R.",
+      comment: "¡Conseguí el trabajo de mis sueños para Canadá.!",
+      profileImage: "/images/profiles/recommendations/profile4.jpg",
+      videoUrl: "https://www.youtube.com/embed/S0Cme39D-PE",
+    },
+    {
+      id: 5,
+      name: "Daniel G.",
+      comment: "En un mes después de comenzar conseguí los resultados que buscaba",
+      profileImage: "/images/profiles/recommendations/profile6.jpg",
+      videoUrl: "https://www.youtube.com/embed/2u3DyR2b6cM",
     },
   ];
 

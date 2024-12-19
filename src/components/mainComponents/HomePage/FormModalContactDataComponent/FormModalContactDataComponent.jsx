@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { insertContactDataRequest } from "../../../../config/contactDataRequests";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +22,7 @@ const FormModalContactDataComponent = ({ closeModal, onFormSuccess }) => {
     label: "Argentina",
   });
   const [phoneNumber, setPhoneNumber] = useState("");
+
   const countryOptions = [
     { value: "AR", label: "Argentina", code: "+54" },
     { value: "BO", label: "Bolivia", code: "+591" },
@@ -54,90 +55,96 @@ const FormModalContactDataComponent = ({ closeModal, onFormSuccess }) => {
         contactData.country = selectedCountry.label;
       }
 
-      console.log(contactData);
+      // Guardar los datos en localStorage
+      localStorage.setItem("contactData", JSON.stringify(contactData));
+
       const response = await insertContactDataRequest(contactData);
 
       if (response.data.success) {
         alert("Datos cargados con éxito.");
-        navigate("/schedule-consultation");
+        onFormSuccess(); // Llama a la función que maneja el éxito del formulario
       }
     } catch (error) {
       console.error("Error al enviar los datos:", error);
-      // Manejo de errores permanece igual
     }
   };
 
   useEffect(() => {
-    const scrollBarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
+    const savedData = JSON.parse(localStorage.getItem("contactData"));
+    if (savedData) {
+      setValue("name", savedData.name);
+      setValue("email", savedData.email);
+      setValue("phone", savedData.phone);
+      setSelectedCountry({
+        value: savedData.countryCode || "AR",
+        label: savedData.country || "Argentina",
+        code: savedData.countryCode || "+54",
+      });
+      setPhoneNumber(savedData.phone || "");
+    }
+
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.paddingRight = `${scrollBarWidth}px`;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.paddingRight = "0";
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [setValue]);
 
   return (
     <div
-      className='HomePage-FormModalContactDataComponent-overlay'
+      className="HomePage-FormModalContactDataComponent-overlay"
       onClick={() => closeModal()}
     >
       <form
         onSubmit={handleSubmit(onSubmitContactData)}
-        className='HomePage-FormModalContactDataComponent-form'
+        className="HomePage-FormModalContactDataComponent-form"
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className='HomePage-FormModalContactDataComponent-close'
+          className="HomePage-FormModalContactDataComponent-close"
           onClick={() => {
             closeModal();
           }}
         >
           <AiOutlineClose />
         </span>
-        <h2 className='HomePage-FormModalContactDataComponent-title'>
-          Por favor déjanos tus datos para darte el acceso al entrenamiento de
-          INMEDIATO
+        <h2 className="HomePage-FormModalContactDataComponent-title">
+          Por favor déjanos tus datos para darte el acceso al entrenamiento de INMEDIATO
         </h2>
 
-        <div className='HomePage-FormModalContactDataComponent-field'>
+        <div className="HomePage-FormModalContactDataComponent-field">
           <input
-            id='name'
-            placeholder='Nombre'
-            {...register("name")}
-            className='HomePage-FormModalContactDataComponent-input'
+            id="name"
+            placeholder="Nombre"
+            {...register("name", { required: "Este campo es obligatorio" })}
+            className="HomePage-FormModalContactDataComponent-input"
           />
           {errors.name && (
-            <p className='HomePage-FormModalContactDataComponent-error'>
+            <p className="HomePage-FormModalContactDataComponent-error">
               {errors.name.message}
             </p>
           )}
         </div>
 
-        <div className='HomePage-FormModalContactDataComponent-field'>
+        <div className="HomePage-FormModalContactDataComponent-field">
           <input
-            id='email'
-            type='email'
-            placeholder='E-mail'
-            {...register("email")}
-            className='HomePage-FormModalContactDataComponent-input'
+            id="email"
+            type="email"
+            placeholder="E-mail"
+            {...register("email", { required: "Este campo es obligatorio" })}
+            className="HomePage-FormModalContactDataComponent-input"
           />
           {errors.email && (
-            <p className='HomePage-FormModalContactDataComponent-error'>
+            <p className="HomePage-FormModalContactDataComponent-error">
               {errors.email.message}
             </p>
           )}
         </div>
 
-        <div className='HomePage-FormModalContactDataComponent-field'>
-          <div
-            style={{
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
+        <div className="HomePage-FormModalContactDataComponent-field">
+          <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
             <div style={{ position: "absolute", left: "15px", zIndex: 1 }}>
               <Select
                 options={countryOptions.map((country) => ({
@@ -177,7 +184,7 @@ const FormModalContactDataComponent = ({ closeModal, onFormSuccess }) => {
                     </div>
                   ),
                 }}
-                className='HomePage-FormModalContactDataComponent-select'
+                className="HomePage-FormModalContactDataComponent-select"
                 styles={{
                   control: (base) => ({
                     ...base,
@@ -206,8 +213,8 @@ const FormModalContactDataComponent = ({ closeModal, onFormSuccess }) => {
                 placeholder={
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <img
-                      src='/images/country-flags/ar.png'
-                      alt='Argentina'
+                      src="/images/country-flags/ar.png"
+                      alt="Argentina"
                       style={{ width: "1.5em", height: "1.5em" }}
                     />
                     Argentina
@@ -217,15 +224,15 @@ const FormModalContactDataComponent = ({ closeModal, onFormSuccess }) => {
             </div>
 
             {selectedCountry?.code && (
-              <span className='HomePage-FormModalContactDataComponent-span'>
+              <span className="HomePage-FormModalContactDataComponent-span">
                 {selectedCountry.code}
               </span>
             )}
             <input
-              id='phone'
-              type='tel'
-              placeholder='Número con WhatsApp'
-              {...register("phone")}
+              id="phone"
+              type="tel"
+              placeholder="Número con WhatsApp"
+              {...register("phone", { required: "Este campo es obligatorio" })}
               value={phoneNumber}
               onChange={(e) => {
                 const value = e.target.value;
@@ -237,23 +244,22 @@ const FormModalContactDataComponent = ({ closeModal, onFormSuccess }) => {
               style={{
                 paddingLeft: "8rem",
               }}
-              className='HomePage-FormModalContactDataComponent-input'
+              className="HomePage-FormModalContactDataComponent-input"
             />
           </div>
-
           {errors.phone && (
-            <p className='HomePage-FormModalContactDataComponent-error'>
+            <p className="HomePage-FormModalContactDataComponent-error">
               {errors.phone.message}
             </p>
           )}
         </div>
 
-        <button className='HomePage-FormModalContactDataComponent-button'>
-          ¡Ver AHORA!
+        <button
+          type="submit"
+          className="HomePage-FormModalContactDataComponent-button"
+        >
+          Enviar
         </button>
-        <p className='HomePage-FormModalContactDataComponent-footer'>
-          Solo para profesionales de IT en Latinoamérica con más de dos años de experiencia y que hablen inglés
-        </p>
       </form>
     </div>
   );

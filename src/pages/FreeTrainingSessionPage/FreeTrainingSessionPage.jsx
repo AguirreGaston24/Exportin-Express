@@ -34,10 +34,7 @@ const FreeTrainingSessionPage = () => {
     setFormSubmitted(true); // Marcar el formulario como enviado
     setIsModalOpen(false); // Cerrar el modal
 
-    // Cambiar contexto si es necesario
-    if (context === "schedule") {
-      navigate("/schedule-consultation"); // Redirige después del éxito
-    }
+
   };
 
   return (
@@ -59,39 +56,40 @@ const FreeTrainingSessionPage = () => {
                 <p className="first-section--paragraph_red">Solo para profesionales IT</p>
               </div>
 
-              <div className="video-container" onClick={openModal}>
-                {!formSubmitted && (
-                  <div className="overlay">
-                    Completa el formulario para continuar
-                  </div>
-                )}
-                <iframe
-                className=""
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/S0Cme39D-PE"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+  {/* Contenedor del video */}
+  <div className="video-container" onClick={openModal}>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay=1"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
 
-              {!formSubmitted && context === "video" && (
-                <WebinarButtonComponent
-                  className="cta-button"
-                  onClick={openModal}
-                />
-              )}
+      {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}
+      {!formSubmitted && context === "video" && (
+        <WebinarButtonComponent
+          className="cta-button"
+          onClick={openModal}
+        />
+      )}
 
-              {context === "schedule" && (
-                <button
-                  className="cta-button"
-                  onClick={openModal}
-                >
-                  Agendar una llamada
-                </button>
-              )}
-            </section>
+      {context === "schedule" && (
+        <button className="cta-button" onClick={openModal}>
+          Agendar una llamada
+        </button>
+      )}
+
+      {/* Modal del formulario */}
+      {isModalOpen && !formSubmitted && (
+        <FormModalContactDataComponent
+          closeModal={closeModal}
+          onFormSuccess={handleFormSuccess}
+        />
+      )}
+    </section>
 
             {/* Modal del formulario */}
             {isModalOpen && (

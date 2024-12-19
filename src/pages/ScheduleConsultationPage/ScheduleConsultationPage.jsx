@@ -13,7 +13,7 @@ const ScheduleConsultationPage = () => {
         if (window.Calendly) {
           window.Calendly.initBadgeWidget({
             url: 'https://calendly.com/lucase-s-u97/30min',
-            text: 'Schedule time with me',
+            text: 'Agenda una llamada',
             color: '#0069ff',
             textColor: '#ffffff',
           });

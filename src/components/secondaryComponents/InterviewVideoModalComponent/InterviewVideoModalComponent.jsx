@@ -17,25 +17,27 @@ const InterviewVideoModalComponent = ({ closeModal, videoUrl }) => {
 
   return (
     <div
-      className='InterviewVideoModalComponent-overlay'
+      className="InterviewVideoModalComponent-overlay"
       onClick={() => closeModal()}
     >
       <div
-        className='InterviewVideoModalComponent-content'
+        className="InterviewVideoModalComponent-content"
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className='InterviewVideoModalComponent-close'
+          className="InterviewVideoModalComponent-close"
           onClick={closeModal}
         >
           <AiOutlineClose />
         </span>
-        <video
-          className='InterviewVideoModalComponent-video'
-          controls
+        <iframe
+          className="InterviewVideoModalComponent-video"
           src={videoUrl}
-          onError={() => alert("Error loading video. Please check the URL.")}
-        />
+          title="YouTube video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   );
