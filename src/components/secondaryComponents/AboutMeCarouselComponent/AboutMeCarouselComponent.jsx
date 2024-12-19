@@ -15,7 +15,7 @@ const AboutMeCarouselComponent = () => {
         "Diseñé un sistema para encontrar el trabajo de mis sueños y ganar independencia.",
     },
     {
-      imgSrc: "/images/profiles/profile1.png",
+      imgSrc: "/images/nico/2.jpg",
       label: "MI PRIMER TRABAJO REMOTO",
       description:
         "Después de varios intentos, conseguí mi primera posición remota, lo que me brindó estabilidad y libertad de ubicación. Aprendí la importancia de la resiliencia.",
@@ -23,7 +23,7 @@ const AboutMeCarouselComponent = () => {
         "Entendí cómo aprovechar mis habilidades en un contexto global, abriendo oportunidades antes inalcanzables.",
     },
     {
-      imgSrc: "/images/profiles/profile1.png",
+      imgSrc: "/images/nico/2.jpg",
       label: "COMPARTIENDO EXPERIENCIAS",
       description:
         "Decidí ayudar a otros profesionales a conseguir trabajos remotos, desarrollando recursos para facilitar esa transición.",

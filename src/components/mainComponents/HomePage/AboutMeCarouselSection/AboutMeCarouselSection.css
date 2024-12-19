@@ -9,7 +9,6 @@
   /* Espaciado interno */
   max-width: 1200px;
   /* Límite para pantallas grandes */
-
 }
 
 @media (max-width: 600px) {
@@ -54,13 +53,6 @@
   color: var(--black);
 }
 
-@media (max-width: 600px) {
-  .HomePage-about-me-section-title {
-    font-size: 40px;
-    font-weight: bold;
-    /* Reducir en mobile */
-  }
-}
 
 /* Contenedor del carrusel */
 .HomePage-about-me-section-carousel-container {
@@ -76,6 +68,10 @@
   .HomePage-about-me-section-carousel-container {
     max-width: 100%;
     /* Ajusta al ancho completo en mobile */
+  }
+
+  .HomePage-about-me-section-title {
+    font-size: 30px;
   }
 }
 
