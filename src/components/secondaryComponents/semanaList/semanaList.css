@@ -9,6 +9,8 @@
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 20px;
+    margin-top: 50px; /* Baja toda la sección */
+
 }
 
 /* Contenedor principal de la sección */
@@ -29,21 +31,15 @@
     /* Cambiar de horizontal a vertical */
 }
 
-
-
 .h {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Centrar contenido horizontalmente */
-    gap: 20px;
-    /* Espaciado entre los elementos */
-    width: 100%;
-    /* Opcional, para asegurar que ocupe todo el ancho */
-    margin-bottom: 20px;
-
-}
-
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente fila */
+    gap: 16px; /* Espacio entre elementos (opcional) */
+  }
+  
+  .h > * {
+    flex: 1 1 calc(50% - 16px); /* Cada elemento ocupa el 50% del ancho menos el espacio del gap */
+  }
 /* Caja que contiene el título y el botón */
 .six-section-box {
     display: flex;

@@ -39,17 +39,18 @@ const SemanaList = () => {
   ];
 
   return (
-    <section className='six-section'>
-      <div className='h'>
-        {semanas.map((semanaData, index) => (
-          <SemanaContent
-            key={index}
-            semana={semanaData.semana}
-            contenido={semanaData.contenido}
-          />
-        ))}
-      </div>
-    </section>
+<section className="six-section">
+  <div className="h">
+    {semanas.map((semanaData, index) => (
+      <SemanaContent
+        key={index}
+        semana={semanaData.semana}
+        contenido={semanaData.contenido}
+      />
+    ))}
+  </div>
+</section>
+
   );
 };
 
