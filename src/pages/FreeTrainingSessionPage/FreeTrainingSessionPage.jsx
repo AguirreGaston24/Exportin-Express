@@ -108,9 +108,9 @@ const FreeTrainingSessionPage = () => {
         <div className="section-container">
           <div className="second-section">
             <div className="second-section-content">
-              <h2 className="second-section-title">
-                Objetivo del <strong>programa:</strong>
-              </h2>
+            <h2 className="second-section-title" style={{ whiteSpace: "nowrap" }}>
+                 Objetivo del <strong>programa:</strong>
+            </h2>
               <p className="second-section--paragraph">
                 Nuestro programa tiene un enfoque claro: <strong>conseguir un nuevo trabajo en menos de 3 meses.</strong>
                 Para lograrlo, no podemos dejar las cosas al azar. Cada detalle es tenido en cuenta en este programa integral
@@ -166,7 +166,7 @@ const FreeTrainingSessionPage = () => {
         <div className="section-container">
           <div className="five-section-container">
             <h2 className="five-section-title">
-              Preguntas Frecuentes
+            <strong> Preguntas Frecuentes</strong>
             </h2>
             <div>
               <FAQSection />
@@ -181,8 +181,8 @@ const FreeTrainingSessionPage = () => {
           <div className='HomePage-Footer-map'>
             <MapWithHeatPointsVariantComponent />
           </div>
-          <div className='HomePage-Footer-content'>
-            <div className='HomePage-Footer-logo'>
+          <div className='SecondPage-Footer-content'>
+            <div className='SecondPage-Footer-logo'>
               <img src={logo1} alt='Logo' />
             </div>
           </div>
