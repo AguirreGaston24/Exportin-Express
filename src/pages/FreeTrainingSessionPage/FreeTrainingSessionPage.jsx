@@ -31,10 +31,8 @@ const FreeTrainingSessionPage = () => {
   };
 
   const handleFormSuccess = () => {
-    setFormSubmitted(true); // Marcar el formulario como enviado
-    setIsModalOpen(false); // Cerrar el modal
-
-
+    setFormSubmitted(true);
+    closeModal(); // Cierra el modal después de enviar el formulario
   };
 
   return (
@@ -56,8 +54,8 @@ const FreeTrainingSessionPage = () => {
                 <p className="first-section--paragraph_red">Solo para profesionales IT</p>
               </div>
 
-            {/* Contenedor del video */}
-            <div
+         {/* Contenedor del video */}
+         <div
               className={`video-container ${!formSubmitted ? 'disabled' : ''}`}
               onClick={formSubmitted ? undefined : openModal}
             >
@@ -77,28 +75,25 @@ const FreeTrainingSessionPage = () => {
               )}
             </div>
 
-      {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}
-      {!formSubmitted && context === "video" && (
-        <WebinarButtonComponent
-          className="cta-button"
-          onClick={openModal}
-        />
-      )}
+            {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}
+            {!formSubmitted && context === 'video' && (
+              <WebinarButtonComponent className="cta-button" onClick={openModal} />
+            )}
 
-      {context === "schedule" && (
-        <button className="cta-button" onClick={openModal}>
-          Agendar una llamada
-        </button>
-      )}
+            {context === 'schedule' && (
+              <button className="cta-button" onClick={openModal}>
+                Agendar una llamada
+              </button>
+            )}
 
-      {/* Modal del formulario */}
-      {isModalOpen && !formSubmitted && (
-        <FormModalContactDataComponent
-          closeModal={closeModal}
-          onFormSuccess={handleFormSuccess}
-        />
-      )}
-    </section>
+            {/* Modal del formulario */}
+            {isModalOpen && !formSubmitted && (
+              <FormModalContactDataComponent
+                closeModal={closeModal}
+                onFormSuccess={handleFormSuccess}
+              />
+            )}
+          </section>
 
             {/* Modal del formulario */}
             {isModalOpen && (
