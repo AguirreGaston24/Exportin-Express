@@ -56,17 +56,26 @@ const FreeTrainingSessionPage = () => {
                 <p className="first-section--paragraph_red">Solo para profesionales IT</p>
               </div>
 
-  {/* Contenedor del video */}
-  <div className="video-container" onClick={openModal}>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay=1"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
+            {/* Contenedor del video */}
+            <div
+              className={`video-container ${!formSubmitted ? 'disabled' : ''}`}
+              onClick={formSubmitted ? undefined : openModal}
+            >
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              {!formSubmitted && (
+                <div className="video-overlay">
+                  {/* Mensaje superpuesto mientras no se haya enviado el formulario */}
+                  Completa el formulario para ver el video.
+                </div>
+              )}
+            </div>
 
       {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}
       {!formSubmitted && context === "video" && (
