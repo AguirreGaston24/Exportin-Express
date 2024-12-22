@@ -64,16 +64,12 @@ const FreeTrainingSessionPage = () => {
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay=1"
+    src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay"
     title="YouTube video player"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowFullScreen
   ></iframe>
-  {!formSubmitted && (
-    <div className="video-overlay">
-      Completa el formulario para ver el video.
-    </div>
-  )}
+
 </div>
 
       {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}

@@ -119,6 +119,22 @@
 
     }
 
+    video-overlay{
+        position: relative;
+        display: flex;
+        /* Usa Flexbox para centrar */
+        justify-content: center;
+        /* Centra horizontalmente */
+        align-items: center;
+        /* Centra verticalmente */
+        width: 100%;
+        /* Asegúrate de que el contenedor ocupe todo el espacio */
+        height: 100%;
+        /* Define la altura o herédala del contenedor padre */
+        box-sizing: border-box;
+        /* Incluye los bordes dentro del ancho/alto */
+    }
+
     .overlay {
         position: absolute;
         top: 0;
