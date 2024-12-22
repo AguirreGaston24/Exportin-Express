@@ -31,8 +31,10 @@ const FreeTrainingSessionPage = () => {
   };
 
   const handleFormSuccess = () => {
-    setFormSubmitted(true);
-    closeModal(); // Cierra el modal después de enviar el formulario
+    setFormSubmitted(true); // Marcar el formulario como enviado
+    setIsModalOpen(false); // Cerrar el modal
+
+
   };
 
   return (
@@ -54,46 +56,48 @@ const FreeTrainingSessionPage = () => {
                 <p className="first-section--paragraph_red">Solo para profesionales IT</p>
               </div>
 
-         {/* Contenedor del video */}
-         <div
-              className={`video-container ${!formSubmitted ? 'disabled' : ''}`}
-              onClick={formSubmitted ? undefined : openModal}
-            >
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              {!formSubmitted && (
-                <div className="video-overlay">
-                  {/* Mensaje superpuesto mientras no se haya enviado el formulario */}
-                  Completa el formulario para ver el video.
-                </div>
-              )}
-            </div>
+  {/* Contenedor del video */}
+  <div
+  className={`video-container ${formSubmitted ? 'enabled' : ''}`}
+  onClick={!formSubmitted ? openModal : undefined} // Solo abre el modal si el formulario no se ha completado
+>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay=1"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+  {!formSubmitted && (
+    <div className="video-overlay">
+      Completa el formulario para ver el video.
+    </div>
+  )}
+</div>
 
-            {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}
-            {!formSubmitted && context === 'video' && (
-              <WebinarButtonComponent className="cta-button" onClick={openModal} />
-            )}
+      {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}
+      {!formSubmitted && context === "video" && (
+        <WebinarButtonComponent
+          className="cta-button"
+          onClick={openModal}
+        />
+      )}
 
-            {context === 'schedule' && (
-              <button className="cta-button" onClick={openModal}>
-                Agendar una llamada
-              </button>
-            )}
+      {context === "schedule" && (
+        <button className="cta-button" onClick={openModal}>
+          Agendar una llamada
+        </button>
+      )}
 
-            {/* Modal del formulario */}
-            {isModalOpen && !formSubmitted && (
-              <FormModalContactDataComponent
-                closeModal={closeModal}
-                onFormSuccess={handleFormSuccess}
-              />
-            )}
-          </section>
+      {/* Modal del formulario */}
+      {isModalOpen && !formSubmitted && (
+        <FormModalContactDataComponent
+          closeModal={closeModal}
+          onFormSuccess={handleFormSuccess}
+        />
+      )}
+    </section>
 
             {/* Modal del formulario */}
             {isModalOpen && (

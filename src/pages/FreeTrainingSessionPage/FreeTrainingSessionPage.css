@@ -119,12 +119,6 @@
 
     }
 
-    .video-container.disabled {
-        pointer-events: none;
-        opacity: 0.5;
-      }
-      
-
     .overlay {
         position: absolute;
         top: 0;
@@ -141,6 +135,21 @@
         pointer-events: none;
     }
 
+    .video-container iframe {
+        pointer-events: none;
+        z-index: 2;
+    }
+    
+    .video-container.enabled iframe {
+        pointer-events: auto;
+        /* Permite la interacción */
+    }
+    
+
+    .video-container.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
 
     .cta-button {
         margin-top: 20px;
