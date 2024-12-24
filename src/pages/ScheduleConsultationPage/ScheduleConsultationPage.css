@@ -1,28 +1,45 @@
-/* Container principal */
+/* Fondo blanco */
 .schedule-consultation-page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 50px;
-    background: linear-gradient(135deg, #f0f4f8, #e6e9f0);
+    background: #ffffff;
     min-height: 100vh;
     font-family: Arial, sans-serif;
+    position: relative;
 }
 
-/* Título */
+/* Navbar y logo */
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start; /* Alineación a la izquierda */
+    background: transparent;
+}
+
+.na img {
+    height: 60px;
+    width: auto;
+}
+
+/* Subtítulo */
 .schedule-consultation-page-title {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #2c3e50;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: none; /* Sin sombra para el subtítulo */
 }
 
-/* Espacio entre el widget y el título */
+/* Espacio y apariencia del widget */
 .schedule-consultation-page-container h1 + div {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
     max-width: 900px;
 }
@@ -30,5 +47,5 @@
 /* Sombra y bordes del Calendly Widget */
 .schedule-consultation-page-container iframe {
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
 }

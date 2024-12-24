@@ -61,22 +61,46 @@ const FreeTrainingSessionPage = () => {
   className={`video-container ${formSubmitted ? 'enabled' : ''}`}
   onClick={!formSubmitted ? openModal : undefined} // Solo abre el modal si el formulario no se ha completado
 >
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/S0Cme39D-PE?autoplay"
-    title="YouTube video player"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  ></iframe>
+<div id="video-player-wrapper" style={{ margin: '0 auto', width: '100%' }}>
+      {/* Script del reproductor */}
+      <script
+        src="https://scripts.converteai.net/lib/js/smartplayer/v1/sdk.min.js"
+        data-id="671a35deab78ce000a3a9f28"
+      ></script>
+
+      {/* Contenedor del iframe */}
+      <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+        <iframe
+          frameBorder="0"
+          allowFullScreen
+          src="https://scripts.converteai.net/2444b072-868f-44f5-9a35-c3664144ee10/players/671a35deab78ce000a3a9f28/embed.html"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+          }}
+          referrerPolicy="origin"
+        ></iframe>
+      </div>
+
+      {/* Estilo personalizado */}
+      <style>
+        {`
+          .elementor-element:has(#video-player-wrapper) {
+            width: 100%;
+          }
+        `}
+      </style>
+    </div>
 
 </div>
 
       {/* Botón para mostrar el formulario si el formulario no ha sido enviado */}
       {!formSubmitted && context === "video" && (
         <WebinarButtonComponent
-          className="cta-button"
-          onClick={openModal}
+
         />
       )}
 
